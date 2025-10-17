@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en" class="font-sans">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio • Your Name</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configure Tailwind to use Inter as the default sans-serif font
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            sans: [
+              'Inter',
+              'ui-sans-serif',
+              'system-ui',
+              'Segoe UI',
+              'Roboto',
+              'Helvetica Neue',
+              'Arial',
+              'Noto Sans',
+              'Apple Color Emoji',
+              'Segoe UI Emoji',
+              'Segoe UI Symbol',
+              'Noto Color Emoji'
+            ]
+          }
+        }
+      }
+    </script>
+    <meta name="description" content="Personal portfolio of Your Name: projects, experience, and contact information.">
+  </head>
+  <body class="bg-white text-slate-800 antialiased">
+    <header class="border-b border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-6 flex items-center justify-between">
+        <a href="#" class="text-xl font-bold">Your Name</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-slate-600">About</a>
+          <a href="#projects" class="hover:text-slate-600">Projects</a>
+          <a href="#experience" class="hover:text-slate-600">Experience</a>
+          <a href="#contact" class="hover:text-slate-600">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="mx-auto max-w-6xl px-4 py-20">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Building thoughtful products.</h1>
+        <p class="mt-6 max-w-2xl text-lg text-slate-600">I’m a [your role] focused on creating delightful, performant experiences. Here are some things I’ve worked on recently.</p>
+        <div class="mt-8 flex gap-4">
+          <a href="#projects" class="inline-flex items-center rounded-md bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">View Projects</a>
+          <a href="#contact" class="inline-flex items-center rounded-md border border-slate-300 px-5 py-3 text-slate-900 hover:bg-slate-50">Get in touch</a>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
+        <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Example project card -->
+          <article class="rounded-lg border border-slate-200 p-5 hover:shadow-sm">
+            <h3 class="text-lg font-semibold">Project Title</h3>
+            <p class="mt-2 text-sm text-slate-600">Short description of what the project does and why it matters.</p>
+            <div class="mt-4 flex gap-3 text-sm">
+              <a href="#" class="text-slate-900 underline hover:no-underline">Live</a>
+              <a href="#" class="text-slate-900 underline hover:no-underline">Code</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
+        <h2 class="text-2xl md:text-3xl font-semibold">Experience</h2>
+        <ul class="mt-6 space-y-5">
+          <li>
+            <div class="flex items-center justify-between">
+              <p class="font-medium">Company • Role</p>
+              <p class="text-sm text-slate-500">2023 — Present</p>
+            </div>
+            <p class="mt-2 text-sm text-slate-600">One-line summary of your responsibilities and impact.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
+        <h2 class="text-2xl md:text-3xl font-semibold">About</h2>
+        <p class="mt-4 max-w-3xl text-slate-700">Write a short bio about who you are, what you enjoy working on, and what you’re looking for. Keep it concise and friendly.</p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
+        <h2 class="text-2xl md:text-3xl font-semibold">Contact</h2>
+        <p class="mt-4 text-slate-700">Email: <a class="underline" href="mailto:you@example.com">you@example.com</a></p>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200">
+      <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">
+        © <span id="year"></span> Your Name. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  
+</html>
+
+
