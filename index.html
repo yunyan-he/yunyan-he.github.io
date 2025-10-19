@@ -36,72 +36,111 @@
       }
     </script>
     <meta name="description" content="Personal portfolio of Your Name: projects, experience, and contact information.">
+    
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .hero-word {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+      }
+    </style>
   </head>
   <body class="bg-white text-slate-800 antialiased">
-    <header class="border-b border-slate-200">
-      <div class="mx-auto max-w-6xl px-4 py-6 flex items-center justify-between">
-        <a href="#" class="text-xl font-bold">Your Name</a>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#about" class="hover:text-slate-600">About</a>
-          <a href="#projects" class="hover:text-slate-600">Projects</a>
-          <a href="#experience" class="hover:text-slate-600">Experience</a>
-          <a href="#contact" class="hover:text-slate-600">Contact</a>
-        </nav>
+    <!-- Hero Section -->
+    <section id="hero" class="h-[80vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+      <div class="text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-4">
+          <span class="hero-word" style="animation-delay: 0.1s;">Building</span>
+          <span class="hero-word" style="animation-delay: 0.2s;"> thoughtful</span>
+          <span class="hero-word" style="animation-delay: 0.3s;"> products.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-slate-600 font-medium">Your Name</p>
       </div>
-    </header>
+    </section>
 
     <main>
-      <!-- Hero -->
-      <section class="mx-auto max-w-6xl px-4 py-20">
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">Building thoughtful products.</h1>
-        <p class="mt-6 max-w-2xl text-lg text-slate-600">I’m a [your role] focused on creating delightful, performant experiences. Here are some things I’ve worked on recently.</p>
-        <div class="mt-8 flex gap-4">
-          <a href="#projects" class="inline-flex items-center rounded-md bg-slate-900 px-5 py-3 text-white hover:bg-slate-800">View Projects</a>
-          <a href="#contact" class="inline-flex items-center rounded-md border border-slate-300 px-5 py-3 text-slate-900 hover:bg-slate-50">Get in touch</a>
+      <!-- Tab Navigation -->
+      <nav class="flex justify-center border-b border-slate-200">
+        <div class="flex gap-8">
+          <button class="tab-button active px-4 py-3 text-sm font-medium text-slate-900 border-b-2 border-green-500" data-tab="projects">Projects</button>
+          <button class="tab-button px-4 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent" data-tab="tech-blog">Tech Blog</button>
+          <button class="tab-button px-4 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent" data-tab="study-notes">Study Notes</button>
+          <button class="tab-button px-4 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent" data-tab="about-me">About Me</button>
         </div>
-      </section>
+      </nav>
 
-      <!-- Projects -->
-      <section id="projects" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
-        <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Example project card -->
-          <article class="rounded-lg border border-slate-200 p-5 hover:shadow-sm">
-            <h3 class="text-lg font-semibold">Project Title</h3>
-            <p class="mt-2 text-sm text-slate-600">Short description of what the project does and why it matters.</p>
-            <div class="mt-4 flex gap-3 text-sm">
-              <a href="#" class="text-slate-900 underline hover:no-underline">Live</a>
-              <a href="#" class="text-slate-900 underline hover:no-underline">Code</a>
+      <!-- Content Container -->
+      <div class="content-container flex overflow-x-hidden transition-all duration-300 ease-in-out">
+        <!-- Projects Section -->
+        <section id="projects" class="w-full flex-shrink-0">
+          <div class="mx-auto max-w-6xl px-4 py-16">
+            <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
+            <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <!-- Example project card -->
+              <article class="rounded-lg border border-slate-200 p-5 hover:shadow-sm">
+                <h3 class="text-lg font-semibold">Project Title</h3>
+                <p class="mt-2 text-sm text-slate-600">Short description of what the project does and why it matters.</p>
+                <div class="mt-4 flex gap-3 text-sm">
+                  <a href="#" class="text-slate-900 underline hover:no-underline">Live</a>
+                  <a href="#" class="text-slate-900 underline hover:no-underline">Code</a>
+                </div>
+              </article>
             </div>
-          </article>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <!-- Experience -->
-      <section id="experience" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
-        <h2 class="text-2xl md:text-3xl font-semibold">Experience</h2>
-        <ul class="mt-6 space-y-5">
-          <li>
-            <div class="flex items-center justify-between">
-              <p class="font-medium">Company • Role</p>
-              <p class="text-sm text-slate-500">2023 — Present</p>
+        <!-- Tech Blog Section -->
+        <section id="tech-blog" class="w-full flex-shrink-0">
+          <div class="mx-auto max-w-6xl px-4 py-16">
+            <h2 class="text-2xl md:text-3xl font-semibold">Tech Blog</h2>
+            <div class="mt-8 space-y-6">
+              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
+                <h3 class="text-xl font-semibold">Blog Post Title</h3>
+                <p class="mt-2 text-sm text-slate-500">Published on January 1, 2024</p>
+                <p class="mt-3 text-slate-700">Brief excerpt from your latest blog post about technology, development, or industry insights.</p>
+                <a href="#" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium">Read more →</a>
+              </article>
             </div>
-            <p class="mt-2 text-sm text-slate-600">One-line summary of your responsibilities and impact.</p>
-          </li>
-        </ul>
-      </section>
+          </div>
+        </section>
 
-      <!-- About -->
-      <section id="about" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
-        <h2 class="text-2xl md:text-3xl font-semibold">About</h2>
-        <p class="mt-4 max-w-3xl text-slate-700">Write a short bio about who you are, what you enjoy working on, and what you’re looking for. Keep it concise and friendly.</p>
-      </section>
+        <!-- Study Notes Section -->
+        <section id="study-notes" class="w-full flex-shrink-0">
+          <div class="mx-auto max-w-6xl px-4 py-16">
+            <h2 class="text-2xl md:text-3xl font-semibold">Study Notes</h2>
+            <div class="mt-8 space-y-6">
+              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
+                <h3 class="text-xl font-semibold">Study Topic</h3>
+                <p class="mt-2 text-sm text-slate-500">Last updated: January 1, 2024</p>
+                <p class="mt-3 text-slate-700">Summary of your study notes, key concepts, and learning resources.</p>
+                <a href="#" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium">View notes →</a>
+              </article>
+            </div>
+          </div>
+        </section>
 
-      <!-- Contact -->
-      <section id="contact" class="mx-auto max-w-6xl px-4 py-16 border-t border-slate-200">
-        <h2 class="text-2xl md:text-3xl font-semibold">Contact</h2>
-        <p class="mt-4 text-slate-700">Email: <a class="underline" href="mailto:you@example.com">you@example.com</a></p>
-      </section>
+        <!-- About Me Section -->
+        <section id="about-me" class="w-full flex-shrink-0">
+          <div class="mx-auto max-w-6xl px-4 py-16">
+            <h2 class="text-2xl md:text-3xl font-semibold">About Me</h2>
+            <p class="mt-4 max-w-3xl text-slate-700">Write a short bio about who you are, what you enjoy working on, and what you're looking for. Keep it concise and friendly.</p>
+            <div class="mt-8">
+              <h3 class="text-lg font-semibold mb-4">Contact</h3>
+              <p class="text-slate-700">Email: <a class="underline" href="mailto:you@example.com">you@example.com</a></p>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer class="border-t border-slate-200">
@@ -112,6 +151,62 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Tab functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const contentContainer = document.querySelector('.content-container');
+        const sections = document.querySelectorAll('section[id]');
+
+        function switchTab(targetTab, shouldScroll = true) {
+          // Remove active class from all buttons
+          tabButtons.forEach(button => {
+            button.classList.remove('active', 'text-slate-900', 'border-green-500');
+            button.classList.add('text-slate-500', 'border-transparent');
+          });
+
+          // Add active class to clicked button
+          const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
+          activeButton.classList.add('active', 'text-slate-900', 'border-green-500');
+          activeButton.classList.remove('text-slate-500', 'border-transparent');
+
+          // Scroll to corresponding section (only when requested)
+          const targetSection = document.getElementById(targetTab);
+          if (shouldScroll && targetSection) {
+            targetSection.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start',
+              inline: 'start'
+            });
+          }
+        }
+
+        // Add click event listeners to tab buttons
+        tabButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            switchTab(targetTab);
+          });
+        });
+
+        // Set initial active state (Projects tab) without scrolling
+        switchTab('projects', false);
+
+        // Sticky scroll logic
+        const mainElement = document.querySelector('main');
+        let hasTriggeredScroll = false;
+
+        function handleScroll() {
+          if (window.scrollY > 20 && !hasTriggeredScroll) {
+            hasTriggeredScroll = true;
+            mainElement.scrollIntoView({ behavior: 'smooth' });
+            // Remove the scroll listener after triggering
+            window.removeEventListener('scroll', handleScroll);
+          }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+      });
     </script>
   </body>
   
