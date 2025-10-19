@@ -156,41 +156,109 @@
       document.addEventListener('DOMContentLoaded', function() {
         const tabButtons = document.querySelectorAll('.tab-button');
         const contentContainer = document.querySelector('.content-container');
-        const sections = document.querySelectorAll('section[id]');
+        const sections = Array.from(document.querySelectorAll('.content-container > section'));
 
-        function switchTab(targetTab, shouldScroll = true) {
-          // Remove active class from all buttons
-          tabButtons.forEach(button => {
-            button.classList.remove('active', 'text-slate-900', 'border-green-500');
-            button.classList.add('text-slate-500', 'border-transparent');
+        // State
+        let currentIndex = 0;
+        let isAnimating = false;
+
+        function setActiveButton(index) {
+          tabButtons.forEach((button, i) => {
+            if (i === index) {
+              button.classList.add('active', 'text-slate-900', 'border-green-500');
+              button.classList.remove('text-slate-500', 'border-transparent');
+            } else {
+              button.classList.remove('active', 'text-slate-900', 'border-green-500');
+              button.classList.add('text-slate-500', 'border-transparent');
+            }
           });
+        }
 
-          // Add active class to clicked button
-          const activeButton = document.querySelector(`[data-tab="${targetTab}"]`);
-          activeButton.classList.add('active', 'text-slate-900', 'border-green-500');
-          activeButton.classList.remove('text-slate-500', 'border-transparent');
-
-          // Scroll to corresponding section (only when requested)
-          const targetSection = document.getElementById(targetTab);
-          if (shouldScroll && targetSection) {
-            targetSection.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start',
-              inline: 'start'
-            });
+        function onScrollAnimationEnd(callback) {
+          // Prefer modern scrollend event; fallback to timeout
+          const useScrollEnd = 'onscrollend' in window || 'onscrollend' in document;
+          if (useScrollEnd) {
+            const handler = () => {
+              contentContainer.removeEventListener('scrollend', handler);
+              callback();
+            };
+            contentContainer.addEventListener('scrollend', handler, { once: true });
+          } else {
+            setTimeout(callback, 450);
           }
         }
 
-        // Add click event listeners to tab buttons
-        tabButtons.forEach(button => {
+        function switchTab(targetIndex) {
+          if (isAnimating || targetIndex === currentIndex) return;
+          const num = sections.length;
+          const width = contentContainer.offsetWidth;
+
+          // Determine shortest path distances (forward/right and backward/left)
+          const forwardDistance = (targetIndex - currentIndex + num) % num;   // move right
+          const backwardDistance = (currentIndex - targetIndex + num) % num;  // move left
+
+          isAnimating = true;
+
+          // Helper to finish and update state
+          const finish = () => {
+            currentIndex = targetIndex;
+            setActiveButton(currentIndex);
+            isAnimating = false;
+          };
+
+          // Wrap-around special cases for a single-step left from 0->last and right from last->0
+          if (currentIndex === 0 && targetIndex === num - 1 && backwardDistance === 1) {
+            // Wrap-left: clone last, prepend, jump right, then smooth scroll left to 0
+            const clone = sections[num - 1].cloneNode(true);
+            contentContainer.insertBefore(clone, contentContainer.firstChild);
+            // Jump to show original first section
+            contentContainer.scrollLeft = width;
+            // Defer smooth scroll to next frame(s) to ensure the jump is committed
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                contentContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                onScrollAnimationEnd(() => {
+                  // Jump to real last section and cleanup
+                  contentContainer.removeChild(clone);
+                  contentContainer.scrollLeft = (num - 1) * width;
+                  finish();
+                });
+              });
+            });
+            return;
+          }
+
+          if (currentIndex === num - 1 && targetIndex === 0 && forwardDistance === 1) {
+            // Wrap-right: clone first, append, smooth scroll to clone, then jump to real first
+            const clone = sections[0].cloneNode(true);
+            contentContainer.appendChild(clone);
+            // Ensure starting position at real last
+            contentContainer.scrollLeft = (num - 1) * width;
+            // Smooth scroll to the clone at the end
+            contentContainer.scrollTo({ left: num * width, behavior: 'smooth' });
+            onScrollAnimationEnd(() => {
+              contentContainer.removeChild(clone);
+              contentContainer.scrollLeft = 0;
+              finish();
+            });
+            return;
+          }
+
+          // Non-wrap or multi-step: just scroll directly to target position (shortest direction implied by position)
+          const targetLeft = targetIndex * width;
+          contentContainer.scrollTo({ left: targetLeft, behavior: 'smooth' });
+          onScrollAnimationEnd(finish);
+        }
+
+        // Add click event listeners to tab buttons (pass index)
+        tabButtons.forEach((button, index) => {
           button.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            switchTab(targetTab);
+            switchTab(index);
           });
         });
 
-        // Set initial active state (Projects tab) without scrolling
-        switchTab('projects', false);
+        // Initial state: active button for index 0 without scrolling
+        setActiveButton(0);
 
         // Sticky scroll logic
         const mainElement = document.querySelector('main');
