@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio • Your Name</title>
+    <title>Portfolio • Yunyan He</title>
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +53,12 @@
         animation: fadeInUp 0.8s ease-out forwards;
         opacity: 0;
       }
+      
+      .tab-section {
+        margin: 0 auto;
+        max-width: 64rem;
+        padding: 5rem 2rem;
+      }
     </style>
   </head>
   <body class="bg-white text-slate-800 antialiased">
@@ -64,7 +70,7 @@
           <span class="hero-word" style="animation-delay: 0.2s;"> thoughtful</span>
           <span class="hero-word" style="animation-delay: 0.3s;"> products.</span>
         </h1>
-        <p class="text-xl md:text-2xl text-slate-600 font-medium">Your Name</p>
+        <p class="text-xl md:text-2xl text-slate-600 font-medium">Yunayan He</p>
       </div>
     </section>
 
@@ -83,7 +89,7 @@
       <div class="content-container flex overflow-x-hidden transition-all duration-300 ease-in-out">
         <!-- Projects Section -->
         <section id="projects" class="w-full flex-shrink-0">
-          <div class="mx-auto max-w-6xl px-4 py-16">
+          <div class="tab-section">
             <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
             <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <!-- Example project card -->
@@ -101,7 +107,7 @@
 
         <!-- Tech Blog Section -->
         <section id="tech-blog" class="w-full flex-shrink-0">
-          <div class="mx-auto max-w-6xl px-4 py-16">
+          <div class="tab-section">
             <h2 class="text-2xl md:text-3xl font-semibold">Tech Blog</h2>
             <div class="mt-8 space-y-6">
               <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
@@ -116,7 +122,7 @@
 
         <!-- Study Notes Section -->
         <section id="study-notes" class="w-full flex-shrink-0">
-          <div class="mx-auto max-w-6xl px-4 py-16">
+          <div class="tab-section">
             <h2 class="text-2xl md:text-3xl font-semibold">Study Notes</h2>
             <div class="mt-8 space-y-6">
               <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
@@ -131,12 +137,148 @@
 
         <!-- About Me Section -->
         <section id="about-me" class="w-full flex-shrink-0">
-          <div class="mx-auto max-w-6xl px-4 py-16">
+          <div class="tab-section">
             <h2 class="text-2xl md:text-3xl font-semibold">About Me</h2>
-            <p class="mt-4 max-w-3xl text-slate-700">Write a short bio about who you are, what you enjoy working on, and what you're looking for. Keep it concise and friendly.</p>
+            <p class="mt-4 max-w-3xl text-slate-700">Master's student passionate about human-centered AI and mobile development. I love turning ideas into intuitive, intelligent systems—and I'm always up for a challenge that blends tech with real-world impact.</p>
+            
+            <!-- Education Timeline -->
+            <div class="mt-12">
+              <h3 class="text-xl font-semibold mb-8">Education</h3>
+              <div class="relative max-w-4xl">
+                <!-- Timeline line with soft gradient -->
+                <div class="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 rounded-full"></div>
+                
+                <!-- Graduate Studies -->
+                <div class="relative flex items-start mb-12 education-item" data-education="graduate">
+                  <div class="flex-shrink-0 relative">
+                    <div class="w-12 h-12 bg-gradient-to-br from-slate-500 to-slate-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
+                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                      </svg>
+                    </div>
+                    <div class="absolute -inset-1 bg-slate-400 rounded-full opacity-10 animate-pulse"></div>
+                  </div>
+                  <div class="ml-8 flex-1">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
+                      <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-xl font-bold text-slate-900">RWTH Aachen University</h4>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">2025 - Present</span>
+                      </div>
+                      <p class="text-slate-600 font-medium mb-3">Master of Science in Human-Centered Intelligent Systems</p>
+                      <p class="text-slate-700 leading-relaxed">Currently pursuing advanced studies in human-centered intelligent systems, focusing on the intersection of AI and user experience.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Undergraduate Studies -->
+                <div class="relative flex items-start mb-12 education-item" data-education="undergraduate">
+                  <div class="flex-shrink-0 relative">
+                    <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
+                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                      </svg>
+                    </div>
+                    <div class="absolute -inset-1 bg-amber-400 rounded-full opacity-10 animate-pulse"></div>
+                  </div>
+                  <div class="ml-8 flex-1">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
+                      <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-xl font-bold text-slate-900">Beijing University of Posts and Telecommunications</h4>
+                        <span class="px-3 py-1 bg-amber-100 text-amber-800 text-sm font-medium rounded-full">2021 - 2025</span>
+                      </div>
+                      <p class="text-slate-600 font-medium mb-3">Bachelor of Science in Computer Science and Technology</p>
+                      <div class="flex items-center gap-4 mb-3">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">GPA: 3.5/4.0</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">86/100</span>
+                      </div>
+                      <p class="text-slate-700 leading-relaxed">Comprehensive study of computer science fundamentals, algorithms, data structures, and software engineering. Completed thesis involving machine learning model training with PyTorch.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- High School -->
+                <div class="relative flex items-start mb-12 education-item" data-education="highschool">
+                  <div class="flex-shrink-0 relative">
+                    <div class="w-12 h-12 bg-gradient-to-br from-rose-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
+                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                      </svg>
+                    </div>
+                    <div class="absolute -inset-1 bg-rose-400 rounded-full opacity-10 animate-pulse"></div>
+                  </div>
+                  <div class="ml-8 flex-1">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
+                      <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-xl font-bold text-slate-900">Xiangtan County No. 1 High School</h4>
+                        <span class="px-3 py-1 bg-rose-100 text-rose-800 text-sm font-medium rounded-full">2018 - 2021</span>
+                      </div>
+                      <p class="text-slate-600 font-medium mb-3">High School Diploma</p>
+                      <div class="flex items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">🏆 Top 0.1%</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">College Entrance Exam</span>
+                      </div>
+                      <p class="text-slate-700 leading-relaxed">Achieved top 0.1% in final college entrance exam, demonstrating exceptional academic performance and dedication to learning.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Skills Section -->
+            <div class="mt-12">
+              <h3 class="text-xl font-semibold mb-6">Skills</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Programming Languages -->
+                <div>
+                  <h4 class="text-lg font-medium text-slate-900 mb-3">Programming Languages</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Java</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">C</span>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Kotlin</span>
+                  </div>
+                </div>
+                
+                <!-- Machine Learning & AI -->
+                <div>
+                  <h4 class="text-lg font-medium text-slate-900 mb-3">Machine Learning & AI</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">PyTorch</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Model Training</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Google Colab</span>
+                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Deep Learning</span>
+                  </div>
+                </div>
+                
+                <!-- Tools & IDEs -->
+                <div>
+                  <h4 class="text-lg font-medium text-slate-900 mb-3">Tools & IDEs</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Git</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">VS Code</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Android Studio</span>
+                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">IntelliJ IDEA</span>
+                  </div>
+                </div>
+                
+                <!-- Languages -->
+                <div>
+                  <h4 class="text-lg font-medium text-slate-900 mb-3">Languages</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">English (Fluent)</span>
+                    <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Chinese (Native)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div class="mt-8">
               <h3 class="text-lg font-semibold mb-4">Contact</h3>
-              <p class="text-slate-700">Email: <a class="underline" href="mailto:you@example.com">you@example.com</a></p>
+              <div class="space-y-2">
+                <p class="text-slate-700">Email: <a class="hover:text-blue-600 transition-colors duration-200" href="mailto:aerin.hyy@gmail.com">aerin.hyy@gmail.com</a></p>
+                <p class="text-slate-700">LinkedIn: <a class="hover:text-blue-600 transition-colors duration-200" href="https://www.linkedin.com/in/yunyan-he-2104a933b" target="_blank" rel="noopener noreferrer">linkedin.com/in/yunyan-he-2104a933b</a></p>
+              </div>
             </div>
           </div>
         </section>
@@ -274,6 +416,52 @@
         }
 
         window.addEventListener('scroll', handleScroll);
+
+        // Education timeline interaction
+        const educationItems = document.querySelectorAll('.education-item');
+        const educationIcons = document.querySelectorAll('.education-icon');
+        const educationCards = document.querySelectorAll('.education-card');
+
+        function scrollEducationToCenter(element) {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          const elementHeight = rect.height;
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const targetPosition = scrollTop + rect.top - (windowHeight / 2) + (elementHeight / 2);
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+
+        // Add click listeners to education icons
+        educationIcons.forEach(icon => {
+          icon.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const educationItem = this.closest('.education-item');
+            scrollEducationToCenter(educationItem);
+          });
+        });
+
+        // Add click listeners to education cards
+        educationCards.forEach(card => {
+          card.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const educationItem = this.closest('.education-item');
+            scrollEducationToCenter(educationItem);
+          });
+        });
+
+        // Add click listeners to entire education items
+        educationItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            // Only trigger if not clicking on icon or card (to avoid double triggers)
+            if (!e.target.closest('.education-icon') && !e.target.closest('.education-card')) {
+              scrollEducationToCenter(this);
+            }
+          });
+        });
       });
     </script>
   </body>
