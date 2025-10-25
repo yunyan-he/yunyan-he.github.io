@@ -225,7 +225,6 @@
           </div>
         </section>
 
-
         <!-- About Me Section -->
         <section id="about-me" class="w-full flex-shrink-0">
           <div class="tab-section">
@@ -387,6 +386,10 @@
 
       // Tab functionality
       document.addEventListener('DOMContentLoaded', function() {
+        let isPageReady = false;
+        // Delay activation of scroll handling logic
+        // to avoid triggering animations when browser restores scroll position.
+        setTimeout(() => { isPageReady = true; }, 100); 
         const tabButtons = document.querySelectorAll('.tab-button');
         const contentContainer = document.querySelector('.content-container');
         const sections = Array.from(document.querySelectorAll('.content-container > section'));
@@ -394,6 +397,25 @@
         // State
         let currentIndex = 0;
         let isAnimating = false;
+        function syncStateFromScroll() {
+          const width = contentContainer.offsetWidth;
+          if (width === 0) return; // Avoid division by zero when not rendered
+
+          // Calculate correct index based on restored scroll position
+          const restoredIndex = Math.round(contentContainer.scrollLeft / width);
+          
+          // Update state and UI
+          if (restoredIndex !== currentIndex) {
+            currentIndex = restoredIndex;
+          }
+          setActiveButton(currentIndex);
+        }
+
+        // Immediately sync state after browser restores scroll position (using setTimeout(0))
+        setTimeout(syncStateFromScroll, 0);
+
+        // (Optional but recommended) Also sync when window size changes to prevent layout issues
+        window.addEventListener('resize', syncStateFromScroll);
 
         function setActiveButton(index) {
           tabButtons.forEach((button, i) => {
@@ -582,7 +604,7 @@
         
         // Scroll event handler
         function handleScroll() {
-          if (isTransitioning) return;
+          if (isTransitioning || !isPageReady) return;
           
           const scrollY = window.scrollY;
           const scrollDirection = scrollY > lastScrollY ? 'down' : 'up';
