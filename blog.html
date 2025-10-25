@@ -5,16 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog Post • Yunyan He</title>
 
-  <!-- Google Fonts: Inter (Consistent with index.html) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-  <!-- 
-    1. Import Tailwind CSS
-    NOTE: ?plugins=typography is critical!
-    This adds the "prose" class to auto-style Markdown content (h1, p, code...)
-  -->
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     // (Consistent with index.html)
@@ -31,43 +25,29 @@
     }
   </script>
   
-  <!-- 2. Import marked.js (converts Markdown to HTML) -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 </head>
 <body class="bg-white text-slate-800 antialiased">
 
-  <!-- Main Content Area -->
   <div class="max-w-3xl mx-auto px-6 py-12">
     
-    <!-- 
-      Task 3: The "Back" link pointing to the #tech-blog tab
-      (Links back to the #tech-blog section on the main page)
-    -->
     <a href="index.html#tech-blog" class="text-green-600 hover:text-green-700 font-medium text-sm">
       &larr; Back to Portfolio
     </a>
 
-    <!-- 
-      Your Markdown content will be injected here.
-      The "prose" class handles all styling.
-    -->
-    <article id="content" class="prose prose-slate lg:prose-lg mt-6">
+    <article id="content" class="prose prose-slate lg:prose-lg mt-6 break-words">
       <p>Loading post...</p>
     </article>
     
   </div>
 
-  <!-- 
-    Tasks 1 & 2: The JS logic with the correct fetch path
-  -->
   <script>
     (async function() {
       const contentEl = document.getElementById('content');
       
       try {
         // 1. Get the post name from the URL
-        // e.g., blog.html?post=my-first-post
         const urlParams = new URLSearchParams(window.location.search);
         const postName = urlParams.get('post');
 
@@ -75,17 +55,17 @@
           throw new Error('No post specified in URL. (e.g., ?post=your-file-name)');
         }
         
-        // 2. Task 2: Fetch from the 'blogs/' folder
+        // 2. Fetch from the 'blogs/' folder
         const response = await fetch(`blogs/${postName}.md`);
         
         if (!response.ok) {
-          // If the file isn't found, throw a clear error
           throw new Error(`Post not found. (Could not load 'blogs/${postName}.md')`);
         }
         
         const markdownText = await response.text();
         
         // 3. Use marked.js to parse the Markdown text into HTML
+        // (No marked.setOptions here, as requested)
         contentEl.innerHTML = marked.parse(markdownText);
         
         // 4. (Optimization) Auto-set the page title from the post's first <h1>
@@ -107,4 +87,3 @@
   </script>
 </body>
 </html>
-
