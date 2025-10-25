@@ -28,6 +28,44 @@
 
   <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <style>
+    /* Page transition animations */
+    body {
+      opacity: 0;
+      animation: fadeIn 0.15s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .content-loading {
+      opacity: 0;
+      transform: translateY(5px);
+      transition: all 0.15s ease-out;
+    }
+    
+    .content-loaded {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .loading-spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 50%;
+      border-top-color: #10b981;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body class="bg-white text-slate-800 antialiased">
 
@@ -39,8 +77,11 @@
     </a>
 
     <!-- Markdown content will be injected here -->
-    <article id="content" class="prose prose-slate lg:prose-lg mt-6 break-words">
-      <p>Loading note...</p>
+    <article id="content" class="prose prose-slate lg:prose-lg mt-6 break-words content-loading">
+      <div class="flex items-center gap-2 text-slate-500">
+        <div class="loading-spinner"></div>
+        <span>Loading note...</span>
+      </div>
     </article>
     
   </div>
@@ -69,6 +110,10 @@
 
         // Parse Markdown into HTML
         contentEl.innerHTML = marked.parse(markdownText);
+        
+        // Add loaded class for smooth transition
+        contentEl.classList.remove('content-loading');
+        contentEl.classList.add('content-loaded');
 
         // Auto-set page title from first <h1>
         const firstHeading = contentEl.querySelector('h1');
