@@ -38,56 +38,10 @@
     <meta name="description" content="Personal portfolio of Your Name: projects, experience, and contact information.">
     
     <style>
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      
-      .hero-word {
-        animation: fadeInUp 0.8s ease-out forwards;
-        opacity: 0;
-      }
-      
       .tab-section {
         margin: 0 auto;
         max-width: 64rem;
         padding: 5rem 2rem;
-      }
-      
-      .typewriter {
-        overflow: hidden;
-        border-right: 2px solid #10b981;
-        white-space: nowrap;
-        animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-      }
-      
-      @keyframes typing {
-        from { width: 0; }
-        to { width: 100%; }
-      }
-      
-      @keyframes blink-caret {
-        from, to { border-color: transparent; }
-        50% { border-color: #10b981; }
-      }
-      
-      .typewriter-container {
-        min-height: 6rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      #typewriter-text {
-        border-right: 4px solid #10b981;
-        animation: blink-caret 0.75s step-end infinite;
-        line-height: 1.1;
       }
       
       /* Smooth scrolling for the entire page */
@@ -97,16 +51,6 @@
     </style>
   </head>
   <body class="bg-white text-slate-800 antialiased">
-    <!-- Hero Section -->
-    <section id="hero" class="h-[60vh] flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <div class="text-center">
-        <div class="typewriter-container mb-4">
-          <h1 id="typewriter-text" class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900"></h1>
-        </div>
-        <p class="text-xl md:text-2xl text-slate-600 font-medium">Yunyan He</p>
-      </div>
-    </section>
-
     <main>
       <!-- Tab Navigation -->
       <nav id="tab-nav" class="flex justify-center border-b border-slate-200 bg-white transition-all duration-300">
@@ -384,12 +328,8 @@
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Tab functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        let isPageReady = false;
-        // Delay activation of scroll handling logic
-        // to avoid triggering animations when browser restores scroll position.
-        setTimeout(() => { isPageReady = true; }, 100); 
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
         const tabButtons = document.querySelectorAll('.tab-button');
         const contentContainer = document.querySelector('.content-container');
         const sections = Array.from(document.querySelectorAll('.content-container > section'));
@@ -509,181 +449,31 @@
         // Initial state: active button for index 0 without scrolling
         setActiveButton(0);
 
-        // Precise scroll system
+        // Initialize nav bar as sticky from the start
         const tabNav = document.getElementById('tab-nav');
-        const heroSection = document.getElementById('hero');
         const mainElement = document.querySelector('main');
         
         // States
-        let isNavSticky = false;
-        let isTransitioning = false;
         let lastScrollY = 0;
-        let lastTransitionTime = 0;
         
-        // Calculate boundaries
-        const heroHeight = heroSection.offsetHeight;
-        const mainTop = mainElement.offsetTop;
-        const SCROLL_THRESHOLD = 50; // Smaller threshold for more responsive trigger
+        // Make nav sticky immediately since there's no hero section
+        tabNav.style.position = 'fixed';
+        tabNav.style.top = '0';
+        tabNav.style.left = '0';
+        tabNav.style.right = '0';
+        tabNav.style.zIndex = '50';
+        tabNav.style.backgroundColor = 'white';
+        tabNav.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
         
-        function makeNavSticky() {
-          if (isNavSticky) return;
-          
-          isNavSticky = true;
-          tabNav.style.position = 'fixed';
-          tabNav.style.top = '0';
-          tabNav.style.left = '0';
-          tabNav.style.right = '0';
-          tabNav.style.zIndex = '50';
-          tabNav.style.backgroundColor = 'white';
-          tabNav.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-          
-          // Add padding to content to account for fixed nav
-          contentContainer.style.paddingTop = tabNav.offsetHeight + 'px';
-        }
-        
-        function removeNavSticky() {
-          if (!isNavSticky) return;
-          
-          isNavSticky = false;
-          tabNav.style.position = '';
-          tabNav.style.top = '';
-          tabNav.style.left = '';
-          tabNav.style.right = '';
-          tabNav.style.zIndex = '';
-          tabNav.style.backgroundColor = '';
-          tabNav.style.boxShadow = '';
-          
-          // Remove padding from content
-          contentContainer.style.paddingTop = '';
-        }
-        
-        function scrollToContentStation() {
-          if (isTransitioning) return;
-          
-          const now = Date.now();
-          if (now - lastTransitionTime < 500) return; // Debounce transitions
-          
-          isTransitioning = true;
-          lastTransitionTime = now;
-          
-          // Smooth scroll to main element top
-          window.scrollTo({
-            top: mainTop,
-            behavior: 'smooth'
-          });
-          
-          // Make nav sticky after scroll completes
-          setTimeout(() => {
-            makeNavSticky();
-            isTransitioning = false;
-          }, 300);
-        }
-        
-        function scrollToHeroStation() {
-          if (isTransitioning) return;
-          
-          const now = Date.now();
-          if (now - lastTransitionTime < 500) return; // Debounce transitions
-          
-          isTransitioning = true;
-          lastTransitionTime = now;
-          
-          // Remove sticky nav first
-          removeNavSticky();
-          
-          // Smooth scroll to top
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
-          
-          setTimeout(() => {
-            isTransitioning = false;
-          }, 300);
-        }
-        
-        // Scroll event handler
-        function handleScroll() {
-          if (isTransitioning || !isPageReady) return;
-          
-          const scrollY = window.scrollY;
-          const scrollDirection = scrollY > lastScrollY ? 'down' : 'up';
-          lastScrollY = scrollY;
-          
-          // Phase 1: Hero -> Content Station (any scroll down)
-          if (!isNavSticky && scrollY > SCROLL_THRESHOLD) {
-            scrollToContentStation();
-          }
-          
-          // Phase 2: Content Station -> Hero (only when at exact top and scrolling up)
-          if (isNavSticky && 
-              scrollY <= mainTop + 1 && 
-              scrollDirection === 'up') {
-            scrollToHeroStation();
-          }
-        }
+        // Add padding to content to account for fixed nav
+        contentContainer.style.paddingTop = tabNav.offsetHeight + 'px';
         
         // Tab click handler
         tabButtons.forEach((button, index) => {
           button.addEventListener('click', function() {
-            if (!isNavSticky) {
-              // If not sticky yet, scroll to content station
-              scrollToContentStation();
-            }
             switchTab(index);
           });
         });
-        
-        // Initialize event listeners
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        // Typewriter animation
-        const typewriterText = document.getElementById('typewriter-text');
-        const sentences = [
-          "I turn code into experience.",
-          "I turn models into interaction.", 
-          "I turn ideas into impact."
-        ];
-        
-        let currentSentenceIndex = 0;
-        let currentCharIndex = 0;
-        let isDeleting = false;
-        let typewriterSpeed = 100;
-        
-        function typeWriter() {
-          const currentSentence = sentences[currentSentenceIndex];
-          
-          if (isDeleting) {
-            // Deleting characters
-            typewriterText.textContent = currentSentence.substring(0, currentCharIndex - 1);
-            currentCharIndex--;
-            typewriterSpeed = 30; // Much faster when deleting
-          } else {
-            // Typing characters
-            typewriterText.textContent = currentSentence.substring(0, currentCharIndex + 1);
-            currentCharIndex++;
-            typewriterSpeed = 100; // Normal speed when typing
-          }
-          
-          // Check if we've finished typing the current sentence
-          if (!isDeleting && currentCharIndex === currentSentence.length) {
-            // Pause before starting to delete
-            typewriterSpeed = 2000;
-            isDeleting = true;
-          }
-          // Check if we've finished deleting the current sentence
-          else if (isDeleting && currentCharIndex === 0) {
-            // Move to next sentence
-            isDeleting = false;
-            currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length;
-            typewriterSpeed = 500; // Pause before starting next sentence
-          }
-          
-          setTimeout(typeWriter, typewriterSpeed);
-        }
-        
-        // Start the typewriter animation
-        typeWriter();
 
         // Education timeline interaction
         const educationItems = document.querySelectorAll('.education-item');
