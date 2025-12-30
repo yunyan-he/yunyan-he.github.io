@@ -45,7 +45,7 @@ Weiser envisioned three types of devices. I tried to map modern products onto th
 
 ### **1\. Tabs are NOT AirTags**
 
-Seeing "inch-sized" Tabs, my first reaction was Apple's AirTag. But after a deeper comparison, I realized AirTag is just an isolated, "mute" beacon that only tells you "I am here."
+Seeing "inch-sized" Tabs, my first reaction was Apple's AirTag. But after a deeper comparison, I realized that while AirTag is a powerful tracker, it acts more like a "mute" beacon in terms of interaction. It only tells you "I am here."
 
 Weiser's Tabs are active micro-computers. They not only know where they are but also serve as interactive interfaces, or even bring dead objects to life—like making a file cabinet open automatically. We have not yet built that "environmental system" where objects communicate and collaborate with each other.
 
@@ -63,13 +63,13 @@ Through deeper thought, I finally understood: Zoom is "me broadcasting my screen
 
 ## **The Real Pain Point: Standalone vs. Distributed Mindset**
 
-The further I read, the more I felt that the lag in software architecture is the real bottleneck. Our software today is still stuck in a "**Standalone Mindset**."
+The further I read, the more I felt that the lag in interaction architecture is the real bottleneck. From a user experience perspective, our software today often feels stuck in a "Standalone Mindset."
 
-Take a common example: If I log into WeChat on a new device and want to view past chat history, I have to wait for it to download gigabytes of data from the server to the local storage, which takes minutes.
+Take a common example: If I log into WeChat(the most popular instant messaging app in China) on a new device and want to view past chat history, I have to wait for it to download gigabytes of data from the server to the local storage, which takes minutes.
 
 This is the typical "Client \+ Server" model. Essentially, it is network transmission \+ local computing. The data is fixed, and the application is isolated.
 
-I once wondered: "Doesn't all software connect to the internet now? Isn't that network computing?" Actually, it's not. It's just local computing with a network pipe.
+I once wondered: "Doesn't all software connect to the internet now? Isn't that network computing?" But in Weiser's sense, maybe not. Functionally, it often behaves like local computing with a network pipe.
 
 I later realized: **Being connected to the internet does not equal being Distributed.** The Distributed Computing Weiser spoke of treats "**Location**" as core information.
 
