@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="font-sans">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +25,7 @@
       }
     }
   </script>
-  
+
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <style>
@@ -33,23 +34,30 @@
       opacity: 0;
       animation: fadeIn 0.15s ease-out forwards;
     }
-    
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    
+
     .content-loading {
       opacity: 0;
       transform: translateY(5px);
       transition: all 0.15s ease-out;
     }
-    
+
     .content-loaded {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .loading-spinner {
       display: inline-block;
       width: 20px;
@@ -59,76 +67,199 @@
       border-top-color: #10b981;
       animation: spin 1s ease-in-out infinite;
     }
-    
+
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
   </style>
 
 </head>
-<body class="bg-white text-slate-800 antialiased">
 
-  <div class="max-w-3xl mx-auto px-6 py-12">
-    
-    <a href="index.html#tech-blog" class="text-green-600 hover:text-green-700 font-medium text-sm">
-      &larr; Back to Portfolio
-    </a>
+<body class="bg-white text-slate-800 antialiased relative">
 
-    <article id="content" class="prose prose-slate lg:prose-lg mt-6 break-words content-loading">
-      <div class="flex items-center gap-2 text-slate-500">
-        <div class="loading-spinner"></div>
-        <span>Loading post...</span>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- Header / Back to Portfolio -->
+    <div class="mb-8 flex items-center justify-between">
+      <a href="index.html#tech-blog"
+        class="text-green-600 hover:text-green-700 font-medium text-sm flex items-center gap-2">
+        <span>&larr;</span> Back to Portfolio
+      </a>
+
+      <!-- Mobile Toggle Button (Visible only on small screens) -->
+      <button id="mobile-toc-toggle"
+        class="lg:hidden text-slate-500 hover:text-green-600 flex items-center gap-2 text-sm font-medium">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+        <span>Table of Contents</span>
+      </button>
+    </div>
+
+    <!-- Layout Container -->
+    <div class="flex flex-col lg:flex-row gap-8 relative items-start">
+
+      <!-- Sidebar (TOC) -->
+      <aside id="sidebar" class="w-full lg:w-1/4 hidden lg:block lg:sticky lg:top-12 transition-all duration-300">
+        <div class="max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 border-r border-slate-200">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">On this page</h4>
+          </div>
+          <nav id="toc" class="text-sm text-slate-600 space-y-2">
+            <!-- TOC content injected here -->
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Desktop Toggle Button Container -->
+      <div class="hidden lg:block sticky top-12 z-10 -ml-4">
+        <button id="desktop-toggle-btn"
+          class="bg-white border border-slate-200 text-slate-400 hover:text-green-600 p-1.5 rounded-full shadow-sm transition-all hover:shadow-md"
+          title="Toggle Sidebar">
+          <svg id="toggle-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+          </svg>
+          <svg id="toggle-icon-closed" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
-    </article>
-    
+
+      <!-- Main Content -->
+      <main id="main-content" class="w-full lg:flex-1 min-w-0 transition-all duration-300">
+        <article id="content" class="prose prose-slate lg:prose-lg max-w-none break-words content-loading">
+          <div class="flex items-center gap-2 text-slate-500">
+            <div class="loading-spinner"></div>
+            <span>Loading post...</span>
+          </div>
+        </article>
+      </main>
+
+    </div>
   </div>
 
   <script>
-    (async function() {
-      const contentEl = document.getElementById('content');
-      
-      try {
-        // 1. Get the post name from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const postName = urlParams.get('post');
+      (async function () {
+        const contentEl = document.getElementById('content');
+        const tocEl = document.getElementById('toc');
+        const sidebarEl = document.getElementById('sidebar');
+        const mobileToggleBtn = document.getElementById('mobile-toc-toggle');
+        const desktopToggleBtn = document.getElementById('desktop-toggle-btn');
+        const iconOpen = document.getElementById('toggle-icon-open');
+        const iconClosed = document.getElementById('toggle-icon-closed');
 
-        if (!postName) {
-          throw new Error('No post specified in URL. (e.g., ?post=your-file-name)');
+        // --- TOC Generation ---
+        function generateTOC() {
+          const headings = contentEl.querySelectorAll('h1, h2, h3');
+          if (headings.length === 0) {
+            tocEl.innerHTML = '<p class="text-slate-400 italic">No headings found.</p>';
+            return;
+          }
+
+          const ul = document.createElement('ul');
+          ul.className = 'space-y-2';
+
+          headings.forEach((heading, index) => {
+            if (!heading.id) {
+              heading.id = 'heading-' + index;
+            }
+
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = '#' + heading.id;
+            a.textContent = heading.textContent;
+            a.className = 'block hover:text-green-600 transition-colors duration-200 line-clamp-2';
+
+            if (heading.tagName === 'H3') {
+              a.classList.add('pl-4', 'text-xs', 'text-slate-500');
+            } else if (heading.tagName === 'H1') {
+              a.classList.add('font-bold', 'text-slate-800');
+            }
+
+            // Mobile: close sidebar on click
+            a.addEventListener('click', () => {
+              if (window.innerWidth < 1024) {
+                sidebarEl.classList.add('hidden');
+              }
+            });
+
+            li.appendChild(a);
+            ul.appendChild(li);
+          });
+
+          tocEl.innerHTML = '';
+          tocEl.appendChild(ul);
         }
-        
-        // 2. Fetch from the 'blogs/' folder
-        const response = await fetch(`blogs/${postName}.md`);
-        
-        if (!response.ok) {
-          throw new Error(`Post not found. (Could not load 'blogs/${postName}.md')`);
-        }
-        
-        const markdownText = await response.text();
-        
-        // 3. Use marked.js to parse the Markdown text into HTML
-        // (No marked.setOptions here, as requested)
-        contentEl.innerHTML = marked.parse(markdownText);
-        
-        // Add loaded class for smooth transition
-        contentEl.classList.remove('content-loading');
-        contentEl.classList.add('content-loaded');
-        
-        // 4. (Optimization) Auto-set the page title from the post's first <h1>
-        const firstHeading = contentEl.querySelector('h1');
-        if (firstHeading) {
-          document.title = firstHeading.textContent + ' • Yunyan He';
-        }
-        
-      } catch (error) {
-        console.error('Error loading post:', error);
-        // If an error occurs, display an error message on the page
-        contentEl.innerHTML = `
+
+        // --- Interaction Logic ---
+
+        mobileToggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          sidebarEl.classList.toggle('hidden');
+          if (!sidebarEl.classList.contains('hidden')) {
+            sidebarEl.classList.add('mb-8');
+          }
+        });
+
+        desktopToggleBtn.addEventListener('click', () => {
+          const isHidden = sidebarEl.classList.contains('hidden');
+
+          if (isHidden) {
+            sidebarEl.classList.remove('hidden', 'lg:hidden');
+            sidebarEl.classList.add('lg:block');
+            iconOpen.classList.remove('hidden');
+            iconClosed.classList.add('hidden');
+          } else {
+            sidebarEl.classList.add('hidden', 'lg:hidden');
+            sidebarEl.classList.remove('lg:block');
+            iconOpen.classList.add('hidden');
+            iconClosed.classList.remove('hidden');
+          }
+        });
+
+        try {
+          const urlParams = new URLSearchParams(window.location.search);
+          const postName = urlParams.get('post');
+
+          if (!postName) {
+            throw new Error('No post specified in URL. (e.g., ?post=your-file-name)');
+          }
+
+          const response = await fetch(`blogs/${postName}.md`);
+
+          if (!response.ok) {
+            throw new Error(`Post not found. (Could not load 'blogs/${postName}.md')`);
+          }
+
+          const markdownText = await response.text();
+
+          contentEl.innerHTML = marked.parse(markdownText);
+          contentEl.classList.remove('content-loading');
+          contentEl.classList.add('content-loaded');
+
+          const firstHeading = contentEl.querySelector('h1');
+          if (firstHeading) {
+            document.title = firstHeading.textContent + ' • Yunyan He';
+          }
+
+          generateTOC();
+
+        } catch (error) {
+          console.error('Error loading post:', error);
+          contentEl.innerHTML = `
           <h1 class="text-2xl font-bold">Error Loading Post</h1>
           <p class="text-red-600">The requested post could not be loaded.</p>
           <p><strong>Details:</strong> ${error.message}</p>
         `;
-      }
-    })();
+          contentEl.classList.remove('content-loading');
+          contentEl.classList.add('content-loaded');
+        }
+      })();
   </script>
 </body>
+
 </html>
