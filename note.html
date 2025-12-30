@@ -78,24 +78,69 @@
   </style>
 </head>
 
-<body class="bg-white text-slate-800 antialiased relative">
+<body class="bg-slate-50 text-slate-800 antialiased relative">
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-    <!-- Header / Back to Portfolio -->
-    <div class="mb-8 flex items-center justify-between">
-      <a href="index.html#study-notes"
-        class="text-green-600 hover:text-green-700 font-medium text-sm flex items-center gap-2">
-        <span>&larr;</span> Back to Portfolio
+  <!-- Global Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm backdrop-blur-md bg-opacity-90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Site Identity -->
+      <a href="index.html"
+        class="flex items-center gap-2 text-lg font-bold text-slate-900 hover:text-green-600 transition-colors">
+        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+          </svg>
+        </div>
+        Yunyan He
       </a>
 
-      <!-- Mobile Toggle Button (Visible only on small screens) -->
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex gap-8">
+        <a href="index.html#about-me"
+          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">About</a>
+        <a href="index.html#projects"
+          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">Projects</a>
+        <a href="index.html#tech-blog"
+          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">Blog</a>
+        <a href="index.html#study-notes"
+          class="text-sm font-medium text-green-700 bg-green-50 px-3 py-1 rounded-full transition-colors">Notes</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Breadcrumbs & Tools Bar -->
+    <div class="mb-8 flex flex-wrap items-center justify-between gap-4 border-b border-slate-100 pb-4">
+      <nav class="flex items-center text-sm text-slate-500" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+          <li>
+            <a href="index.html" class="hover:text-green-600 transition-colors flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Home
+            </a>
+          </li>
+          <li><span class="text-slate-300">/</span></li>
+          <li><a href="index.html#study-notes" class="hover:text-green-600 transition-colors">Study Notes</a></li>
+          <li><span class="text-slate-300">/</span></li>
+          <li class="font-medium text-slate-800 truncate max-w-[150px] sm:max-w-xs" aria-current="page"
+            id="breadcrumb-title">...</li>
+        </ol>
+      </nav>
+
+      <!-- Mobile TOC Toggle -->
       <button id="mobile-toc-toggle"
-        class="lg:hidden text-slate-500 hover:text-green-600 flex items-center gap-2 text-sm font-medium">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        class="lg:hidden text-slate-500 hover:text-green-600 flex items-center gap-2 text-sm font-medium bg-white border border-slate-200 px-3 py-1.5 rounded-md shadow-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
-        <span>Table of Contents</span>
+        <span>Contents</span>
       </button>
     </div>
 
