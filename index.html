@@ -1,541 +1,720 @@
 <!doctype html>
 <html lang="en" class="font-sans">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Portfolio • Yunyan He</title>
 
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio • Yunyan He</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      // Configure Tailwind to use Inter as the default sans-serif font
-      tailwind.config = {
-        theme: {
-          fontFamily: {
-            sans: [
-              'Inter',
-              'ui-sans-serif',
-              'system-ui',
-              'Segoe UI',
-              'Roboto',
-              'Helvetica Neue',
-              'Arial',
-              'Noto Sans',
-              'Apple Color Emoji',
-              'Segoe UI Emoji',
-              'Segoe UI Symbol',
-              'Noto Color Emoji'
-            ]
-          }
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configure Tailwind to use Inter as the default sans-serif font
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: [
+            'Inter',
+            'ui-sans-serif',
+            'system-ui',
+            'Segoe UI',
+            'Roboto',
+            'Helvetica Neue',
+            'Arial',
+            'Noto Sans',
+            'Apple Color Emoji',
+            'Segoe UI Emoji',
+            'Segoe UI Symbol',
+            'Noto Color Emoji'
+          ]
         }
       }
-    </script>
-    <meta name="description" content="Personal portfolio of Your Name: projects, experience, and contact information.">
-    
-    <style>
-      .tab-section {
-        margin: 0 auto;
-        max-width: 64rem;
-        padding: 5rem 2rem;
-      }
-      
-      /* Smooth scrolling for the entire page */
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
-  <body class="bg-white text-slate-800 antialiased">
-    <main>
-      <!-- Tab Navigation -->
-      <nav id="tab-nav" class="flex justify-center border-b border-slate-200 bg-white transition-all duration-300">
-        <div class="flex gap-8">
-          <button class="tab-button active px-4 py-3 text-sm font-medium text-slate-900 border-b-2 border-green-500" data-tab="projects">Projects</button>
-          <button class="tab-button px-4 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent" data-tab="tech-blog">Tech Blog</button>
-          <button class="tab-button px-4 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent" data-tab="study-notes">Study Notes</button>
-          <button class="tab-button px-4 py-3 text-sm font-medium text-slate-500 hover:text-slate-700 border-b-2 border-transparent" data-tab="about-me">About Me</button>
+    }
+  </script>
+  <meta name="description" content="Personal portfolio of Your Name: projects, experience, and contact information.">
+
+  <style>
+    .tab-section {
+      margin: 0 auto;
+      max-width: 64rem;
+      padding: 5rem 2rem;
+    }
+
+    /* Smooth scrolling for the entire page */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 antialiased font-sans">
+  <main class="min-h-screen flex flex-col">
+
+    <!-- Hero Section -->
+    <header
+      class="bg-white border-b border-slate-100 pt-20 pb-16 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-green-50/50 to-transparent pointer-events-none"></div>
+      <div class="relative z-10 max-w-3xl mx-auto">
+        <!-- Optional: Avatar placeholder or real image if available. Using initials for now. -->
+        <div
+          class="mx-auto w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-green-400 to-emerald-600 flex items-center justify-center text-white text-3xl font-bold shadow-lg ring-4 ring-white">
+          YH
         </div>
-      </nav>
 
-      <!-- Content Container -->
-      <div class="content-container flex overflow-x-hidden transition-all duration-300 ease-in-out">
-        <!-- Projects Section -->
-        <section id="projects" class="w-full flex-shrink-0">
-          <div class="tab-section">
-            <h2 class="text-2xl md:text-3xl font-semibold">Projects</h2>
-            <div class="mt-8 grid gap-6 sm:grid-cols-2">
-              <!-- Animal Classification Project -->
-              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-md cursor-pointer transition-shadow duration-200" onclick="window.open('https://github.com/yunyan-he/AnimalClassification', '_blank')">
-                <h3 class="text-xl font-semibold mb-3">Animal Classification AI App</h3>
-                <p class="text-sm text-slate-600 mb-4">Hybrid AI Android app combining on-device ONNX Runtime with Google Gemini Cloud API for instant animal identification.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">Android</span>
-                  <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded">ONNX</span>
-                  <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">Gemini API</span>
-                  <span class="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded">AI/ML</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-4">
+          Yunyan He
+        </h1>
+        <p class="text-xl text-slate-600 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
+          Master's Student in <span class="font-medium text-green-700">Human-Centered Intelligent Systems</span>. <br
+            class="hidden sm:block" />
+          Turning code into experience, models into interaction, and ideas into impact.
+        </p>
+
+        <!-- Social Links -->
+        <div class="flex justify-center gap-6">
+          <a href="https://github.com/yunyan-he" target="_blank"
+            class="text-slate-400 hover:text-green-600 transition-colors transform hover:-translate-y-1 duration-200">
+            <span class="sr-only">GitHub</span>
+            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/yunyan-he-2104a933b" target="_blank"
+            class="text-slate-400 hover:text-blue-600 transition-colors transform hover:-translate-y-1 duration-200">
+            <span class="sr-only">LinkedIn</span>
+            <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd"
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="mailto:aerin.hyy@gmail.com"
+            class="text-slate-400 hover:text-rose-500 transition-colors transform hover:-translate-y-1 duration-200">
+            <span class="sr-only">Email</span>
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tab Navigation (Sticky) -->
+    <nav id="tab-nav"
+      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
+      <div class="flex justify-center max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
+        <div class="flex gap-4 sm:gap-8 min-w-max">
+          <button
+            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-semibold text-green-600 border-b-2 border-green-600 transition-colors"
+            data-tab="projects">Projects</button>
+          <button
+            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
+            data-tab="tech-blog">Tech Blog</button>
+          <button
+            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
+            data-tab="study-notes">Study Notes</button>
+          <button
+            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
+            data-tab="about-me">About Me</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content Container -->
+    <div class="content-container flex overflow-x-hidden transition-all duration-300 ease-in-out">
+      <!-- Projects Section -->
+      <section id="projects" class="w-full flex-shrink-0">
+        <div class="tab-section">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Featured Projects</h2>
+          <div class="grid gap-8 sm:grid-cols-2">
+            <!-- Animal Classification Project -->
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              onclick="window.open('https://github.com/yunyan-he/AnimalClassification', '_blank')">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-700 transition-colors">Animal
+                  Classification AI App</h3>
+                <p class="text-slate-600 mb-6 leading-relaxed">Hybrid AI Android app combining on-device ONNX Runtime
+                  with Google
+                  Gemini Cloud API for instant animal identification.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span
+                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">Android</span>
+                  <span
+                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">ONNX</span>
+                  <span
+                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">Gemini</span>
                 </div>
-                <div class="text-sm">
-                  <a href="https://github.com/yunyan-he/AnimalClassification/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:text-green-700 font-medium" onclick="event.stopPropagation()">View README →</a>
+                <div
+                  class="flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </div>
-              </article>
-            </div>
+              </div>
+            </article>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- Tech Blog Section -->
-        <section id="tech-blog" class="w-full flex-shrink-0">
-          <div class="tab-section">
-            <h2 class="text-2xl md:text-3xl font-semibold">Tech Blog</h2>
-            <div class="mt-8 space-y-6">
-              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
-                <h3 class="text-xl font-semibold">
+      <!-- Tech Blog Section -->
+      <section id="tech-blog" class="w-full flex-shrink-0">
+        <div class="tab-section">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Tech Blog</h2>
+          <div class="mt-8 space-y-6">
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              onclick="window.location.href='blog.html?post=gemini-hybrid-ai-solution'">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                   Android integration of Gemini Vision: a hybrid cloud-local AI recognition solution
                 </h3>
-                <p class="mt-2 text-sm text-slate-500">Published on October 24, 2025</p>
-                <p class="mt-3 text-slate-700">
-                  An Android-side experiment of building a hybrid AI solution, integrating on-device ONNX models with the cloud-based Gemini Vision API.
+                <p class="mt-2 text-sm text-slate-500 flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  October 24, 2025
                 </p>
-                <a href="blog.html?post=gemini-hybrid-ai-solution" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium transition-all duration-50 hover:translate-x-1">
-                  Read more →
-                </a>
-              </article>
-              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
-                <h3 class="text-xl font-semibold">
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                  An Android-side experiment of building a hybrid AI solution, integrating on-device ONNX models with
+                  the cloud-based Gemini Vision API.
+                </p>
+                <div
+                  class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                  Read Article <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              onclick="window.location.href='blog.html?post=android-play-install-referrer-tutorial'">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                   Tracking App Install Sources on Android with the Play Install Referrer Library
                 </h3>
-                <p class="mt-2 text-sm text-slate-500">Published on October 25, 2025</p>
-                <p class="mt-3 text-slate-700">
+                <p class="mt-2 text-sm text-slate-500 flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  October 25, 2025
+                </p>
+                <p class="mt-4 text-slate-600 leading-relaxed">
                   A Developer's Guide to the Google Play Install Referrer API
                 </p>
-                <a href="blog.html?post=android-play-install-referrer-tutorial" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium transition-all duration-50 hover:translate-x-1">
-                  Read more →
-                </a>
-              </article>
-              
-            </div>
-          </div>
-        </section>
+                <div
+                  class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                  Read Article <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </article>
 
-        <!-- Study Notes Section -->
-        <section id="study-notes" class="w-full flex-shrink-0">
-          <div class="tab-section">
-            <h2 class="text-2xl md:text-3xl font-semibold">Study Notes</h2>
-            <div class="mt-8 space-y-6">
-              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
-                <h3 class="text-xl font-semibold">
+          </div>
+        </div>
+      </section>
+
+      <!-- Study Notes Section -->
+      <section id="study-notes" class="w-full flex-shrink-0">
+        <div class="tab-section">
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Study Notes</h2>
+          <div class="mt-8 space-y-6">
+
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              onclick="window.location.href='note.html?note=the-Computer-for-the-21st-Century'">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                   Reflections on Weiser's "The Computer for the 21st Century"
                 </h3>
-                <p class="mt-2 text-sm text-slate-500">Published on December 30, 2025</p>
-                <p class="mt-3 text-slate-700">
-                  Revisiting Mark Weiser's 1991 vision in 2025 feels like looking into a mirror of our current reality. I connect his concept of "invisible computing" to my own observations and discuss the implications for AI and agency.
+                <p class="mt-2 text-sm text-slate-500 flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  December 30, 2025
                 </p>
-                <a href="note.html?note=the-Computer-for-the-21st-Century" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium transition-all duration-50 hover:translate-x-1">
-                  Read notes →
-                </a>
-              </article>
-              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
-                <h3 class="text-xl font-semibold">
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                  Revisiting Mark Weiser's 1991 vision in 2025. I connect his concept of "invisible computing" to
+                  current AI developments and discuss implications for agency.
+                </p>
+                <div
+                  class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                  Read Notes <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              onclick="window.location.href='note.html?note=robotics-industry-survey'">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                   Industry Survey: The Present and Future of Intelligent Robotics
                 </h3>
-                <p class="mt-2 text-sm text-slate-500">Published on October 26, 2024</p>
-                <p class="mt-3 text-slate-700">
-                  An in-depth analysis of the current state, challenges, and future directions of intelligent robotics technology and its global societal impact.
+                <p class="mt-2 text-sm text-slate-500 flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  October 26, 2024
                 </p>
-                <a href="note.html?note=robotics-industry-survey" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium transition-all duration-50 hover:translate-x-1">
-                  Read notes →
-                </a>
-              </article>
-              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
-                <h3 class="text-xl font-semibold">
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                  An in-depth analysis of the current state, challenges, and future directions of intelligent robotics
+                  technology and its global societal impact.
+                </p>
+                <div
+                  class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                  Read Notes <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              onclick="window.location.href='note.html?note=nlp-bias-paper-notes'">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
                   Paper Notes: Tracking Political Biases in NLP Models
                 </h3>
-                <p class="mt-2 text-sm text-slate-500">Published on June 28, 2024</p>
-                <p class="mt-3 text-slate-700">
-                  A review of an ACL 2023 paper analyzing how political bias in pretraining data creates unfair NLP models for downstream tasks.
+                <p class="mt-2 text-sm text-slate-500 flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  June 28, 2024
                 </p>
-                <a href="note.html?note=nlp-bias-paper-notes" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium transition-all duration-50 hover:translate-x-1">
-                  Read notes →
-                </a>
-              </article>
-              <!--
-              <article class="rounded-lg border border-slate-200 p-6 hover:shadow-sm">
-                <h3 class="text-xl font-semibold">
-                  Paper Notes: Semantic Web Overview
-                </h3>
-                <p class="mt-2 text-sm text-slate-500">Published on October 20, 2025</p>
-                <p class="mt-3 text-slate-700">
-                  Summary of key concepts in the Semantic Web, including RDF, OWL, and linked data principles.
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                  A review of an ACL 2023 paper analyzing how political bias in pretraining data creates unfair NLP
+                  models for downstream tasks.
                 </p>
-                <a href="note.html?note=semantic-web-overview" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium">
-                  Read notes →
-                </a>
-              </article>
-              -->
+                <div
+                  class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                  Read Notes <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </article>
 
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- About Me Section -->
-        <section id="about-me" class="w-full flex-shrink-0">
-          <div class="tab-section">
-            <h2 class="text-2xl md:text-3xl font-semibold">About Me</h2>
-            <p class="mt-4 max-w-5xl text-slate-700">Master's student passionate about human-centered AI and mobile development. I love turning ideas into intuitive, intelligent systems—and I'm always up for a challenge that blends tech with real-world impact.</p>
-            
-            <!-- Education Timeline -->
-            <div class="mt-12">
-              <h3 class="text-xl font-semibold mb-8">Education</h3>
-              <div class="relative max-w-4xl">
-                <!-- Timeline line with soft gradient -->
-                <div class="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 rounded-full"></div>
-                
-                <!-- Graduate Studies -->
-                <div class="relative flex items-start mb-12 education-item" data-education="graduate">
-                  <div class="flex-shrink-0 relative">
-                    <div class="w-12 h-12 bg-gradient-to-br from-slate-500 to-slate-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                      </svg>
-                    </div>
-                    <div class="absolute -inset-1 bg-slate-400 rounded-full opacity-10 animate-pulse"></div>
+      <!-- About Me Section -->
+      <section id="about-me" class="w-full flex-shrink-0">
+        <div class="tab-section">
+          <h2 class="text-2xl md:text-3xl font-semibold">About Me</h2>
+          <p class="mt-4 max-w-5xl text-slate-700">Master's student passionate about human-centered AI and mobile
+            development. I love turning ideas into intuitive, intelligent systems—and I'm always up for a challenge that
+            blends tech with real-world impact.</p>
+
+          <!-- Education Timeline -->
+          <div class="mt-12">
+            <h3 class="text-xl font-semibold mb-8">Education</h3>
+            <div class="relative max-w-4xl">
+              <!-- Timeline line with soft gradient -->
+              <div
+                class="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-300 via-slate-400 to-slate-500 rounded-full">
+              </div>
+
+              <!-- Graduate Studies -->
+              <div class="relative flex items-start mb-12 education-item" data-education="graduate">
+                <div class="flex-shrink-0 relative">
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-slate-500 to-slate-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                      </path>
+                    </svg>
                   </div>
-                  <div class="ml-8 flex-1">
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
-                      <div class="flex items-center justify-between mb-3">
-                        <h4 class="text-xl font-bold text-slate-900">RWTH Aachen University</h4>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">2025 - Present</span>
-                      </div>
-                      <p class="text-slate-600 font-medium mb-3">Master of Science in Human-Centered Intelligent Systems</p>
-                      <p class="text-slate-700 leading-relaxed">Currently pursuing advanced studies in human-centered intelligent systems, focusing on the intersection of AI and user experience.</p>
-                    </div>
-                  </div>
+                  <div class="absolute -inset-1 bg-slate-400 rounded-full opacity-10 animate-pulse"></div>
                 </div>
-                
-                <!-- Undergraduate Studies -->
-                <div class="relative flex items-start mb-12 education-item" data-education="undergraduate">
-                  <div class="flex-shrink-0 relative">
-                    <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                      </svg>
+                <div class="ml-8 flex-1">
+                  <div
+                    class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
+                    <div class="flex items-center justify-between mb-3">
+                      <h4 class="text-xl font-bold text-slate-900">RWTH Aachen University</h4>
+                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">2025 -
+                        Present</span>
                     </div>
-                    <div class="absolute -inset-1 bg-amber-400 rounded-full opacity-10 animate-pulse"></div>
-                  </div>
-                  <div class="ml-8 flex-1">
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
-                      <div class="flex items-center justify-between mb-3">
-                        <h4 class="text-xl font-bold text-slate-900">Beijing University of Posts and Telecommunications</h4>
-                        <span class="px-3 py-1 bg-amber-100 text-amber-800 text-sm font-medium rounded-full">2021 - 2025</span>
-                      </div>
-                      <p class="text-slate-600 font-medium mb-3">Bachelor of Science in Computer Science and Technology</p>
-                      <div class="flex items-center gap-4 mb-3">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">GPA: 3.5/4.0</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">86/100</span>
-                      </div>
-                      <p class="text-slate-700 leading-relaxed">Comprehensive study of computer science fundamentals, algorithms, data structures, and software engineering. Completed thesis involving machine learning model training with PyTorch.</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- High School -->
-                <div class="relative flex items-start mb-12 education-item" data-education="highschool">
-                  <div class="flex-shrink-0 relative">
-                    <div class="w-12 h-12 bg-gradient-to-br from-rose-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
-                      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                      </svg>
-                    </div>
-                    <div class="absolute -inset-1 bg-rose-400 rounded-full opacity-10 animate-pulse"></div>
-                  </div>
-                  <div class="ml-8 flex-1">
-                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
-                      <div class="flex items-center justify-between mb-3">
-                        <h4 class="text-xl font-bold text-slate-900">Xiangtan County No. 1 High School</h4>
-                        <span class="px-3 py-1 bg-rose-100 text-rose-800 text-sm font-medium rounded-full">2018 - 2021</span>
-                      </div>
-                      <p class="text-slate-600 font-medium mb-3">High School Diploma</p>
-                      <div class="flex items-center gap-2 mb-3">
-                        <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">🏆 Top 0.1%</span>
-                        <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">College Entrance Exam</span>
-                      </div>
-                      <p class="text-slate-700 leading-relaxed">Achieved top 0.1% in final college entrance exam, demonstrating exceptional academic performance and dedication to learning.</p>
-                    </div>
+                    <p class="text-slate-600 font-medium mb-3">Master of Science in Human-Centered Intelligent Systems
+                    </p>
+                    <p class="text-slate-700 leading-relaxed">Currently pursuing advanced studies in human-centered
+                      intelligent systems, focusing on the intersection of AI and user experience.</p>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <!-- Skills Section -->
-            <div class="mt-12">
-              <h3 class="text-xl font-semibold mb-6">Skills</h3>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Programming Languages -->
-                <div>
-                  <h4 class="text-lg font-medium text-slate-900 mb-3">Programming Languages</h4>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Java</span>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">C</span>
-                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Kotlin</span>
+
+              <!-- Undergraduate Studies -->
+              <div class="relative flex items-start mb-12 education-item" data-education="undergraduate">
+                <div class="flex-shrink-0 relative">
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-500 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                      </path>
+                    </svg>
                   </div>
+                  <div class="absolute -inset-1 bg-amber-400 rounded-full opacity-10 animate-pulse"></div>
                 </div>
-                
-                <!-- Machine Learning & AI -->
-                <div>
-                  <h4 class="text-lg font-medium text-slate-900 mb-3">Machine Learning & AI</h4>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">PyTorch</span>
-                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Model Training</span>
-                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Google Colab</span>
-                    <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Deep Learning</span>
-                  </div>
-                </div>
-                
-                <!-- Tools & IDEs -->
-                <div>
-                  <h4 class="text-lg font-medium text-slate-900 mb-3">Tools & IDEs</h4>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Git</span>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">VS Code</span>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Android Studio</span>
-                    <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">IntelliJ IDEA</span>
-                  </div>
-                </div>
-                
-                <!-- Languages -->
-                <div>
-                  <h4 class="text-lg font-medium text-slate-900 mb-3">Languages</h4>
-                  <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">English (Fluent)</span>
-                    <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Chinese (Native)</span>
+                <div class="ml-8 flex-1">
+                  <div
+                    class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
+                    <div class="flex items-center justify-between mb-3">
+                      <h4 class="text-xl font-bold text-slate-900">Beijing University of Posts and Telecommunications
+                      </h4>
+                      <span class="px-3 py-1 bg-amber-100 text-amber-800 text-sm font-medium rounded-full">2021 -
+                        2025</span>
+                    </div>
+                    <p class="text-slate-600 font-medium mb-3">Bachelor of Science in Computer Science and Technology
+                    </p>
+                    <div class="flex items-center gap-4 mb-3">
+                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">GPA:
+                        3.5/4.0</span>
+                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">86/100</span>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed">Comprehensive study of computer science fundamentals,
+                      algorithms, data structures, and software engineering. Completed thesis involving machine learning
+                      model training with PyTorch.</p>
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div class="mt-8">
-              <h3 class="text-lg font-semibold mb-4">Contact</h3>
-              <div class="space-y-2">
-                <p class="text-slate-700">Email: <a class="hover:text-blue-600 transition-colors duration-200" href="mailto:aerin.hyy@gmail.com">aerin.hyy@gmail.com</a></p>
-                <p class="text-slate-700">LinkedIn: <a class="hover:text-blue-600 transition-colors duration-200" href="https://www.linkedin.com/in/yunyan-he-2104a933b" target="_blank" rel="noopener noreferrer">linkedin.com/in/yunyan-he-2104a933b</a></p>
+
+              <!-- High School -->
+              <div class="relative flex items-start mb-12 education-item" data-education="highschool">
+                <div class="flex-shrink-0 relative">
+                  <div
+                    class="w-12 h-12 bg-gradient-to-br from-rose-400 to-rose-500 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform duration-300 education-icon">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z">
+                      </path>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="absolute -inset-1 bg-rose-400 rounded-full opacity-10 animate-pulse"></div>
+                </div>
+                <div class="ml-8 flex-1">
+                  <div
+                    class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
+                    <div class="flex items-center justify-between mb-3">
+                      <h4 class="text-xl font-bold text-slate-900">Xiangtan County No. 1 High School</h4>
+                      <span class="px-3 py-1 bg-rose-100 text-rose-800 text-sm font-medium rounded-full">2018 -
+                        2021</span>
+                    </div>
+                    <p class="text-slate-600 font-medium mb-3">High School Diploma</p>
+                    <div class="flex items-center gap-2 mb-3">
+                      <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">🏆 Top
+                        0.1%</span>
+                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">College
+                        Entrance Exam</span>
+                    </div>
+                    <p class="text-slate-700 leading-relaxed">Achieved top 0.1% in final college entrance exam,
+                      demonstrating exceptional academic performance and dedication to learning.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-      </div>
-    </main>
 
-    <footer class="border-t border-slate-200">
-      <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">
-        © <span id="year"></span> Yunyan He. All rights reserved.
-      </div>
-    </footer>
+          <!-- Skills Section -->
+          <div class="mt-12">
+            <h3 class="text-xl font-semibold mb-6">Skills</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Programming Languages -->
+              <div>
+                <h4 class="text-lg font-medium text-slate-900 mb-3">Programming Languages</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Java</span>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Python</span>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">C</span>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">Kotlin</span>
+                </div>
+              </div>
 
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
+              <!-- Machine Learning & AI -->
+              <div>
+                <h4 class="text-lg font-medium text-slate-900 mb-3">Machine Learning & AI</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">PyTorch</span>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Model Training</span>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Google Colab</span>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">Deep Learning</span>
+                </div>
+              </div>
 
-        // Tab functionality
-        document.addEventListener('DOMContentLoaded', function() {
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const contentContainer = document.querySelector('.content-container');
-        const sections = Array.from(document.querySelectorAll('.content-container > section'));
+              <!-- Tools & IDEs -->
+              <div>
+                <h4 class="text-lg font-medium text-slate-900 mb-3">Tools & IDEs</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Git</span>
+                  <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">VS Code</span>
+                  <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">Android Studio</span>
+                  <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">IntelliJ IDEA</span>
+                </div>
+              </div>
 
-        // State
-        let currentIndex = 0;
-        let isAnimating = false;
-        function syncStateFromScroll() {
-          const width = contentContainer.offsetWidth;
-          if (width === 0) return; // Avoid division by zero when not rendered
+              <!-- Languages -->
+              <div>
+                <h4 class="text-lg font-medium text-slate-900 mb-3">Languages</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">English (Fluent)</span>
+                  <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Chinese (Native)</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          // Calculate correct index based on restored scroll position
-          const restoredIndex = Math.round(contentContainer.scrollLeft / width);
-          
-          // Update state and UI
-          if (restoredIndex !== currentIndex) {
-            currentIndex = restoredIndex;
-          }
-          setActiveButton(currentIndex);
+          <div class="mt-8">
+            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <div class="space-y-2">
+              <p class="text-slate-700">Email: <a class="hover:text-blue-600 transition-colors duration-200"
+                  href="mailto:aerin.hyy@gmail.com">aerin.hyy@gmail.com</a></p>
+              <p class="text-slate-700">LinkedIn: <a class="hover:text-blue-600 transition-colors duration-200"
+                  href="https://www.linkedin.com/in/yunyan-he-2104a933b" target="_blank"
+                  rel="noopener noreferrer">linkedin.com/in/yunyan-he-2104a933b</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-200">
+    <div class="mx-auto max-w-6xl px-4 py-8 text-sm text-slate-500">
+      © <span id="year"></span> Yunyan He. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function () {
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const contentContainer = document.querySelector('.content-container');
+      const sections = Array.from(document.querySelectorAll('.content-container > section'));
+
+      // State
+      let currentIndex = 0;
+      let isAnimating = false;
+      function syncStateFromScroll() {
+        const width = contentContainer.offsetWidth;
+        if (width === 0) return; // Avoid division by zero when not rendered
+
+        // Calculate correct index based on restored scroll position
+        const restoredIndex = Math.round(contentContainer.scrollLeft / width);
+
+        // Update state and UI
+        if (restoredIndex !== currentIndex) {
+          currentIndex = restoredIndex;
         }
+        setActiveButton(currentIndex);
+      }
 
-        // Immediately sync state after browser restores scroll position (using setTimeout(0))
-        setTimeout(syncStateFromScroll, 0);
+      // Immediately sync state after browser restores scroll position (using setTimeout(0))
+      setTimeout(syncStateFromScroll, 0);
 
-        // (Optional but recommended) Also sync when window size changes to prevent layout issues
-        window.addEventListener('resize', syncStateFromScroll);
+      // (Optional but recommended) Also sync when window size changes to prevent layout issues
+      window.addEventListener('resize', syncStateFromScroll);
 
-        function setActiveButton(index) {
-          tabButtons.forEach((button, i) => {
-            if (i === index) {
-              button.classList.add('active', 'text-slate-900', 'border-green-500');
-              button.classList.remove('text-slate-500', 'border-transparent');
-            } else {
-              button.classList.remove('active', 'text-slate-900', 'border-green-500');
-              button.classList.add('text-slate-500', 'border-transparent');
-            }
-          });
-        }
-
-        function onScrollAnimationEnd(callback) {
-          // Prefer modern scrollend event; fallback to timeout
-          const useScrollEnd = 'onscrollend' in window || 'onscrollend' in document;
-          if (useScrollEnd) {
-            const handler = () => {
-              contentContainer.removeEventListener('scrollend', handler);
-              callback();
-            };
-            contentContainer.addEventListener('scrollend', handler, { once: true });
+      function setActiveButton(index) {
+        tabButtons.forEach((button, i) => {
+          if (i === index) {
+            button.classList.add('active', 'text-slate-900', 'border-green-500');
+            button.classList.remove('text-slate-500', 'border-transparent');
           } else {
-            setTimeout(callback, 450);
+            button.classList.remove('active', 'text-slate-900', 'border-green-500');
+            button.classList.add('text-slate-500', 'border-transparent');
           }
-        }
+        });
+      }
 
-        function switchTab(targetIndex) {
-          if (isAnimating || targetIndex === currentIndex) return;
-          const num = sections.length;
-          const width = contentContainer.offsetWidth;
-
-          // Determine shortest path distances (forward/right and backward/left)
-          const forwardDistance = (targetIndex - currentIndex + num) % num;   // move right
-          const backwardDistance = (currentIndex - targetIndex + num) % num;  // move left
-
-          isAnimating = true;
-
-          // Helper to finish and update state
-          const finish = () => {
-            currentIndex = targetIndex;
-            setActiveButton(currentIndex);
-            isAnimating = false;
+      function onScrollAnimationEnd(callback) {
+        // Prefer modern scrollend event; fallback to timeout
+        const useScrollEnd = 'onscrollend' in window || 'onscrollend' in document;
+        if (useScrollEnd) {
+          const handler = () => {
+            contentContainer.removeEventListener('scrollend', handler);
+            callback();
           };
+          contentContainer.addEventListener('scrollend', handler, { once: true });
+        } else {
+          setTimeout(callback, 450);
+        }
+      }
 
-          // Wrap-around special cases for a single-step left from 0->last and right from last->0
-          if (currentIndex === 0 && targetIndex === num - 1 && backwardDistance === 1) {
-            // Wrap-left: clone last, prepend, jump right, then smooth scroll left to 0
-            const clone = sections[num - 1].cloneNode(true);
-            contentContainer.insertBefore(clone, contentContainer.firstChild);
-            // Jump to show original first section
-            contentContainer.scrollLeft = width;
-            // Defer smooth scroll to next frame(s) to ensure the jump is committed
+      function switchTab(targetIndex) {
+        if (isAnimating || targetIndex === currentIndex) return;
+        const num = sections.length;
+        const width = contentContainer.offsetWidth;
+
+        // Determine shortest path distances (forward/right and backward/left)
+        const forwardDistance = (targetIndex - currentIndex + num) % num;   // move right
+        const backwardDistance = (currentIndex - targetIndex + num) % num;  // move left
+
+        isAnimating = true;
+
+        // Helper to finish and update state
+        const finish = () => {
+          currentIndex = targetIndex;
+          setActiveButton(currentIndex);
+          isAnimating = false;
+        };
+
+        // Wrap-around special cases for a single-step left from 0->last and right from last->0
+        if (currentIndex === 0 && targetIndex === num - 1 && backwardDistance === 1) {
+          // Wrap-left: clone last, prepend, jump right, then smooth scroll left to 0
+          const clone = sections[num - 1].cloneNode(true);
+          contentContainer.insertBefore(clone, contentContainer.firstChild);
+          // Jump to show original first section
+          contentContainer.scrollLeft = width;
+          // Defer smooth scroll to next frame(s) to ensure the jump is committed
+          requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              requestAnimationFrame(() => {
-                contentContainer.scrollTo({ left: 0, behavior: 'smooth' });
-                onScrollAnimationEnd(() => {
-                  // Jump to real last section and cleanup
-                  contentContainer.removeChild(clone);
-                  contentContainer.scrollLeft = (num - 1) * width;
-                  finish();
-                });
+              contentContainer.scrollTo({ left: 0, behavior: 'smooth' });
+              onScrollAnimationEnd(() => {
+                // Jump to real last section and cleanup
+                contentContainer.removeChild(clone);
+                contentContainer.scrollLeft = (num - 1) * width;
+                finish();
               });
             });
-            return;
-          }
-
-          if (currentIndex === num - 1 && targetIndex === 0 && forwardDistance === 1) {
-            // Wrap-right: clone first, append, smooth scroll to clone, then jump to real first
-            const clone = sections[0].cloneNode(true);
-            contentContainer.appendChild(clone);
-            // Ensure starting position at real last
-            contentContainer.scrollLeft = (num - 1) * width;
-            // Smooth scroll to the clone at the end
-            contentContainer.scrollTo({ left: num * width, behavior: 'smooth' });
-            onScrollAnimationEnd(() => {
-              contentContainer.removeChild(clone);
-              contentContainer.scrollLeft = 0;
-              finish();
-            });
-            return;
-          }
-
-          // Non-wrap or multi-step: just scroll directly to target position (shortest direction implied by position)
-          const targetLeft = targetIndex * width;
-          contentContainer.scrollTo({ left: targetLeft, behavior: 'smooth' });
-          onScrollAnimationEnd(finish);
+          });
+          return;
         }
 
-
-        // Initial state: active button for index 0 without scrolling
-        setActiveButton(0);
-
-        // Initialize nav bar as sticky from the start
-        const tabNav = document.getElementById('tab-nav');
-        const mainElement = document.querySelector('main');
-        
-        // States
-        let lastScrollY = 0;
-        
-        // Make nav sticky immediately since there's no hero section
-        tabNav.style.position = 'fixed';
-        tabNav.style.top = '0';
-        tabNav.style.left = '0';
-        tabNav.style.right = '0';
-        tabNav.style.zIndex = '50';
-        tabNav.style.backgroundColor = 'white';
-        tabNav.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-        
-        // Add padding to content to account for fixed nav
-        contentContainer.style.paddingTop = tabNav.offsetHeight + 'px';
-        
-        // Tab click handler
-        tabButtons.forEach((button, index) => {
-          button.addEventListener('click', function() {
-            switchTab(index);
+        if (currentIndex === num - 1 && targetIndex === 0 && forwardDistance === 1) {
+          // Wrap-right: clone first, append, smooth scroll to clone, then jump to real first
+          const clone = sections[0].cloneNode(true);
+          contentContainer.appendChild(clone);
+          // Ensure starting position at real last
+          contentContainer.scrollLeft = (num - 1) * width;
+          // Smooth scroll to the clone at the end
+          contentContainer.scrollTo({ left: num * width, behavior: 'smooth' });
+          onScrollAnimationEnd(() => {
+            contentContainer.removeChild(clone);
+            contentContainer.scrollLeft = 0;
+            finish();
           });
-        });
-
-        // Education timeline interaction
-        const educationItems = document.querySelectorAll('.education-item');
-        const educationIcons = document.querySelectorAll('.education-icon');
-        const educationCards = document.querySelectorAll('.education-card');
-
-        function scrollEducationToCenter(element) {
-          const rect = element.getBoundingClientRect();
-          const windowHeight = window.innerHeight;
-          const elementHeight = rect.height;
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          const targetPosition = scrollTop + rect.top - (windowHeight / 2) + (elementHeight / 2);
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
+          return;
         }
 
-        // Add click listeners to education icons
-        educationIcons.forEach(icon => {
-          icon.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const educationItem = this.closest('.education-item');
-            scrollEducationToCenter(educationItem);
-          });
-        });
+        // Non-wrap or multi-step: just scroll directly to target position (shortest direction implied by position)
+        const targetLeft = targetIndex * width;
+        contentContainer.scrollTo({ left: targetLeft, behavior: 'smooth' });
+        onScrollAnimationEnd(finish);
+      }
 
-        // Add click listeners to education cards
-        educationCards.forEach(card => {
-          card.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const educationItem = this.closest('.education-item');
-            scrollEducationToCenter(educationItem);
-          });
-        });
 
-        // Add click listeners to entire education items
-        educationItems.forEach(item => {
-          item.addEventListener('click', function(e) {
-            // Only trigger if not clicking on icon or card (to avoid double triggers)
-            if (!e.target.closest('.education-icon') && !e.target.closest('.education-card')) {
-              scrollEducationToCenter(this);
-            }
-          });
+      // Initial state: active button for index 0 without scrolling
+      setActiveButton(0);
+
+      // States
+      let lastScrollY = 0;
+
+      // (Legacy fixed nav code removed - relying on CSS sticky position)
+
+
+      // Tab click handler
+      tabButtons.forEach((button, index) => {
+        button.addEventListener('click', function () {
+          switchTab(index);
         });
       });
-    </script>
-  </body>
-  
+
+      // Education timeline interaction
+      const educationItems = document.querySelectorAll('.education-item');
+      const educationIcons = document.querySelectorAll('.education-icon');
+      const educationCards = document.querySelectorAll('.education-card');
+
+      function scrollEducationToCenter(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const elementHeight = rect.height;
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetPosition = scrollTop + rect.top - (windowHeight / 2) + (elementHeight / 2);
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+
+      // Add click listeners to education icons
+      educationIcons.forEach(icon => {
+        icon.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const educationItem = this.closest('.education-item');
+          scrollEducationToCenter(educationItem);
+        });
+      });
+
+      // Add click listeners to education cards
+      educationCards.forEach(card => {
+        card.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const educationItem = this.closest('.education-item');
+          scrollEducationToCenter(educationItem);
+        });
+      });
+
+      // Add click listeners to entire education items
+      educationItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+          // Only trigger if not clicking on icon or card (to avoid double triggers)
+          if (!e.target.closest('.education-icon') && !e.target.closest('.education-card')) {
+            scrollEducationToCenter(this);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
 </html>
-
-
