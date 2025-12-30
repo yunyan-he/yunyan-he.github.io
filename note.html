@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="font-sans">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,30 +29,37 @@
 
   <!-- Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  
+
   <style>
     /* Page transition animations */
     body {
       opacity: 0;
       animation: fadeIn 0.15s ease-out forwards;
     }
-    
+
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    
+
     .content-loading {
       opacity: 0;
       transform: translateY(5px);
       transition: all 0.15s ease-out;
     }
-    
+
     .content-loaded {
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .loading-spinner {
       display: inline-block;
       width: 20px;
@@ -61,16 +69,19 @@
       border-top-color: #10b981;
       animation: spin 1s ease-in-out infinite;
     }
-    
+
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
+
 <body class="bg-white text-slate-800 antialiased">
 
   <div class="max-w-3xl mx-auto px-6 py-12">
-    
+
     <!-- Back link to Study Notes tab -->
     <a href="index.html#study-notes" class="text-green-600 hover:text-green-700 font-medium text-sm">
       &larr; Back to Portfolio
@@ -83,53 +94,56 @@
         <span>Loading note...</span>
       </div>
     </article>
-    
+
   </div>
 
   <script>
-    (async function() {
-      const contentEl = document.getElementById('content');
+      (async function () {
+        const contentEl = document.getElementById('content');
 
-      try {
-        // Get the note name from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const noteName = urlParams.get('note');
+        try {
+          // Get the note name from the URL
+          const urlParams = new URLSearchParams(window.location.search);
+          const noteName = urlParams.get('note');
 
-        if (!noteName) {
-          throw new Error('No note specified in URL. (e.g., ?note=your-file-name)');
-        }
+          if (!noteName) {
+            throw new Error('No note specified in URL. (e.g., ?note=your-file-name)');
+          }
 
-        // Fetch from the 'notes/' folder
-        const response = await fetch(`notes/${noteName}.md`);
+          // Fetch from the 'notes/' folder
+          const response = await fetch(`notes/${noteName}.md`);
 
-        if (!response.ok) {
-          throw new Error(`Note not found. (Could not load 'notes/${noteName}.md')`);
-        }
+          if (!response.ok) {
+            throw new Error(`Note not found. (Could not load 'notes/${noteName}.md')`);
+          }
 
-        const markdownText = await response.text();
+          const markdownText = await response.text();
 
-        // Parse Markdown into HTML
-        contentEl.innerHTML = marked.parse(markdownText);
-        
-        // Add loaded class for smooth transition
-        contentEl.classList.remove('content-loading');
-        contentEl.classList.add('content-loaded');
+          // Parse Markdown into HTML
+          contentEl.innerHTML = marked.parse(markdownText);
 
-        // Auto-set page title from first <h1>
-        const firstHeading = contentEl.querySelector('h1');
-        if (firstHeading) {
-          document.title = firstHeading.textContent + ' • Yunyan He';
-        }
+          // Add loaded class for smooth transition
+          contentEl.classList.remove('content-loading');
+          contentEl.classList.add('content-loaded');
 
-      } catch (error) {
-        console.error('Error loading note:', error);
-        contentEl.innerHTML = `
+          // Auto-set page title from first <h1>
+          const firstHeading = contentEl.querySelector('h1');
+          if (firstHeading) {
+            document.title = firstHeading.textContent + ' • Yunyan He';
+          }
+
+        } catch (error) {
+          console.error('Error loading note:', error);
+          contentEl.innerHTML = `
           <h1 class="text-2xl font-bold">Error Loading Note</h1>
           <p class="text-red-600">The requested note could not be loaded.</p>
           <p><strong>Details:</strong> ${error.message}</p>
         `;
-      }
-    })();
+          contentEl.classList.remove('content-loading');
+          contentEl.classList.add('content-loaded');
+        }
+      })();
   </script>
 </body>
+
 </html>
