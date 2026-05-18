@@ -49,6 +49,22 @@
     html {
       scroll-behavior: smooth;
     }
+
+    /* Premium custom animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.98); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(24px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animate-slide-up {
+      animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
   </style>
 </head>
 
@@ -133,67 +149,290 @@
       <!-- Projects Section -->
       <section id="projects" class="w-full flex-shrink-0">
         <div class="tab-section">
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Featured Projects</h2>
-          <div class="grid gap-8 sm:grid-cols-2">
-            <!-- Animal Classification Project -->
+          <!-- Advanced AI & Web Systems -->
+          <div class="mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 animate-fade-in">Advanced AI & Web Systems</h2>
+            <p class="text-slate-500 mt-2 text-sm sm:text-base">Core projects exploring multi-agent orchestration, LLM persona evaluation, and active learning interfaces.</p>
+          </div>
+          <div class="grid gap-8 sm:grid-cols-2 mb-16">
+            <!-- LatentLearn -->
             <article
-              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-              onclick="window.open('https://github.com/yunyan-he/AnimalClassification', '_blank')">
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between"
+              onclick="window.open('https://github.com/yunyan-he/LatentLearn', '_blank')">
               <div
-                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+                class="absolute inset-0 bg-gradient-to-br from-indigo-50/40 via-purple-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
               </div>
-              <div class="relative z-10">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-700 transition-colors">Animal
-                  Classification AI App</h3>
-                <p class="text-slate-600 mb-6 leading-relaxed">Hybrid AI Android app combining on-device ONNX Runtime
-                  with Google
-                  Gemini Cloud API for instant animal identification.</p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span
-                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">Android</span>
-                  <span
-                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">ONNX</span>
-                  <span
-                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">Gemini</span>
+              <div class="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2.5 bg-indigo-50 rounded-xl text-indigo-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <circle cx="12" cy="5" r="2" fill="currentColor"/>
+                          <circle cx="5" cy="12" r="1.5" />
+                          <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                          <circle cx="19" cy="12" r="1.5" />
+                          <circle cx="7" cy="19" r="1.5" />
+                          <circle cx="17" cy="19" r="1.5" />
+                          <path d="M12 7v3M12 14v3M10.5 13L8 17.5M13.5 13l2.5 4.5M10.2 11.5L6.8 12M13.8 11.5L17.2 12" stroke-linecap="round" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-indigo-500">Multi-Agent System</span>
+                    </div>
+                    <span class="flex h-2 w-2 relative">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-700 transition-colors">
+                    LatentLearn
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Non-Linear Learning Interface for Divergent Minds</p>
+                  <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                    A spatial Focus Tree powered by stateful LangGraph multi-agent orchestration — letting associative thinkers explore topics without losing their main thread.
+                  </p>
                 </div>
-                <div
-                  class="flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                <div>
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">LangGraph</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">FastAPI</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">Next.js</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">Multi-Agent</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">SSE Streaming</span>
+                  </div>
+                  <div class="flex items-center text-sm font-semibold text-indigo-600 group-hover:translate-x-1 transition-transform">
+                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </article>
 
-            <!-- PDF Note Extractor Project -->
+            <!-- DearDairy -->
             <article
-              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between"
+              onclick="window.open('https://github.com/yunyan-he/DearDairy', '_blank')">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-rose-50/40 via-pink-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2.5 bg-rose-50 rounded-xl text-rose-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M15.5 10.5a1.2 1.2 0 00-2.4 0c0 1 1.2 1.8 1.2 1.8s1.2-.8 1.2-1.8z" fill="currentColor" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-rose-500">AI Personality Companion</span>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-rose-700 transition-colors">
+                    DearDairy
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">AI Journal That Knows You Over Time</p>
+                  <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                    A growth companion that builds a living personality profile from daily entries, tracking behavioral patterns across weekly, monthly, and yearly reviews.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">FastAPI</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">React</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">OpenRouter</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">Supabase</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">Persona System</span>
+                  </div>
+                  <div class="flex items-center text-sm font-semibold text-rose-600 group-hover:translate-x-1 transition-transform">
+                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- HabitsForm -->
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between"
+              onclick="window.open('https://github.com/yunyan-he/HabitsForm', '_blank')">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-teal-50/40 via-emerald-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2.5 bg-teal-50 rounded-xl text-teal-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-teal-500">PWA & Utility</span>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-teal-700 transition-colors">
+                    HabitsForm
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Habit Tracker Built for Real Life</p>
+                  <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                    Replaces fragile streaks with "maximum intervals" and uses hourly Bomber notifications to interrupt doomscrolling at the right moment.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-teal-100 group-hover:bg-teal-50/30 transition-all duration-300">Next.js</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-teal-100 group-hover:bg-teal-50/30 transition-all duration-300">TypeScript</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-teal-100 group-hover:bg-teal-50/30 transition-all duration-300">PWA</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-teal-100 group-hover:bg-teal-50/30 transition-all duration-300">Supabase Edge</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-teal-100 group-hover:bg-teal-50/30 transition-all duration-300">Web Push</span>
+                  </div>
+                  <div class="flex items-center text-sm font-semibold text-teal-600 group-hover:translate-x-1 transition-transform">
+                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Obsidian Feynman -->
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between"
+              onclick="window.open('https://github.com/yunyan-he/obsidian-feynman', '_blank')">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-orange-50/40 via-amber-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2.5 bg-amber-50 rounded-xl text-amber-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Obsidian & Learning Design</span>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-700 transition-colors">
+                    Obsidian Feynman
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Active Learning Plugin for Long-Form Documents</p>
+                  <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                    Transforms passive reading into a structured Feynman Technique experience — AI evaluates your understanding section by section before unlocking the next.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">Obsidian Plugin</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">TypeScript</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">OpenRouter</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">AI Evaluation</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">Learning Design</span>
+                  </div>
+                  <div class="flex items-center text-sm font-semibold text-amber-600 group-hover:translate-x-1 transition-transform">
+                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Mobile & Utility Applications -->
+          <div class="mb-8 border-t border-slate-100 pt-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 animate-fade-in">Mobile & Utility Applications</h2>
+            <p class="text-slate-500 mt-2 text-sm sm:text-base">Client-side applications, on-device AI models, and document processing utilities.</p>
+          </div>
+          <div class="grid gap-8 sm:grid-cols-2">
+            <!-- Animal Classification AI App -->
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between"
+              onclick="window.open('https://github.com/yunyan-he/AnimalClassification', '_blank')">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/40 via-emerald-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2.5 bg-green-50 rounded-xl text-green-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m-3-3h6" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-green-500">Android & CV</span>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
+                    Animal Classification AI App
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">On-Device and Cloud Hybrid Intelligence</p>
+                  <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                    Hybrid AI Android app combining on-device ONNX Runtime with Google Gemini Cloud API for instant animal identification.
+                  </p>
+                </div>
+                <div>
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">Android</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">ONNX Runtime</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">Gemini API</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">Computer Vision</span>
+                  </div>
+                  <div class="flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- PDF Note Extractor -->
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer flex flex-col justify-between"
               onclick="window.open('https://github.com/yunyan-he/pdf_note_extractor', '_blank')">
               <div
-                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+                class="absolute inset-0 bg-gradient-to-br from-sky-50/40 via-blue-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
               </div>
-              <div class="relative z-10">
-                <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-700 transition-colors">PDF Note
-                  Extractor</h3>
-                <p class="text-slate-600 mb-6 leading-relaxed">A local web application for extracting Microsoft
-                  Edge–style PDF highlights and notes, featuring fast content preview and multi-format export
-                  capabilities.</p>
-                <div class="flex flex-wrap gap-2 mb-6">
-                  <span
-                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">FastAPI</span>
-                  <span
-                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">React</span>
-                  <span
-                    class="px-2.5 py-1 bg-slate-100 text-slate-600 text-xs font-semibold rounded-md border border-slate-200">PDF
-                    Processing</span>
+              <div class="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                      <div class="p-2.5 bg-sky-50 rounded-xl text-sky-600 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2-8H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-5-5z" />
+                        </svg>
+                      </div>
+                      <span class="text-xs font-bold uppercase tracking-wider text-sky-500">Local Web Utility</span>
+                    </div>
+                  </div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
+                    PDF Note Extractor
+                  </h3>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Document Annotation Utilities</p>
+                  <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+                    A local web application for extracting Microsoft Edge–style PDF highlights and notes, featuring fast content preview and multi-format export capabilities.
+                  </p>
                 </div>
-                <div
-                  class="flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                <div>
+                  <div class="flex flex-wrap gap-1.5 mb-6">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">FastAPI</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">React</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">PDF Processing</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">Metadata Parsing</span>
+                  </div>
+                  <div class="flex items-center text-sm font-semibold text-sky-600 group-hover:translate-x-1 transition-transform">
+                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </article>
