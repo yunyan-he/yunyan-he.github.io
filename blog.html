@@ -73,6 +73,10 @@
         transform: rotate(360deg);
       }
     }
+    
+    /* Language visibility rules */
+    html:not([lang="zh"]) .lang-zh { display: none !important; }
+    html[lang="zh"] .lang-en { display: none !important; }
   </style>
 
 </head>
@@ -95,15 +99,31 @@
       </a>
 
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex gap-8">
+      <nav class="hidden md:flex gap-8 items-center">
         <a href="index.html#about-me"
-          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">About</a>
+          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">
+          <span class="lang-en">About</span>
+          <span class="lang-zh">关于</span>
+        </a>
         <a href="index.html#projects"
-          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">Projects</a>
+          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">
+          <span class="lang-en">Projects</span>
+          <span class="lang-zh">项目</span>
+        </a>
         <a href="index.html#tech-blog"
-          class="text-sm font-medium text-green-700 bg-green-50 px-3 py-1 rounded-full transition-colors">Blog</a>
+          class="text-sm font-medium text-green-700 bg-green-50 px-3 py-1 rounded-full transition-colors">
+          <span class="lang-en">Blog</span>
+          <span class="lang-zh">博客</span>
+        </a>
         <a href="index.html#study-notes"
-          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">Notes</a>
+          class="text-sm font-medium text-slate-600 hover:text-green-600 transition-colors">
+          <span class="lang-en">Notes</span>
+          <span class="lang-zh">笔记</span>
+        </a>
+        <button id="lang-switch-btn" class="text-xs font-bold text-slate-600 hover:text-green-600 transition-all border border-slate-200 rounded-lg px-2.5 py-1.5 flex items-center gap-1 bg-white shadow-sm hover:shadow hover:-translate-y-0.5 duration-200 active:translate-y-0 cursor-pointer">
+          <span class="lang-en">中文</span>
+          <span class="lang-zh">EN</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -121,11 +141,17 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              Home
+              <span class="lang-en">Home</span>
+              <span class="lang-zh">首页</span>
             </a>
           </li>
           <li><span class="text-slate-300">/</span></li>
-          <li><a href="index.html#tech-blog" class="hover:text-green-600 transition-colors">Tech Blog</a></li>
+          <li>
+            <a href="index.html#tech-blog" class="hover:text-green-600 transition-colors">
+              <span class="lang-en">Tech Blog</span>
+              <span class="lang-zh">技术博客</span>
+            </a>
+          </li>
           <li><span class="text-slate-300">/</span></li>
           <li class="font-medium text-slate-800 truncate max-w-[150px] sm:max-w-xs" aria-current="page"
             id="breadcrumb-title">...</li>
@@ -139,7 +165,8 @@
           stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
         </svg>
-        <span>Contents</span>
+        <span class="lang-en">Contents</span>
+        <span class="lang-zh">目录</span>
       </button>
     </div>
 
@@ -149,8 +176,10 @@
       <!-- Sidebar (TOC) -->
       <aside id="sidebar" class="w-full lg:w-1/4 hidden lg:block lg:sticky lg:top-24 transition-all duration-300">
         <div class="max-h-[calc(100vh-6rem)] overflow-y-auto pr-4 border-r border-slate-200">
-          <div class="flex items-center justify-between mb-4">
-            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">On this page</h4>
+            <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+              <span class="lang-en">On this page</span>
+              <span class="lang-zh">本页目录</span>
+            </h4>
           </div>
           <nav id="toc" class="text-sm text-slate-600 space-y-2">
             <!-- TOC content injected here -->
@@ -179,7 +208,8 @@
         <article id="content" class="prose prose-slate lg:prose-lg max-w-none break-words content-loading">
           <div class="flex items-center gap-2 text-slate-500">
             <div class="loading-spinner"></div>
-            <span>Loading post...</span>
+            <span class="lang-en">Loading post...</span>
+            <span class="lang-zh">正在加载文章...</span>
           </div>
         </article>
       </main>
@@ -188,96 +218,121 @@
   </div>
 
   <script>
-      (async function () {
-        const contentEl = document.getElementById('content');
-        const tocEl = document.getElementById('toc');
-        const sidebarEl = document.getElementById('sidebar');
-        const mobileToggleBtn = document.getElementById('mobile-toc-toggle');
-        const desktopToggleBtn = document.getElementById('desktop-toggle-btn');
-        const iconOpen = document.getElementById('toggle-icon-open');
-        const iconClosed = document.getElementById('toggle-icon-closed');
+    (async function () {
+      const contentEl = document.getElementById('content');
+      const tocEl = document.getElementById('toc');
+      const sidebarEl = document.getElementById('sidebar');
+      const mobileToggleBtn = document.getElementById('mobile-toc-toggle');
+      const desktopToggleBtn = document.getElementById('desktop-toggle-btn');
+      const iconOpen = document.getElementById('toggle-icon-open');
+      const iconClosed = document.getElementById('toggle-icon-closed');
 
-        // --- TOC Generation ---
-        function generateTOC() {
-          const headings = contentEl.querySelectorAll('h1, h2, h3');
-          if (headings.length === 0) {
-            tocEl.innerHTML = '<p class="text-slate-400 italic">No headings found.</p>';
-            return;
-          }
+      // Initialize language
+      const savedLang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('lang', savedLang);
 
-          const ul = document.createElement('ul');
-          ul.className = 'space-y-2';
-
-          headings.forEach((heading, index) => {
-            if (!heading.id) {
-              heading.id = 'heading-' + index;
-            }
-
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = '#' + heading.id;
-            a.textContent = heading.textContent;
-            a.className = 'block hover:text-green-600 transition-colors duration-200 line-clamp-2';
-
-            if (heading.tagName === 'H3') {
-              a.classList.add('pl-4', 'text-xs', 'text-slate-500');
-            } else if (heading.tagName === 'H1') {
-              a.classList.add('font-bold', 'text-slate-800');
-            }
-
-            // Mobile: close sidebar on click
-            a.addEventListener('click', () => {
-              if (window.innerWidth < 1024) {
-                sidebarEl.classList.add('hidden');
-              }
-            });
-
-            li.appendChild(a);
-            ul.appendChild(li);
-          });
-
-          tocEl.innerHTML = '';
-          tocEl.appendChild(ul);
+      // --- TOC Generation ---
+      function generateTOC() {
+        const headings = contentEl.querySelectorAll('h1, h2, h3');
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        if (headings.length === 0) {
+          tocEl.innerHTML = currentLang === 'zh' 
+            ? '<p class="text-slate-400 italic">未找到目录项。</p>' 
+            : '<p class="text-slate-400 italic">No headings found.</p>';
+          return;
         }
 
-        // --- Interaction Logic ---
+        const ul = document.createElement('ul');
+        ul.className = 'space-y-2';
 
-        mobileToggleBtn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          sidebarEl.classList.toggle('hidden');
-          if (!sidebarEl.classList.contains('hidden')) {
-            sidebarEl.classList.add('mb-8');
+        headings.forEach((heading, index) => {
+          if (!heading.id) {
+            heading.id = 'heading-' + index;
           }
+
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = '#' + heading.id;
+          a.textContent = heading.textContent;
+          a.className = 'block hover:text-green-600 transition-colors duration-200 line-clamp-2';
+
+          if (heading.tagName === 'H3') {
+            a.classList.add('pl-4', 'text-xs', 'text-slate-500');
+          } else if (heading.tagName === 'H1') {
+            a.classList.add('font-bold', 'text-slate-800');
+          }
+
+          // Mobile: close sidebar on click
+          a.addEventListener('click', () => {
+            if (window.innerWidth < 1024) {
+              sidebarEl.classList.add('hidden');
+            }
+          });
+
+          li.appendChild(a);
+          ul.appendChild(li);
         });
 
-        desktopToggleBtn.addEventListener('click', () => {
-          const isHidden = sidebarEl.classList.contains('hidden');
+        tocEl.innerHTML = '';
+        tocEl.appendChild(ul);
+      }
 
-          if (isHidden) {
-            sidebarEl.classList.remove('hidden', 'lg:hidden');
-            sidebarEl.classList.add('lg:block');
-            iconOpen.classList.remove('hidden');
-            iconClosed.classList.add('hidden');
-          } else {
-            sidebarEl.classList.add('hidden', 'lg:hidden');
-            sidebarEl.classList.remove('lg:block');
-            iconOpen.classList.add('hidden');
-            iconClosed.classList.remove('hidden');
-          }
-        });
+      // --- Interaction Logic ---
+      mobileToggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sidebarEl.classList.toggle('hidden');
+        if (!sidebarEl.classList.contains('hidden')) {
+          sidebarEl.classList.add('mb-8');
+        }
+      });
+
+      desktopToggleBtn.addEventListener('click', () => {
+        const isHidden = sidebarEl.classList.contains('hidden');
+
+        if (isHidden) {
+          sidebarEl.classList.remove('hidden', 'lg:hidden');
+          sidebarEl.classList.add('lg:block');
+          iconOpen.classList.remove('hidden');
+          iconClosed.classList.add('hidden');
+        } else {
+          sidebarEl.classList.add('hidden', 'lg:hidden');
+          sidebarEl.classList.remove('lg:block');
+          iconOpen.classList.add('hidden');
+          iconClosed.classList.remove('hidden');
+        }
+      });
+
+      // --- Load Post Markdown ---
+      async function loadPost() {
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        contentEl.innerHTML = `
+          <div class="flex items-center gap-2 text-slate-500">
+            <div class="loading-spinner"></div>
+            <span>${currentLang === 'zh' ? '正在加载文章...' : 'Loading post...'}</span>
+          </div>
+        `;
+        contentEl.classList.remove('content-loaded');
+        contentEl.classList.add('content-loading');
 
         try {
           const urlParams = new URLSearchParams(window.location.search);
           const postName = urlParams.get('post');
 
           if (!postName) {
-            throw new Error('No post specified in URL. (e.g., ?post=your-file-name)');
+            throw new Error(currentLang === 'zh' ? 'URL 中未指定文章文件名' : 'No post specified in URL. (e.g., ?post=your-file-name)');
           }
 
-          const response = await fetch(`blogs/${postName}.md`);
+          const fetchUrl = currentLang === 'zh' ? `blogs/${postName}_zh.md` : `blogs/${postName}.md`;
+          let response = await fetch(fetchUrl);
+
+          // Graceful fallback to English if Chinese translation is missing
+          if (!response.ok && currentLang === 'zh') {
+            console.warn(`Could not find Chinese translation for ${postName}, falling back to English.`);
+            response = await fetch(`blogs/${postName}.md`);
+          }
 
           if (!response.ok) {
-            throw new Error(`Post not found. (Could not load 'blogs/${postName}.md')`);
+            throw new Error(currentLang === 'zh' ? `未找到文章。(无法加载 '${fetchUrl}')` : `Post not found. (Could not load '${fetchUrl}')`);
           }
 
           const markdownText = await response.text();
@@ -289,21 +344,39 @@
           const firstHeading = contentEl.querySelector('h1');
           if (firstHeading) {
             document.title = firstHeading.textContent + ' • Yunyan He';
+            document.getElementById('breadcrumb-title').textContent = firstHeading.textContent;
           }
 
           generateTOC();
 
         } catch (error) {
           console.error('Error loading post:', error);
-          contentEl.innerHTML = `
-          <h1 class="text-2xl font-bold">Error Loading Post</h1>
-          <p class="text-red-600">The requested post could not be loaded.</p>
-          <p><strong>Details:</strong> ${error.message}</p>
-        `;
+          contentEl.innerHTML = currentLang === 'zh' ? `
+            <h1 class="text-2xl font-bold">加载文章错误</h1>
+            <p class="text-red-600">所请求的文章加载失败。</p>
+            <p><strong>详情:</strong> ${error.message}</p>
+          ` : `
+            <h1 class="text-2xl font-bold">Error Loading Post</h1>
+            <p class="text-red-600">The requested post could not be loaded.</p>
+            <p><strong>Details:</strong> ${error.message}</p>
+          `;
           contentEl.classList.remove('content-loading');
           contentEl.classList.add('content-loaded');
         }
-      })();
+      }
+
+      // Handle language switcher click
+      document.getElementById('lang-switch-btn').addEventListener('click', () => {
+        const currentLang = document.documentElement.getAttribute('lang') || 'en';
+        const newLang = currentLang === 'en' ? 'zh' : 'en';
+        document.documentElement.setAttribute('lang', newLang);
+        localStorage.setItem('lang', newLang);
+        loadPost();
+      });
+
+      // Initial load
+      await loadPost();
+    })();
   </script>
 </body>
 

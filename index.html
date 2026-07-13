@@ -72,6 +72,10 @@
     .animate-spin-slow {
       animation: spinSlow 20s linear infinite;
     }
+    
+    /* Language visibility rules */
+    html:not([lang="zh"]) .lang-zh { display: none !important; }
+    html[lang="zh"] .lang-en { display: none !important; }
   </style>
 </head>
 
@@ -102,9 +106,16 @@
           Yunyan He
         </h1>
         <p class="text-xl text-slate-600 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
-          Master's Student in <span class="font-medium text-green-700">Human-Centered Intelligent Systems</span>. <br
-            class="hidden sm:block" />
-          Turning code into experience, models into interaction, and ideas into impact.
+          <span class="lang-en">
+            Master's Student in <span class="font-medium text-green-700">Human-Centered Intelligent Systems</span>. <br
+              class="hidden sm:block" />
+            Turning code into experience, models into interaction, and ideas into impact.
+          </span>
+          <span class="lang-zh text-lg">
+            就读于 <span class="font-medium text-green-700">以人为本的智能系统</span> 专业硕士。 <br
+              class="hidden sm:block" />
+            将代码转化为体验，将模型转化为交互，将创意转化为影响力。
+          </span>
         </p>
 
         <!-- Premium Glassmorphism Social Links -->
@@ -141,21 +152,38 @@
     <!-- Tab Navigation (Sticky) -->
     <nav id="tab-nav"
       class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
-      <div class="flex justify-center max-w-7xl mx-auto px-4 overflow-x-auto no-scrollbar">
-        <div class="flex gap-4 sm:gap-8 min-w-max">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
+        <div class="w-16 hidden md:block"></div>
+        <div class="flex gap-4 sm:gap-8 overflow-x-auto no-scrollbar mx-auto">
           <button
-            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-semibold text-green-600 border-b-2 border-green-600 transition-colors"
-            data-tab="projects">Projects</button>
+            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-semibold text-green-600 border-b-2 border-green-600 transition-colors"
+            data-tab="projects">
+            <span class="lang-en">Projects</span>
+            <span class="lang-zh">项目</span>
+          </button>
           <button
-            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
-            data-tab="tech-blog">Tech Blog</button>
+            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
+            data-tab="tech-blog">
+            <span class="lang-en">Tech Blog</span>
+            <span class="lang-zh">技术博客</span>
+          </button>
           <button
-            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
-            data-tab="study-notes">Study Notes</button>
+            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
+            data-tab="study-notes">
+            <span class="lang-en">Study Notes</span>
+            <span class="lang-zh">学习笔记</span>
+          </button>
           <button
-            class="tab-button w-full sm:w-auto text-center px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
-            data-tab="about-me">About Me</button>
+            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
+            data-tab="about-me">
+            <span class="lang-en">About Me</span>
+            <span class="lang-zh">关于我</span>
+          </button>
         </div>
+        <button id="lang-switch-btn" class="flex-shrink-0 text-xs font-bold text-slate-600 hover:text-green-600 transition-all border border-slate-200 rounded-lg px-2.5 py-1.5 flex items-center gap-1 bg-white/95 shadow-sm hover:shadow hover:-translate-y-0.5 duration-200 active:translate-y-0 cursor-pointer">
+          <span class="lang-en">中文</span>
+          <span class="lang-zh">EN</span>
+        </button>
       </div>
     </nav>
 
@@ -166,8 +194,14 @@
         <div class="tab-section">
           <!-- Advanced AI & Web Systems -->
           <div class="mb-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 animate-fade-in">Advanced AI & Web Systems</h2>
-            <p class="text-slate-500 mt-2 text-sm sm:text-base">Core projects exploring multi-agent orchestration, LLM persona evaluation, and active learning interfaces.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 animate-fade-in">
+              <span class="lang-en">Advanced AI & Web Systems</span>
+              <span class="lang-zh">高级 AI 与 Web 系统</span>
+            </h2>
+            <p class="text-slate-500 mt-2 text-sm sm:text-base">
+              <span class="lang-en">Core projects exploring multi-agent orchestration, LLM persona evaluation, and active learning interfaces.</span>
+              <span class="lang-zh">涵盖多智能体编排、大语言模型角色评估以及主动学习界面的核心项目。</span>
+            </p>
           </div>
           <div class="grid gap-8 sm:grid-cols-2 mb-16">
             <!-- LatentLearn -->
@@ -192,7 +226,10 @@
                           <path d="M12 7v3M12 14v3M10.5 13L8 17.5M13.5 13l2.5 4.5M10.2 11.5L6.8 12M13.8 11.5L17.2 12" stroke-linecap="round" />
                         </svg>
                       </div>
-                      <span class="text-xs font-bold uppercase tracking-wider text-indigo-500">Multi-Agent System</span>
+                      <span class="text-xs font-bold uppercase tracking-wider text-indigo-500">
+                        <span class="lang-en">Multi-Agent System</span>
+                        <span class="lang-zh">多智能体系统</span>
+                      </span>
                     </div>
                     <span class="flex h-2 w-2 relative">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
@@ -202,9 +239,13 @@
                   <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-indigo-700 transition-colors">
                     LatentLearn
                   </h3>
-                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Non-Linear Learning Interface for Divergent Minds</p>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">
+                    <span class="lang-en">Non-Linear Learning Interface for Divergent Minds</span>
+                    <span class="lang-zh">专为发散性思维设计的非线性学习界面</span>
+                  </p>
                   <p class="text-slate-600 mb-6 leading-relaxed text-sm">
-                    A spatial Focus Tree powered by stateful LangGraph multi-agent orchestration — letting associative thinkers explore topics without losing their main thread.
+                    <span class="lang-en">A spatial Focus Tree powered by stateful LangGraph multi-agent orchestration — letting associative thinkers explore topics without losing their main thread.</span>
+                    <span class="lang-zh">基于状态化 LangGraph 多智能体编排的空间式“专注树”——让联想思维者在探索主题的同时不丢失主线。</span>
                   </p>
                 </div>
                 <div>
@@ -212,11 +253,16 @@
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">LangGraph</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">FastAPI</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">Next.js</span>
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">Multi-Agent</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">
+                      <span class="lang-en">Multi-Agent</span>
+                      <span class="lang-zh">多智能体</span>
+                    </span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-indigo-100 group-hover:bg-indigo-50/30 transition-all duration-300">SSE Streaming</span>
                   </div>
                   <div class="flex items-center text-sm font-semibold text-indigo-600 group-hover:translate-x-1 transition-transform">
-                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="lang-en">View Source</span>
+                    <span class="lang-zh">查看源码</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -241,15 +287,22 @@
                           <path stroke-linecap="round" stroke-linejoin="round" d="M15.5 10.5a1.2 1.2 0 00-2.4 0c0 1 1.2 1.8 1.2 1.8s1.2-.8 1.2-1.8z" fill="currentColor" />
                         </svg>
                       </div>
-                      <span class="text-xs font-bold uppercase tracking-wider text-rose-500">AI Personality Companion</span>
+                      <span class="text-xs font-bold uppercase tracking-wider text-rose-500">
+                        <span class="lang-en">AI Personality Companion</span>
+                        <span class="lang-zh">AI 人格伴侣</span>
+                      </span>
                     </div>
                   </div>
                   <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-rose-700 transition-colors">
                     DearDairy
                   </h3>
-                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">AI Journal That Knows You Over Time</p>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">
+                    <span class="lang-en">AI Journal That Knows You Over Time</span>
+                    <span class="lang-zh">懂你的智能日记</span>
+                  </p>
                   <p class="text-slate-600 mb-6 leading-relaxed text-sm">
-                    A growth companion that builds a living personality profile from daily entries, tracking behavioral patterns across weekly, monthly, and yearly reviews.
+                    <span class="lang-en">A growth companion that builds a living personality profile from daily entries, tracking behavioral patterns across weekly, monthly, and yearly reviews.</span>
+                    <span class="lang-zh">一个成长伴侣，通过日常记录构建生动的人格画像，并在周、月、年度回顾中追踪行为模式。</span>
                   </p>
                 </div>
                 <div>
@@ -258,10 +311,15 @@
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">React</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">OpenRouter</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">Supabase</span>
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">Persona System</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-rose-100 group-hover:bg-rose-50/30 transition-all duration-300">
+                      <span class="lang-en">Persona System</span>
+                      <span class="lang-zh">人格系统</span>
+                    </span>
                   </div>
                   <div class="flex items-center text-sm font-semibold text-rose-600 group-hover:translate-x-1 transition-transform">
-                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="lang-en">View Source</span>
+                    <span class="lang-zh">查看源码</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -286,15 +344,22 @@
                           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
                         </svg>
                       </div>
-                      <span class="text-xs font-bold uppercase tracking-wider text-teal-500">PWA & Utility</span>
+                      <span class="text-xs font-bold uppercase tracking-wider text-teal-500">
+                        <span class="lang-en">PWA & Utility</span>
+                        <span class="lang-zh">PWA 与实用工具</span>
+                      </span>
                     </div>
                   </div>
                   <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-teal-700 transition-colors">
                     HabitsForm
                   </h3>
-                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Habit Tracker Built for Real Life</p>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">
+                    <span class="lang-en">Habit Tracker Built for Real Life</span>
+                    <span class="lang-zh">面向真实生活的习惯追踪器</span>
+                  </p>
                   <p class="text-slate-600 mb-6 leading-relaxed text-sm">
-                    Replaces fragile streaks with "maximum intervals" and uses hourly Bomber notifications to interrupt doomscrolling at the right moment.
+                    <span class="lang-en">Replaces fragile streaks with "maximum intervals" and uses hourly Bomber notifications to interrupt doomscrolling at the right moment.</span>
+                    <span class="lang-zh">以“最大间隔”替代脆弱的连续打卡，并使用按小时发送的弹窗通知，在恰当时机打断无休止的刷屏。</span>
                   </p>
                 </div>
                 <div>
@@ -306,7 +371,9 @@
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-teal-100 group-hover:bg-teal-50/30 transition-all duration-300">Web Push</span>
                   </div>
                   <div class="flex items-center text-sm font-semibold text-teal-600 group-hover:translate-x-1 transition-transform">
-                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="lang-en">View Source</span>
+                    <span class="lang-zh">查看源码</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -330,27 +397,45 @@
                           <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                         </svg>
                       </div>
-                      <span class="text-xs font-bold uppercase tracking-wider text-amber-500">Obsidian & Learning Design</span>
+                      <span class="text-xs font-bold uppercase tracking-wider text-amber-500">
+                        <span class="lang-en">Obsidian & Learning Design</span>
+                        <span class="lang-zh">Obsidian 与学习设计</span>
+                      </span>
                     </div>
                   </div>
                   <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-700 transition-colors">
                     Obsidian Feynman
                   </h3>
-                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Active Learning Plugin for Long-Form Documents</p>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">
+                    <span class="lang-en">Active Learning Plugin for Long-Form Documents</span>
+                    <span class="lang-zh">面向长文档的主动学习插件</span>
+                  </p>
                   <p class="text-slate-600 mb-6 leading-relaxed text-sm">
-                    Transforms passive reading into a structured Feynman Technique experience — AI evaluates your understanding section by section before unlocking the next.
+                    <span class="lang-en">Transforms passive reading into a structured Feynman Technique experience — AI evaluates your understanding section by section before unlocking the next.</span>
+                    <span class="lang-zh">将自满的被动阅读转变为结构化的费曼学习法体验——AI 会逐段评估您的理解程度，合格后才解锁下一节内容。</span>
                   </p>
                 </div>
                 <div>
                   <div class="flex flex-wrap gap-1.5 mb-6">
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">Obsidian Plugin</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">
+                      <span class="lang-en">Obsidian Plugin</span>
+                      <span class="lang-zh">Obsidian 插件</span>
+                    </span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">TypeScript</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">OpenRouter</span>
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">AI Evaluation</span>
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">Learning Design</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">
+                      <span class="lang-en">AI Evaluation</span>
+                      <span class="lang-zh">AI 评估</span>
+                    </span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-amber-100 group-hover:bg-amber-50/30 transition-all duration-300">
+                      <span class="lang-en">Learning Design</span>
+                      <span class="lang-zh">学习设计</span>
+                    </span>
                   </div>
                   <div class="flex items-center text-sm font-semibold text-amber-600 group-hover:translate-x-1 transition-transform">
-                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="lang-en">View Source</span>
+                    <span class="lang-zh">查看源码</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -361,8 +446,14 @@
 
           <!-- Mobile & Utility Applications -->
           <div class="mb-8 border-t border-slate-100 pt-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 animate-fade-in">Mobile & Utility Applications</h2>
-            <p class="text-slate-500 mt-2 text-sm sm:text-base">Client-side applications, on-device AI models, and document processing utilities.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 animate-fade-in">
+              <span class="lang-en">Mobile & Utility Applications</span>
+              <span class="lang-zh">移动与实用程序</span>
+            </h2>
+            <p class="text-slate-500 mt-2 text-sm sm:text-base">
+              <span class="lang-en">Client-side applications, on-device AI models, and document processing utilities.</span>
+              <span class="lang-zh">客户端应用、本地 AI 模型与文档处理实用程序。</span>
+            </p>
           </div>
           <div class="grid gap-8 sm:grid-cols-2">
             <!-- Animal Classification AI App -->
@@ -382,15 +473,22 @@
                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m-3-3h6" />
                         </svg>
                       </div>
-                      <span class="text-xs font-bold uppercase tracking-wider text-green-500">Android & CV</span>
+                      <span class="text-xs font-bold uppercase tracking-wider text-green-500">
+                        <span class="lang-en">Android & CV</span>
+                        <span class="lang-zh">Android 与计算机视觉</span>
+                      </span>
                     </div>
                   </div>
                   <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
                     Animal Classification AI App
                   </h3>
-                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">On-Device and Cloud Hybrid Intelligence</p>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">
+                    <span class="lang-en">On-Device and Cloud Hybrid Intelligence</span>
+                    <span class="lang-zh">设备本地与云端混合智能</span>
+                  </p>
                   <p class="text-slate-600 mb-6 leading-relaxed text-sm">
-                    Hybrid AI Android app combining on-device ONNX Runtime with Google Gemini Cloud API for instant animal identification.
+                    <span class="lang-en">Hybrid AI Android app combining on-device ONNX Runtime with Google Gemini Cloud API for instant animal identification.</span>
+                    <span class="lang-zh">混合 AI Android 应用，结合设备本地 ONNX Runtime 与谷歌 Gemini 云端 API 实现即时动物识别。</span>
                   </p>
                 </div>
                 <div>
@@ -398,10 +496,15 @@
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">Android</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">ONNX Runtime</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">Gemini API</span>
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">Computer Vision</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-green-100 group-hover:bg-green-50/30 transition-all duration-300">
+                      <span class="lang-en">Computer Vision</span>
+                      <span class="lang-zh">计算机视觉</span>
+                    </span>
                   </div>
                   <div class="flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="lang-en">View Source</span>
+                    <span class="lang-zh">查看源码</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -425,26 +528,41 @@
                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2-8H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7l-5-5z" />
                         </svg>
                       </div>
-                      <span class="text-xs font-bold uppercase tracking-wider text-sky-500">Local Web Utility</span>
+                      <span class="text-xs font-bold uppercase tracking-wider text-sky-500">
+                        <span class="lang-en">Local Web Utility</span>
+                        <span class="lang-zh">本地 Web 实用工具</span>
+                      </span>
                     </div>
                   </div>
                   <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-sky-700 transition-colors">
                     PDF Note Extractor
                   </h3>
-                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">Document Annotation Utilities</p>
+                  <p class="text-sm font-semibold text-slate-500 mb-3 italic">
+                    <span class="lang-en">Document Annotation Utilities</span>
+                    <span class="lang-zh">文档标注工具</span>
+                  </p>
                   <p class="text-slate-600 mb-6 leading-relaxed text-sm">
-                    A local web application for extracting Microsoft Edge–style PDF highlights and notes, featuring fast content preview and multi-format export capabilities.
+                    <span class="lang-en">A local web application for extracting Microsoft Edge–style PDF highlights and notes, featuring fast content preview and multi-format export capabilities.</span>
+                    <span class="lang-zh">一个本地 Web 应用，用于提取 Microsoft Edge 风格的 PDF 高亮和笔记，支持快速内容预览与多格式导出。</span>
                   </p>
                 </div>
                 <div>
                   <div class="flex flex-wrap gap-1.5 mb-6">
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">FastAPI</span>
                     <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">React</span>
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">PDF Processing</span>
-                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">Metadata Parsing</span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">
+                      <span class="lang-en">PDF Processing</span>
+                      <span class="lang-zh">PDF 处理</span>
+                    </span>
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-semibold rounded-md border border-slate-100 group-hover:border-sky-100 group-hover:bg-sky-50/30 transition-all duration-300">
+                      <span class="lang-en">Metadata Parsing</span>
+                      <span class="lang-zh">元数据解析</span>
+                    </span>
                   </div>
                   <div class="flex items-center text-sm font-semibold text-sky-600 group-hover:translate-x-1 transition-transform">
-                    View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span class="lang-en">View Source</span>
+                    <span class="lang-zh">查看源码</span>
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </div>
@@ -458,7 +576,10 @@
       <!-- Tech Blog Section -->
       <section id="tech-blog" class="w-full flex-shrink-0">
         <div class="tab-section">
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Tech Blog</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
+            <span class="lang-en">Tech Blog</span>
+            <span class="lang-zh">技术博客</span>
+          </h2>
           <div class="mt-8 space-y-6">
             <article
               class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
@@ -468,16 +589,19 @@
               </div>
               <div class="relative z-10">
                 <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  Android integration of Gemini Vision: a hybrid cloud-local AI recognition solution
+                  <span class="lang-en">Android integration of Gemini Vision: a hybrid cloud-local AI recognition solution</span>
+                  <span class="lang-zh">Android 端集成 Gemini Vision：本地 + 云端混合 AI 识别方案</span>
                 </h3>
 
                 <p class="mt-4 text-slate-600 leading-relaxed">
-                  An Android-side experiment of building a hybrid AI solution, integrating on-device ONNX models with
-                  the cloud-based Gemini Vision API.
+                  <span class="lang-en">An Android-side experiment of building a hybrid AI solution, integrating on-device ONNX models with the cloud-based Gemini Vision API.</span>
+                  <span class="lang-zh">一个 Android 端构建混合 AI 方案的实验，融合了本地 ONNX 模型与云端 Gemini Vision API。</span>
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  Read Article <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="lang-en">Read Article</span>
+                  <span class="lang-zh">阅读文章</span>
+                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -493,15 +617,19 @@
               </div>
               <div class="relative z-10">
                 <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  Tracking App Install Sources on Android with the Play Install Referrer Library
+                  <span class="lang-en">Tracking App Install Sources on Android with the Play Install Referrer Library</span>
+                  <span class="lang-zh">使用 Play Install Referrer 库在 Android 上追踪应用安装来源</span>
                 </h3>
 
                 <p class="mt-4 text-slate-600 leading-relaxed">
-                  A Developer's Guide to the Google Play Install Referrer API
+                  <span class="lang-en">A Developer's Guide to the Google Play Install Referrer API</span>
+                  <span class="lang-zh">面向开发者的 Google Play Install Referrer API 使用指南</span>
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  Read Article <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="lang-en">Read Article</span>
+                  <span class="lang-zh">阅读文章</span>
+                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -516,7 +644,10 @@
       <!-- Study Notes Section -->
       <section id="study-notes" class="w-full flex-shrink-0">
         <div class="tab-section">
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">Study Notes</h2>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
+            <span class="lang-en">Study Notes</span>
+            <span class="lang-zh">学习笔记</span>
+          </h2>
           <div class="mt-8 space-y-6">
 
             <article
@@ -527,14 +658,18 @@
               </div>
               <div class="relative z-10">
                 <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  AI Insurance: Frameworks, Application Cases, and Market Trends
+                  <span class="lang-en">AI Insurance: Frameworks, Application Cases, and Market Trends</span>
+                  <span class="lang-zh">AI 保险：责任框架、应用案例与市场趋势</span>
                 </h3>
                 <p class="mt-4 text-slate-600 leading-relaxed">
-                  An in-depth analysis of shifting liability in autonomous driving and AGI agents, comparing pilots in China and Western market developments.
+                  <span class="lang-en">An in-depth analysis of shifting liability in autonomous driving and AGI agents, comparing pilots in China and Western market developments.</span>
+                  <span class="lang-zh">深度分析自动驾驶与 AGI 智能体中的责任转移，对比中国试点与西方市场的发展。</span>
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  Read Notes <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="lang-en">Read Notes</span>
+                  <span class="lang-zh">阅读笔记</span>
+                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -550,16 +685,19 @@
               </div>
               <div class="relative z-10">
                 <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  Reflections on Weiser's "The Computer for the 21st Century"
+                  <span class="lang-en">Reflections on Weiser's "The Computer for the 21st Century"</span>
+                  <span class="lang-zh">维瑟《21世纪的计算机》阅读反思</span>
                 </h3>
 
                 <p class="mt-4 text-slate-600 leading-relaxed">
-                  Revisiting Mark Weiser's 1991 vision in 2025. I connect his concept of "invisible computing" to
-                  current AI developments and discuss implications for agency.
+                  <span class="lang-en">Revisiting Mark Weiser's 1991 vision in 2025. I connect his concept of "invisible computing" to current AI developments and discuss implications for agency.</span>
+                  <span class="lang-zh">在2026年重温马克·维瑟1991年的愿景。我将他“隐形计算”的概念与当下的 AI 进展相联系，并探讨其对自主权的影响。</span>
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  Read Notes <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="lang-en">Read Notes</span>
+                  <span class="lang-zh">阅读笔记</span>
+                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -575,16 +713,19 @@
               </div>
               <div class="relative z-10">
                 <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  Industry Survey: The Present and Future of Intelligent Robotics
+                  <span class="lang-en">Industry Survey: The Present and Future of Intelligent Robotics</span>
+                  <span class="lang-zh">行业调查：智能机器人的现在与未来</span>
                 </h3>
 
                 <p class="mt-4 text-slate-600 leading-relaxed">
-                  An in-depth analysis of the current state, challenges, and future directions of intelligent robotics
-                  technology and its global societal impact.
+                  <span class="lang-en">An in-depth analysis of the current state, challenges, and future directions of intelligent robotics technology and its global societal impact.</span>
+                  <span class="lang-zh">对智能机器人技术的现状、挑战、未来方向及其全球社会影响的深入分析。</span>
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  Read Notes <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="lang-en">Read Notes</span>
+                  <span class="lang-zh">阅读笔记</span>
+                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -600,16 +741,19 @@
               </div>
               <div class="relative z-10">
                 <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  Paper Notes: Tracking Political Biases in NLP Models
+                  <span class="lang-en">Paper Notes: Tracking Political Biases in NLP Models</span>
+                  <span class="lang-zh">论文评述：追踪 NLP 模型中的政治偏见</span>
                 </h3>
 
                 <p class="mt-4 text-slate-600 leading-relaxed">
-                  A review of an ACL 2023 paper analyzing how political bias in pretraining data creates unfair NLP
-                  models for downstream tasks.
+                  <span class="lang-en">A review of an ACL 2023 paper analyzing how political bias in pretraining data creates unfair NLP models for downstream tasks.</span>
+                  <span class="lang-zh">对 ACL 2023 论文的评述，分析了预训练数据中的政治偏见如何导致下游任务中产生不公的 NLP 模型。</span>
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  Read Notes <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span class="lang-en">Read Notes</span>
+                  <span class="lang-zh">阅读笔记</span>
+                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -624,14 +768,21 @@
       <!-- About Me Section -->
       <section id="about-me" class="w-full flex-shrink-0">
         <div class="tab-section">
-          <h2 class="text-2xl md:text-3xl font-semibold">About Me</h2>
-          <p class="mt-4 max-w-5xl text-slate-700">Master's student passionate about human-centered AI and mobile
-            development. I love turning ideas into intuitive, intelligent systems—and I'm always up for a challenge that
-            blends tech with real-world impact.</p>
+          <h2 class="text-2xl md:text-3xl font-semibold">
+            <span class="lang-en">About Me</span>
+            <span class="lang-zh">关于我</span>
+          </h2>
+          <p class="mt-4 max-w-5xl text-slate-700">
+            <span class="lang-en">Master's student passionate about human-centered AI and mobile development. I love turning ideas into intuitive, intelligent systems—and I'm always up for a challenge that blends tech with real-world impact.</span>
+            <span class="lang-zh">智能系统方向的研究生，热衷于以人为本的 AI 和移动开发。我喜欢将创意转化为直觉、智能的系统——并时刻准备接受将技术与现实世界影响融为一体的挑战。</span>
+          </p>
 
           <!-- Education Timeline -->
           <div class="mt-12">
-            <h3 class="text-xl font-semibold mb-8">Education</h3>
+            <h3 class="text-xl font-semibold mb-8">
+              <span class="lang-en">Education</span>
+              <span class="lang-zh">教育背景</span>
+            </h3>
             <div class="relative max-w-4xl">
               <!-- Timeline line with soft gradient -->
               <div
@@ -655,14 +806,23 @@
                   <div
                     class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
                     <div class="flex items-center justify-between mb-3">
-                      <h4 class="text-xl font-bold text-slate-900">RWTH Aachen University</h4>
-                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">2025 -
-                        Present</span>
+                      <h4 class="text-xl font-bold text-slate-900">
+                        <span class="lang-en">RWTH Aachen University</span>
+                        <span class="lang-zh">亚琛工业大学</span>
+                      </h4>
+                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">
+                        <span class="lang-en">2025 - Present</span>
+                        <span class="lang-zh">2025 - 至今</span>
+                      </span>
                     </div>
-                    <p class="text-slate-600 font-medium mb-3">Master of Science in Human-Centered Intelligent Systems
+                    <p class="text-slate-600 font-medium mb-3">
+                      <span class="lang-en">Master of Science in Human-Centered Intelligent Systems</span>
+                      <span class="lang-zh">以人为本的智能系统 理学硕士</span>
                     </p>
-                    <p class="text-slate-700 leading-relaxed">Currently pursuing advanced studies in human-centered
-                      intelligent systems, focusing on the intersection of AI and user experience.</p>
+                    <p class="text-slate-700 leading-relaxed">
+                      <span class="lang-en">Currently pursuing advanced studies in human-centered intelligent systems, focusing on the intersection of AI and user experience.</span>
+                      <span class="lang-zh">目前正攻读以人为本智能系统的高级课程，专注于人工智能与用户体验的交叉领域。</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -684,21 +844,24 @@
                   <div
                     class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
                     <div class="flex items-center justify-between mb-3">
-                      <h4 class="text-xl font-bold text-slate-900">Beijing University of Posts and Telecommunications
+                      <h4 class="text-xl font-bold text-slate-900">
+                        <span class="lang-en">Beijing University of Posts and Telecommunications</span>
+                        <span class="lang-zh">北京邮电大学</span>
                       </h4>
-                      <span class="px-3 py-1 bg-amber-100 text-amber-800 text-sm font-medium rounded-full">2021 -
-                        2025</span>
+                      <span class="px-3 py-1 bg-amber-100 text-amber-800 text-sm font-medium rounded-full">2021 - 2025</span>
                     </div>
-                    <p class="text-slate-600 font-medium mb-3">Bachelor of Science in Computer Science and Technology
+                    <p class="text-slate-600 font-medium mb-3">
+                      <span class="lang-en">Bachelor of Science in Computer Science and Technology</span>
+                      <span class="lang-zh">计算机科学与技术 工学学士</span>
                     </p>
                     <div class="flex items-center gap-4 mb-3">
-                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">GPA:
-                        3.5/4.0</span>
+                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">GPA: 3.5/4.0</span>
                       <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">86/100</span>
                     </div>
-                    <p class="text-slate-700 leading-relaxed">Comprehensive study of computer science fundamentals,
-                      algorithms, data structures, and software engineering. Completed thesis involving machine learning
-                      model training with PyTorch.</p>
+                    <p class="text-slate-700 leading-relaxed">
+                      <span class="lang-en">Comprehensive study of computer science fundamentals, algorithms, data structures, and software engineering. Completed thesis involving machine learning model training with PyTorch.</span>
+                      <span class="lang-zh">系统学习计算机科学基础、算法、数据结构和软件工程。完成了涉及使用 PyTorch 进行机器学习模型训练的毕业设计。</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -722,19 +885,27 @@
                   <div
                     class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 hover:shadow-md transition-shadow duration-300 cursor-pointer education-card">
                     <div class="flex items-center justify-between mb-3">
-                      <h4 class="text-xl font-bold text-slate-900">Xiangtan County No. 1 High School</h4>
-                      <span class="px-3 py-1 bg-rose-100 text-rose-800 text-sm font-medium rounded-full">2018 -
-                        2021</span>
+                      <h4 class="text-xl font-bold text-slate-900">
+                        <span class="lang-en">Xiangtan County No. 1 High School</span>
+                        <span class="lang-zh">湘潭县第一中学</span>
+                      </h4>
+                      <span class="px-3 py-1 bg-rose-100 text-rose-800 text-sm font-medium rounded-full">2018 - 2021</span>
                     </div>
-                    <p class="text-slate-600 font-medium mb-3">High School Diploma</p>
+                    <p class="text-slate-600 font-medium mb-3">
+                      <span class="lang-en">High School Diploma</span>
+                      <span class="lang-zh">高中毕业证书</span>
+                    </p>
                     <div class="flex items-center gap-2 mb-3">
-                      <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">🏆 Top
-                        0.1%</span>
-                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">College
-                        Entrance Exam</span>
+                      <span class="px-3 py-1 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-full">🏆 Top 0.1%</span>
+                      <span class="px-3 py-1 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">
+                        <span class="lang-en">College Entrance Exam</span>
+                        <span class="lang-zh">高考</span>
+                      </span>
                     </div>
-                    <p class="text-slate-700 leading-relaxed">Achieved top 0.1% in final college entrance exam,
-                      demonstrating exceptional academic performance and dedication to learning.</p>
+                    <p class="text-slate-700 leading-relaxed">
+                      <span class="lang-en">Achieved top 0.1% in final college entrance exam, demonstrating exceptional academic performance and dedication to learning.</span>
+                      <span class="lang-zh">在最终高考中名列前 0.1%，展现了卓越的学术表现和对学习的专注。</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -743,7 +914,10 @@
 
           <!-- Skills Section -->
           <div class="mt-12">
-            <h3 class="text-xl font-bold text-slate-900 mb-8">Technical Expertise</h3>
+            <h3 class="text-xl font-bold text-slate-900 mb-8">
+              <span class="lang-en">Technical Expertise</span>
+              <span class="lang-zh">技术专长</span>
+            </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               <!-- Frontend & PWA Development -->
               <div class="bg-white rounded-xl border border-slate-100 p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
@@ -753,15 +927,24 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                   </div>
-                  <h4 class="text-lg font-bold text-slate-900">Frontend & PWA Development</h4>
+                  <h4 class="text-lg font-bold text-slate-900">
+                    <span class="lang-en">Frontend & PWA Development</span>
+                    <span class="lang-zh">前端与 PWA 开发</span>
+                  </h4>
                 </div>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">TypeScript</span>
                   <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">Next.js</span>
                   <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">React</span>
                   <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">Tailwind CSS</span>
-                  <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">PWA & Service Workers</span>
-                  <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">Web Push Notifications</span>
+                  <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">
+                    <span class="lang-en">PWA & Service Workers</span>
+                    <span class="lang-zh">PWA 与 Service Worker</span>
+                  </span>
+                  <span class="px-3 py-1.5 bg-teal-50/50 text-teal-800 rounded-full text-xs font-semibold border border-teal-100/50">
+                    <span class="lang-en">Web Push Notifications</span>
+                    <span class="lang-zh">Web 推送通知</span>
+                  </span>
                 </div>
               </div>
 
@@ -773,7 +956,10 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                     </svg>
                   </div>
-                  <h4 class="text-lg font-bold text-slate-900">Backend & Database Systems</h4>
+                  <h4 class="text-lg font-bold text-slate-900">
+                    <span class="lang-en">Backend & Database Systems</span>
+                    <span class="lang-zh">后端与数据库系统</span>
+                  </h4>
                 </div>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1.5 bg-sky-50/50 text-sky-800 rounded-full text-xs font-semibold border border-sky-100/50">FastAPI</span>
@@ -793,15 +979,27 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
-                  <h4 class="text-lg font-bold text-slate-900">AI & Agent Orchestration</h4>
+                  <h4 class="text-lg font-bold text-slate-900">
+                    <span class="lang-en">AI & Agent Orchestration</span>
+                    <span class="lang-zh">AI 与智能体编排</span>
+                  </h4>
                 </div>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">LangGraph (Stateful Graphs)</span>
-                  <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">Multi-Agent Orchestration</span>
+                  <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">
+                    <span class="lang-en">Multi-Agent Orchestration</span>
+                    <span class="lang-zh">多智能体编排</span>
+                  </span>
                   <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">OpenRouter & LLM APIs</span>
                   <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">Persona Psychology Systems</span>
-                  <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">LLM-as-a-Judge Evaluation</span>
-                  <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">PyTorch & Deep Learning</span>
+                  <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">
+                    <span class="lang-en">LLM-as-a-Judge Evaluation</span>
+                    <span class="lang-zh">基于大模型的自动评估</span>
+                  </span>
+                  <span class="px-3 py-1.5 bg-indigo-50/50 text-indigo-800 rounded-full text-xs font-semibold border border-indigo-100/50">
+                    <span class="lang-en">PyTorch & Deep Learning</span>
+                    <span class="lang-zh">PyTorch 与深度学习</span>
+                  </span>
                 </div>
               </div>
 
@@ -813,11 +1011,17 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                   </div>
-                  <h4 class="text-lg font-bold text-slate-900">Developer Ecosystem & Tools</h4>
+                  <h4 class="text-lg font-bold text-slate-900">
+                    <span class="lang-en">Developer Ecosystem & Tools</span>
+                    <span class="lang-zh">开发者生态与工具</span>
+                  </h4>
                 </div>
                 <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1.5 bg-amber-50/50 text-amber-800 rounded-full text-xs font-semibold border border-amber-100/50">Obsidian Plugin API</span>
-                  <span class="px-3 py-1.5 bg-amber-50/50 text-amber-800 rounded-full text-xs font-semibold border border-amber-100/50">ONNX Runtime (On-Device AI)</span>
+                  <span class="px-3 py-1.5 bg-amber-50/50 text-amber-800 rounded-full text-xs font-semibold border border-amber-100/50">
+                    <span class="lang-en">ONNX Runtime (On-Device AI)</span>
+                    <span class="lang-zh">ONNX Runtime (本地 AI)</span>
+                  </span>
                   <span class="px-3 py-1.5 bg-amber-50/50 text-amber-800 rounded-full text-xs font-semibold border border-amber-100/50">Git & Version Control</span>
                   <span class="px-3 py-1.5 bg-amber-50/50 text-amber-800 rounded-full text-xs font-semibold border border-amber-100/50">VS Code & Android Studio</span>
                   <span class="px-3 py-1.5 bg-amber-50/50 text-amber-800 rounded-full text-xs font-semibold border border-amber-100/50">English (Fluent)</span>
@@ -828,7 +1032,10 @@
           </div>
 
           <div class="mt-8">
-            <h3 class="text-lg font-semibold mb-4">Contact</h3>
+            <h3 class="text-lg font-semibold mb-4">
+              <span class="lang-en">Contact</span>
+              <span class="lang-zh">联系方式</span>
+            </h3>
             <div class="space-y-2">
               <p class="text-slate-700">Email: <a class="hover:text-blue-600 transition-colors duration-200"
                   href="mailto:aerin.hyy@gmail.com">aerin.hyy@gmail.com</a></p>
@@ -849,10 +1056,31 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Language Switcher Logic
+    function setLanguage(lang) {
+      if (lang === 'zh') {
+        document.documentElement.setAttribute('lang', 'zh');
+        localStorage.setItem('lang', 'zh');
+      } else {
+        document.documentElement.setAttribute('lang', 'en');
+        localStorage.setItem('lang', 'en');
+      }
+    }
 
-    // Tab functionality
+    // Initialize from localStorage
+    const savedLang = localStorage.getItem('lang') || 'en';
+    setLanguage(savedLang);
+
     document.addEventListener('DOMContentLoaded', function () {
+      const langBtn = document.getElementById('lang-switch-btn');
+      if (langBtn) {
+        langBtn.addEventListener('click', () => {
+          const currentLang = document.documentElement.getAttribute('lang') || 'en';
+          setLanguage(currentLang === 'en' ? 'zh' : 'en');
+        });
+      }
+
+      document.getElementById('year').textContent = new Date().getFullYear();
       const tabButtons = document.querySelectorAll('.tab-button');
       const contentContainer = document.querySelector('.content-container');
       const sections = Array.from(document.querySelectorAll('.content-container > section'));
