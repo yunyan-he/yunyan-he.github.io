@@ -188,9 +188,9 @@
     </nav>
 
     <!-- Content Container -->
-    <div class="content-container flex overflow-x-hidden transition-all duration-300 ease-in-out">
+    <div class="content-container transition-all duration-300 ease-in-out">
       <!-- Projects Section -->
-      <section id="projects" class="w-full flex-shrink-0">
+      <section id="projects" class="tab-panel">
         <div class="tab-section">
           <!-- Advanced AI & Web Systems -->
           <div class="mb-8">
@@ -574,13 +574,28 @@
       </section>
 
       <!-- Tech Blog Section -->
-      <section id="tech-blog" class="w-full flex-shrink-0">
+      <section id="tech-blog" class="tab-panel hidden">
         <div class="tab-section">
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-            <span class="lang-en">Tech Blog</span>
-            <span class="lang-zh">技术博客</span>
-          </h2>
-          <div class="mt-8 space-y-6">
+          <div class="mb-8">
+            <p class="text-sm font-bold uppercase tracking-wider text-green-700 mb-2">
+              <span class="lang-en">Selected writing for AI Agent / AI PM roles</span>
+              <span class="lang-zh">面向 AI Agent / AI PM 岗位的精选写作</span>
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+              <span class="lang-en">Product & Technical Thinking</span>
+              <span class="lang-zh">产品与技术思考</span>
+            </h2>
+            <p class="mt-3 max-w-3xl text-slate-600 leading-relaxed">
+              <span class="lang-en">I group writing by the signal a hiring manager needs: agentic product imagination, AI system architecture, and platform growth mechanics.</span>
+              <span class="lang-zh">这里按招聘方最需要看到的信号组织：智能体产品想象力、AI 系统架构能力，以及平台增长与归因机制。</span>
+            </p>
+          </div>
+          <div class="mt-8 space-y-10">
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <span class="lang-en">Agentic Products & Future Interfaces</span>
+                <span class="lang-zh">智能体产品与未来交互</span>
+              </h3>
             <article
               class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               onclick="window.location.href='blog.html?post=programmable-space-future'">
@@ -597,6 +612,17 @@
                   <span class="lang-en">A speculation on programmable space, China's shrinking population, and what it means to own a home when it can be rearranged on command.</span>
                   <span class="lang-zh">关于可编程空间、人口收缩与未来居住方式的一次思考——当一个家可以随时被重组，我们真正拥有的是什么？</span>
                 </p>
+                <div class="mt-5 flex flex-wrap gap-2 text-xs font-semibold">
+                  <span class="px-2.5 py-1 rounded-md bg-green-50 text-green-700 border border-green-100">AI Agents</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-600 border border-slate-100">
+                    <span class="lang-en">Product Vision</span>
+                    <span class="lang-zh">产品愿景</span>
+                  </span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-600 border border-slate-100">
+                    <span class="lang-en">Ambient Computing</span>
+                    <span class="lang-zh">环境计算</span>
+                  </span>
+                </div>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
                   <span class="lang-en">Read Article</span>
@@ -608,7 +634,13 @@
                 </div>
               </div>
             </article>
+            </div>
 
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <span class="lang-en">AI System Architecture</span>
+                <span class="lang-zh">AI 系统架构</span>
+              </h3>
             <article
               class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               onclick="window.location.href='blog.html?post=gemini-hybrid-ai-solution'">
@@ -625,6 +657,14 @@
                   <span class="lang-en">An Android-side experiment of building a hybrid AI solution, integrating on-device ONNX models with the cloud-based Gemini Vision API.</span>
                   <span class="lang-zh">一个 Android 端构建混合 AI 方案的实验，融合了本地 ONNX 模型与云端 Gemini Vision API。</span>
                 </p>
+                <div class="mt-5 flex flex-wrap gap-2 text-xs font-semibold">
+                  <span class="px-2.5 py-1 rounded-md bg-green-50 text-green-700 border border-green-100">Gemini API</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-600 border border-slate-100">ONNX Runtime</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-600 border border-slate-100">
+                    <span class="lang-en">Hybrid AI</span>
+                    <span class="lang-zh">混合 AI</span>
+                  </span>
+                </div>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
                   <span class="lang-en">Read Article</span>
@@ -636,7 +676,13 @@
                 </div>
               </div>
             </article>
+            </div>
 
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <span class="lang-en">Growth, Attribution & Platform Mechanics</span>
+                <span class="lang-zh">增长、归因与平台机制</span>
+              </h3>
             <article
               class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               onclick="window.location.href='blog.html?post=android-play-install-referrer-tutorial'">
@@ -653,6 +699,17 @@
                   <span class="lang-en">A Developer's Guide to the Google Play Install Referrer API</span>
                   <span class="lang-zh">面向开发者的 Google Play Install Referrer API 使用指南</span>
                 </p>
+                <div class="mt-5 flex flex-wrap gap-2 text-xs font-semibold">
+                  <span class="px-2.5 py-1 rounded-md bg-green-50 text-green-700 border border-green-100">
+                    <span class="lang-en">Attribution</span>
+                    <span class="lang-zh">归因分析</span>
+                  </span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-600 border border-slate-100">Android</span>
+                  <span class="px-2.5 py-1 rounded-md bg-slate-50 text-slate-600 border border-slate-100">
+                    <span class="lang-en">Product Analytics</span>
+                    <span class="lang-zh">产品数据分析</span>
+                  </span>
+                </div>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
                   <span class="lang-en">Read Article</span>
@@ -664,46 +721,35 @@
                 </div>
               </div>
             </article>
+            </div>
 
           </div>
         </div>
       </section>
 
       <!-- Study Notes Section -->
-      <section id="study-notes" class="w-full flex-shrink-0">
+      <section id="study-notes" class="tab-panel hidden">
         <div class="tab-section">
-          <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8">
-            <span class="lang-en">Study Notes</span>
-            <span class="lang-zh">学习笔记</span>
-          </h2>
-          <div class="mt-8 space-y-6">
-
-            <article
-              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
-              onclick="window.location.href='note.html?note=ai-insurance-framework'">
-              <div
-                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
-              </div>
-              <div class="relative z-10">
-                <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  <span class="lang-en">AI Insurance: Frameworks, Application Cases, and Market Trends</span>
-                  <span class="lang-zh">AI 保险：责任框架、应用案例与市场趋势</span>
-                </h3>
-                <p class="mt-4 text-slate-600 leading-relaxed">
-                  <span class="lang-en">An in-depth analysis of shifting liability in autonomous driving and AGI agents, comparing pilots in China and Western market developments.</span>
-                  <span class="lang-zh">深度分析自动驾驶与 AGI 智能体中的责任转移，对比中国试点与西方市场的发展。</span>
-                </p>
-                <div
-                  class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  <span class="lang-en">Read Notes</span>
-                  <span class="lang-zh">阅读笔记</span>
-                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </div>
-            </article>
+          <div class="mb-8">
+            <p class="text-sm font-bold uppercase tracking-wider text-green-700 mb-2">
+              <span class="lang-en">Research notes that support my product taste</span>
+              <span class="lang-zh">支撑产品判断力的研究笔记</span>
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
+              <span class="lang-en">Research Notes</span>
+              <span class="lang-zh">研究笔记</span>
+            </h2>
+            <p class="mt-3 max-w-3xl text-slate-600 leading-relaxed">
+              <span class="lang-en">These notes show how I reason about AI agents beyond implementation: autonomy, liability, bias, human agency, and embodied robotics.</span>
+              <span class="lang-zh">这些笔记展示我如何从实现之外理解 AI Agent：自主性、责任归属、偏见、人的能动性以及具身机器人。</span>
+            </p>
+          </div>
+          <div class="mt-8 space-y-10">
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <span class="lang-en">Human Agency & Ambient AI</span>
+                <span class="lang-zh">人的能动性与环境智能</span>
+              </h3>
 
             <article
               class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
@@ -718,8 +764,8 @@
                 </h3>
 
                 <p class="mt-4 text-slate-600 leading-relaxed">
-                  <span class="lang-en">Revisiting Mark Weiser's 1991 vision in 2025. I connect his concept of "invisible computing" to current AI developments and discuss implications for agency.</span>
-                  <span class="lang-zh">在2026年重温马克·维瑟1991年的愿景。我将他“隐形计算”的概念与当下的 AI 进展相联系，并探讨其对自主权的影响。</span>
+                  <span class="lang-en">Revisiting Mark Weiser's vision and connecting invisible computing to AI agents, agency, and product interaction design.</span>
+                  <span class="lang-zh">重温马克·维瑟的愿景，将隐形计算与 AI Agent、人的自主权和产品交互设计联系起来。</span>
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
@@ -732,7 +778,46 @@
                 </div>
               </div>
             </article>
+            </div>
 
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <span class="lang-en">Autonomy, Liability & Trust</span>
+                <span class="lang-zh">自主性、责任与信任</span>
+              </h3>
+            <article
+              class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+              onclick="window.location.href='note.html?note=ai-insurance-framework'">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl">
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
+                  <span class="lang-en">AI Insurance: Frameworks, Application Cases, and Market Trends</span>
+                  <span class="lang-zh">AI 保险：责任框架、应用案例与市场趋势</span>
+                </h3>
+                <p class="mt-4 text-slate-600 leading-relaxed">
+                  <span class="lang-en">An analysis of shifting liability in autonomous driving and AGI agents, comparing pilots in China and Western market developments.</span>
+                  <span class="lang-zh">分析自动驾驶与 AGI 智能体中的责任转移，对比中国试点与西方市场的发展。</span>
+                </p>
+                <div
+                  class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
+                  <span class="lang-en">Read Notes</span>
+                  <span class="lang-zh">阅读笔记</span>
+                  <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <span class="lang-en">Embodied AI & Robotics</span>
+                <span class="lang-zh">具身 AI 与机器人</span>
+              </h3>
             <article
               class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               onclick="window.location.href='note.html?note=robotics-industry-survey'">
@@ -760,7 +845,13 @@
                 </div>
               </div>
             </article>
+            </div>
 
+            <div>
+              <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
+                <span class="lang-en">Model Evaluation, Bias & Governance</span>
+                <span class="lang-zh">模型评估、偏见与治理</span>
+              </h3>
             <article
               class="group relative bg-white rounded-2xl border border-slate-100 p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer"
               onclick="window.location.href='note.html?note=nlp-bias-paper-notes'">
@@ -788,13 +879,14 @@
                 </div>
               </div>
             </article>
+            </div>
 
           </div>
         </div>
       </section>
 
       <!-- About Me Section -->
-      <section id="about-me" class="w-full flex-shrink-0">
+      <section id="about-me" class="tab-panel hidden">
         <div class="tab-section">
           <h2 class="text-2xl md:text-3xl font-semibold">
             <span class="lang-en">About Me</span>
@@ -1109,137 +1201,61 @@
       }
 
       document.getElementById('year').textContent = new Date().getFullYear();
-      const tabButtons = document.querySelectorAll('.tab-button');
-      const contentContainer = document.querySelector('.content-container');
-      const sections = Array.from(document.querySelectorAll('.content-container > section'));
+      const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
+      const sections = Array.from(document.querySelectorAll('.tab-panel'));
+      const validTabs = new Set(sections.map(section => section.id));
+      let activeTab = null;
 
-      // State
-      let currentIndex = 0;
-      let isAnimating = false;
-      function syncStateFromScroll() {
-        const width = contentContainer.offsetWidth;
-        if (width === 0) return; // Avoid division by zero when not rendered
-
-        // Calculate correct index based on restored scroll position
-        const restoredIndex = Math.round(contentContainer.scrollLeft / width);
-
-        // Update state and UI
-        if (restoredIndex !== currentIndex) {
-          currentIndex = restoredIndex;
-        }
-        setActiveButton(currentIndex);
+      function normalizeTab(tab) {
+        return validTabs.has(tab) ? tab : 'projects';
       }
 
-      // Immediately sync state after browser restores scroll position (using setTimeout(0))
-      setTimeout(syncStateFromScroll, 0);
+      function setActiveTab(tab, options = {}) {
+        const nextTab = normalizeTab(tab);
+        if (activeTab === nextTab) return;
+        activeTab = nextTab;
 
-      // (Optional but recommended) Also sync when window size changes to prevent layout issues
-      window.addEventListener('resize', syncStateFromScroll);
-
-      function setActiveButton(index) {
-        tabButtons.forEach((button, i) => {
-          if (i === index) {
-            button.classList.add('active', 'text-slate-900', 'border-green-500');
-            button.classList.remove('text-slate-500', 'border-transparent');
-          } else {
-            button.classList.remove('active', 'text-slate-900', 'border-green-500');
-            button.classList.add('text-slate-500', 'border-transparent');
-          }
+        sections.forEach(section => {
+          const isActive = section.id === nextTab;
+          section.classList.toggle('hidden', !isActive);
+          section.setAttribute('aria-hidden', String(!isActive));
         });
-      }
 
-      function onScrollAnimationEnd(callback) {
-        // Prefer modern scrollend event; fallback to timeout
-        const useScrollEnd = 'onscrollend' in window || 'onscrollend' in document;
-        if (useScrollEnd) {
-          const handler = () => {
-            contentContainer.removeEventListener('scrollend', handler);
-            callback();
-          };
-          contentContainer.addEventListener('scrollend', handler, { once: true });
-        } else {
-          setTimeout(callback, 450);
+        tabButtons.forEach(button => {
+          const isActive = button.dataset.tab === nextTab;
+          button.classList.toggle('active', isActive);
+          button.classList.toggle('text-green-600', isActive);
+          button.classList.toggle('border-green-600', isActive);
+          button.classList.toggle('font-semibold', isActive);
+          button.classList.toggle('text-slate-500', !isActive);
+          button.classList.toggle('border-transparent', !isActive);
+          button.classList.toggle('font-medium', !isActive);
+          button.setAttribute('aria-selected', String(isActive));
+        });
+
+        if (options.scrollToTop) {
+          document.getElementById('tab-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
 
-      function switchTab(targetIndex) {
-        if (isAnimating || targetIndex === currentIndex) return;
-        const num = sections.length;
-        const width = contentContainer.offsetWidth;
-
-        // Determine shortest path distances (forward/right and backward/left)
-        const forwardDistance = (targetIndex - currentIndex + num) % num;   // move right
-        const backwardDistance = (currentIndex - targetIndex + num) % num;  // move left
-
-        isAnimating = true;
-
-        // Helper to finish and update state
-        const finish = () => {
-          currentIndex = targetIndex;
-          setActiveButton(currentIndex);
-          isAnimating = false;
-        };
-
-        // Wrap-around special cases for a single-step left from 0->last and right from last->0
-        if (currentIndex === 0 && targetIndex === num - 1 && backwardDistance === 1) {
-          // Wrap-left: clone last, prepend, jump right, then smooth scroll left to 0
-          const clone = sections[num - 1].cloneNode(true);
-          contentContainer.insertBefore(clone, contentContainer.firstChild);
-          // Jump to show original first section
-          contentContainer.scrollLeft = width;
-          // Defer smooth scroll to next frame(s) to ensure the jump is committed
-          requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              contentContainer.scrollTo({ left: 0, behavior: 'smooth' });
-              onScrollAnimationEnd(() => {
-                // Jump to real last section and cleanup
-                contentContainer.removeChild(clone);
-                contentContainer.scrollLeft = (num - 1) * width;
-                finish();
-              });
-            });
-          });
-          return;
-        }
-
-        if (currentIndex === num - 1 && targetIndex === 0 && forwardDistance === 1) {
-          // Wrap-right: clone first, append, smooth scroll to clone, then jump to real first
-          const clone = sections[0].cloneNode(true);
-          contentContainer.appendChild(clone);
-          // Ensure starting position at real last
-          contentContainer.scrollLeft = (num - 1) * width;
-          // Smooth scroll to the clone at the end
-          contentContainer.scrollTo({ left: num * width, behavior: 'smooth' });
-          onScrollAnimationEnd(() => {
-            contentContainer.removeChild(clone);
-            contentContainer.scrollLeft = 0;
-            finish();
-          });
-          return;
-        }
-
-        // Non-wrap or multi-step: just scroll directly to target position (shortest direction implied by position)
-        const targetLeft = targetIndex * width;
-        contentContainer.scrollTo({ left: targetLeft, behavior: 'smooth' });
-        onScrollAnimationEnd(finish);
+      function syncTabFromHash(options = {}) {
+        const tabFromHash = window.location.hash.replace('#', '');
+        setActiveTab(tabFromHash, options);
       }
 
-
-      // Initial state: active button for index 0 without scrolling
-      setActiveButton(0);
-
-      // States
-      let lastScrollY = 0;
-
-      // (Legacy fixed nav code removed - relying on CSS sticky position)
-
-
-      // Tab click handler
-      tabButtons.forEach((button, index) => {
+      tabButtons.forEach(button => {
+        button.setAttribute('role', 'tab');
         button.addEventListener('click', function () {
-          switchTab(index);
+          const nextTab = this.dataset.tab;
+          if (activeTab === nextTab) return;
+          history.pushState(null, '', '#' + nextTab);
+          setActiveTab(nextTab, { scrollToTop: true });
         });
       });
+
+      window.addEventListener('popstate', () => syncTabFromHash({ scrollToTop: true }));
+      window.addEventListener('hashchange', () => syncTabFromHash({ scrollToTop: true }));
+      syncTabFromHash();
 
       // Education timeline interaction
       const educationItems = document.querySelectorAll('.education-item');
