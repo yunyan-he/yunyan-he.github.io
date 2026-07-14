@@ -42,7 +42,7 @@
     .tab-section {
       margin: 0 auto;
       max-width: 64rem;
-      padding: 5rem 2rem;
+      padding: 4rem 2rem 5rem;
     }
 
     /* Smooth scrolling for the entire page */
@@ -71,6 +71,108 @@
     }
     .animate-spin-slow {
       animation: spinSlow 20s linear infinite;
+    }
+
+    @keyframes tabReveal {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-panel:not(.hidden) {
+      animation: tabReveal 0.22s ease-out;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid rgb(226 232 240);
+      padding-bottom: 1rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      font-weight: 800;
+      letter-spacing: 0;
+      color: rgb(15 23 42);
+      line-height: 1.1;
+    }
+
+    .section-heading span {
+      flex-shrink: 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgb(100 116 139);
+    }
+
+    .nav-shell {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 4rem;
+    }
+
+    .tab-list {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      overflow-x: auto;
+      border: 1px solid rgb(226 232 240);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      padding: 0.25rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .tab-button {
+      min-height: 2.35rem;
+      white-space: nowrap;
+      border-radius: 999px;
+      padding: 0 1rem;
+      font-size: 0.875rem;
+      font-weight: 650;
+      color: rgb(71 85 105);
+      transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+    }
+
+    .tab-button:hover {
+      color: rgb(15 23 42);
+      background: rgb(248 250 252);
+    }
+
+    .tab-button.active {
+      color: rgb(4 120 87);
+      background: rgb(236 253 245);
+      box-shadow: inset 0 0 0 1px rgb(167 243 208), 0 4px 12px rgba(16, 185, 129, 0.12);
+    }
+
+    @media (max-width: 640px) {
+      .tab-section {
+        padding: 3rem 1rem 4rem;
+      }
+
+      .nav-shell {
+        gap: 0.75rem;
+      }
+
+      .tab-list {
+        max-width: calc(100vw - 5.25rem);
+      }
+
+      .tab-button {
+        padding: 0 0.8rem;
+        font-size: 0.82rem;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
     
     /* Language visibility rules */
@@ -151,32 +253,24 @@
 
     <!-- Tab Navigation (Sticky) -->
     <nav id="tab-nav"
-      class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-14">
-        <div class="w-16 hidden md:block"></div>
-        <div class="flex gap-4 sm:gap-8 overflow-x-auto no-scrollbar mx-auto">
-          <button
-            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-semibold text-green-600 border-b-2 border-green-600 transition-colors"
-            data-tab="projects">
+      class="sticky top-0 z-50 bg-slate-50/85 backdrop-blur-xl border-b border-slate-200/80">
+      <div class="nav-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="hidden md:block text-sm font-bold text-slate-900">YH</div>
+        <div class="tab-list mx-auto" role="tablist" aria-label="Portfolio sections">
+          <button class="tab-button active" type="button" data-tab="projects">
             <span class="lang-en">Projects</span>
             <span class="lang-zh">项目</span>
           </button>
-          <button
-            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
-            data-tab="tech-blog">
-            <span class="lang-en">Tech Blog</span>
-            <span class="lang-zh">技术博客</span>
+          <button class="tab-button" type="button" data-tab="tech-blog">
+            <span class="lang-en">Essays</span>
+            <span class="lang-zh">文章</span>
           </button>
-          <button
-            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
-            data-tab="study-notes">
-            <span class="lang-en">Study Notes</span>
-            <span class="lang-zh">学习笔记</span>
+          <button class="tab-button" type="button" data-tab="study-notes">
+            <span class="lang-en">Research</span>
+            <span class="lang-zh">研究</span>
           </button>
-          <button
-            class="tab-button w-full sm:w-auto text-center px-2 sm:px-4 py-4 text-sm font-medium text-slate-500 hover:text-slate-800 border-b-2 border-transparent hover:border-slate-300 transition-colors"
-            data-tab="about-me">
-            <span class="lang-en">About Me</span>
+          <button class="tab-button" type="button" data-tab="about-me">
+            <span class="lang-en">About</span>
             <span class="lang-zh">关于我</span>
           </button>
         </div>
@@ -573,22 +667,18 @@
         </div>
       </section>
 
-      <!-- Tech Blog Section -->
+      <!-- Essays Section -->
       <section id="tech-blog" class="tab-panel hidden">
         <div class="tab-section">
-          <div class="mb-8">
-            <p class="text-sm font-bold uppercase tracking-wider text-green-700 mb-2">
-              <span class="lang-en">Selected writing for AI Agent / AI PM roles</span>
-              <span class="lang-zh">面向 AI Agent / AI PM 岗位的精选写作</span>
-            </p>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
-              <span class="lang-en">Product & Technical Thinking</span>
-              <span class="lang-zh">产品与技术思考</span>
+          <div class="section-heading">
+            <h2>
+              <span class="lang-en">Essays</span>
+              <span class="lang-zh">文章</span>
             </h2>
-            <p class="mt-3 max-w-3xl text-slate-600 leading-relaxed">
-              <span class="lang-en">I group writing by the signal a hiring manager needs: agentic product imagination, AI system architecture, and platform growth mechanics.</span>
-              <span class="lang-zh">这里按招聘方最需要看到的信号组织：智能体产品想象力、AI 系统架构能力，以及平台增长与归因机制。</span>
-            </p>
+            <span>
+              <span class="lang-en">Product / Systems / Interfaces</span>
+              <span class="lang-zh">产品 / 系统 / 交互</span>
+            </span>
           </div>
           <div class="mt-8 space-y-10">
             <div>
@@ -727,22 +817,18 @@
         </div>
       </section>
 
-      <!-- Study Notes Section -->
+      <!-- Research Section -->
       <section id="study-notes" class="tab-panel hidden">
         <div class="tab-section">
-          <div class="mb-8">
-            <p class="text-sm font-bold uppercase tracking-wider text-green-700 mb-2">
-              <span class="lang-en">Research notes that support my product taste</span>
-              <span class="lang-zh">支撑产品判断力的研究笔记</span>
-            </p>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">
-              <span class="lang-en">Research Notes</span>
-              <span class="lang-zh">研究笔记</span>
+          <div class="section-heading">
+            <h2>
+              <span class="lang-en">Research</span>
+              <span class="lang-zh">研究</span>
             </h2>
-            <p class="mt-3 max-w-3xl text-slate-600 leading-relaxed">
-              <span class="lang-en">These notes show how I reason about AI agents beyond implementation: autonomy, liability, bias, human agency, and embodied robotics.</span>
-              <span class="lang-zh">这些笔记展示我如何从实现之外理解 AI Agent：自主性、责任归属、偏见、人的能动性以及具身机器人。</span>
-            </p>
+            <span>
+              <span class="lang-en">Papers / Surveys / Reviews</span>
+              <span class="lang-zh">论文 / 调研 / 评述</span>
+            </span>
           </div>
           <div class="mt-8 space-y-10">
             <div>
@@ -769,8 +855,8 @@
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  <span class="lang-en">Read Notes</span>
-                  <span class="lang-zh">阅读笔记</span>
+                  <span class="lang-en">Read</span>
+                  <span class="lang-zh">阅读</span>
                   <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -802,8 +888,8 @@
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  <span class="lang-en">Read Notes</span>
-                  <span class="lang-zh">阅读笔记</span>
+                  <span class="lang-en">Read</span>
+                  <span class="lang-zh">阅读</span>
                   <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -836,8 +922,8 @@
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  <span class="lang-en">Read Notes</span>
-                  <span class="lang-zh">阅读笔记</span>
+                  <span class="lang-en">Read</span>
+                  <span class="lang-zh">阅读</span>
                   <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -860,7 +946,7 @@
               </div>
               <div class="relative z-10">
                 <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-700 transition-colors">
-                  <span class="lang-en">Paper Notes: Tracking Political Biases in NLP Models</span>
+                  <span class="lang-en">Paper Review: Tracking Political Biases in NLP Models</span>
                   <span class="lang-zh">论文评述：追踪 NLP 模型中的政治偏见</span>
                 </h3>
 
@@ -870,8 +956,8 @@
                 </p>
                 <div
                   class="mt-6 flex items-center text-sm font-semibold text-green-600 group-hover:translate-x-1 transition-transform">
-                  <span class="lang-en">Read Notes</span>
-                  <span class="lang-zh">阅读笔记</span>
+                  <span class="lang-en">Read</span>
+                  <span class="lang-zh">阅读</span>
                   <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -1219,18 +1305,15 @@
           const isActive = section.id === nextTab;
           section.classList.toggle('hidden', !isActive);
           section.setAttribute('aria-hidden', String(!isActive));
+          section.setAttribute('role', 'tabpanel');
         });
 
         tabButtons.forEach(button => {
           const isActive = button.dataset.tab === nextTab;
           button.classList.toggle('active', isActive);
-          button.classList.toggle('text-green-600', isActive);
-          button.classList.toggle('border-green-600', isActive);
-          button.classList.toggle('font-semibold', isActive);
-          button.classList.toggle('text-slate-500', !isActive);
-          button.classList.toggle('border-transparent', !isActive);
-          button.classList.toggle('font-medium', !isActive);
           button.setAttribute('aria-selected', String(isActive));
+          button.setAttribute('tabindex', isActive ? '0' : '-1');
+          button.setAttribute('aria-controls', button.dataset.tab);
         });
 
         if (options.scrollToTop) {
@@ -1250,6 +1333,23 @@
           if (activeTab === nextTab) return;
           history.pushState(null, '', '#' + nextTab);
           setActiveTab(nextTab, { scrollToTop: true });
+        });
+
+        button.addEventListener('keydown', function (event) {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+
+          const currentIndex = tabButtons.indexOf(this);
+          let nextIndex = currentIndex;
+          if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabButtons.length) % tabButtons.length;
+          if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabButtons.length;
+          if (event.key === 'Home') nextIndex = 0;
+          if (event.key === 'End') nextIndex = tabButtons.length - 1;
+
+          const nextButton = tabButtons[nextIndex];
+          history.pushState(null, '', '#' + nextButton.dataset.tab);
+          setActiveTab(nextButton.dataset.tab, { scrollToTop: true });
+          nextButton.focus();
         });
       });
 
