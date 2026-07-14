@@ -337,6 +337,12 @@
             response = await fetch(`notes/${noteName}.md`);
           }
 
+          // Graceful fallback to Chinese if an English original is missing
+          if (!response.ok && currentLang !== 'zh') {
+            console.warn(`Could not find English note for ${noteName}, falling back to Chinese.`);
+            response = await fetch(`notes/${noteName}_zh.md`);
+          }
+
           if (!response.ok) {
             throw new Error(currentLang === 'zh' ? `未找到笔记。(无法加载 '${fetchUrl}')` : `Note not found. (Could not load '${fetchUrl}')`);
           }
