@@ -147,6 +147,20 @@ Question
 
 这说明行业已经意识到：问题不只是模型，而是组织。
 
+如果把视角从论文转向产业，会更明显。
+
+Salesforce 把 Agentforce 定位成“Humans with Agents”的企业平台，而不是单个聊天机器人。它的产品结构里已经出现 Agentforce Builder、Agentforce Operations、AgentExchange、Sales Agents、Customer Service AI 等模块，说明企业软件正在把 Agent 当作可配置、可分发、可治理的工作单元。更重要的是，AgentExchange 这种形态接近“企业内部或生态内的 Agent 市场”：不同 agent、应用、实施伙伴共同进入同一个业务平台。
+
+Microsoft Copilot Studio 的方向也类似。它不只是让用户创建一个 agent，而是围绕 agent adoption、agent governance、agent security、agent evals、workflows、connected app experiences 等主题建设完整平台。它的博客中已经出现“agent evals”“agent governance”“agents plus workflows”等表达，这说明企业关心的不只是 agent 能不能回答问题，而是 agent 如何被评估、被治理、被嵌入业务流程。
+
+Anthropic 的 MCP 则代表另一条产业线索：企业不可能为每个模型、每个工具、每个数据源单独做集成，因此需要标准协议。Anthropic 在发布 MCP 时明确提到，它希望用一个开放标准连接 AI 系统与数据源，并列举了 Google Drive、Slack、GitHub、Postgres、Puppeteer 等企业系统的预置服务器。早期采用者包括 Block 和 Apollo，开发工具生态中也包括 Replit、Sourcegraph 等。
+
+Google Cloud 的 Agentspace 和 Agent2Agent 则把问题推进到 agent 之间的互操作。Google Cloud Next 2025 的行业报道中提到，A2A 旨在让不同厂商、不同框架构建的 agents 在企业生态中通信，Box、Deloitte、Salesforce、UiPath 等伙伴参与其中。这已经不是“一个公司内部做几个 agent”，而是在搭建跨平台 agent 协作的基础设施。
+
+Pega 和 ServiceNow 这样的企业流程厂商则提醒我们，行业真正担心的是 agent 失控。Pega 的 Agentic Process Fabric 强调把 agents 绑定到预定义流程、任务和 SLA 中，并支持审计。ServiceNow 与 Wipro 等服务商推动 agentic AI workflows 覆盖 IT、HR、采购和网络安全等企业流程。这说明产业界正在把 agent 放进流程治理、权限、审计和合规系统中，而不是只追求“更聪明的模型”。
+
+这些例子共同指向一个趋势：企业正在从“买一个模型”转向“设计一套 agent 组织与治理系统”。不过它们多数仍然围绕任务执行、流程自动化和企业系统集成展开，较少直接讨论“如何组织多个 AI 帮助人思考、形成共识和管理不确定性”。这正是 AI 组织智能与协同推理产品仍然有空间的地方。
+
 ## 6. 但行业多数仍停留在任务完成层
 
 目前大多数 Multi-Agent 研究关注的是如何让 Agent 完成任务。
@@ -250,4 +264,9 @@ Model -> Perspective -> Discussion -> Consensus -> Decision
 
 1. Yiwen Zhu, Lihe Liu, Jiaqian Yu, Di Zhang. [LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.mdpi.com/1999-5903/18/6/326). Future Internet, 2026.
 2. Gopal Vijayaraghavan, Prasanth Jayachandran, Arun Murthy, Sunil Govindan, Vivek Subramanian. [If You Want Coherence, Orchestrate a Team of Rivals: Multi-Agent Models of Organizational Intelligence](https://arxiv.org/abs/2601.14351). arXiv, 2026.
-3. Michael Reilly. Agentic AI Orchestration: An Organizational Design Framework. SSRN 页面待进一步核验。
+3. Michael Reilly. [Agentic AI Orchestration: An Organizational Design Framework](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6447261). SSRN.
+4. Anthropic. [Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol). 2024.
+5. Salesforce. [Agentforce: The AI Agent Platform](https://www.salesforce.com/agentforce/).
+6. Microsoft. [Microsoft Copilot Studio Blog](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/).
+7. Google Cloud Next 2025 coverage. [Google Cloud Next 2025: All the live updates as they happened](https://www.itpro.com/cloud/live/google-cloud-next-2025-all-the-news-and-updates-live). ITPro, 2025.
+8. The Economic Times. [Wipro shares rally over 4% on deal with ServiceNow to scale agentic AI](https://m.economictimes.com/markets/stocks/news/wipro-shares-could-rally-18-if-adr-is-an-indicator-heres-why-it-major-is-in-focus/articleshow/131380918.cms). 2026.
