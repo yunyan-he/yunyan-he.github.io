@@ -109,6 +109,128 @@
       color: rgb(100 116 139);
     }
 
+    .content-directory {
+      border: 1px solid rgb(226 232 240);
+      border-radius: 0.75rem;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+      overflow: hidden;
+    }
+
+    .directory-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 1px solid rgb(226 232 240);
+      padding: 0.875rem 1rem;
+      color: rgb(71 85 105);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .directory-list {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .directory-group {
+      border-bottom: 1px solid rgb(226 232 240);
+      background: linear-gradient(180deg, rgba(236, 253, 245, 0.62), rgba(255, 255, 255, 0.92));
+    }
+
+    .directory-group-title {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .directory-group-name {
+      min-width: 0;
+      font-size: 0.98rem;
+      font-weight: 850;
+      line-height: 1.35;
+      color: rgb(15 23 42);
+    }
+
+    .directory-group-meta {
+      white-space: nowrap;
+      border-radius: 999px;
+      border: 1px solid rgb(167 243 208);
+      background: rgb(236 253 245);
+      padding: 0.25rem 0.6rem;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: rgb(4 120 87);
+    }
+
+    .directory-sublist {
+      display: grid;
+      margin: 0 1rem 1rem;
+      border: 1px solid rgb(209 250 229);
+      border-radius: 0.65rem;
+      background: rgba(255, 255, 255, 0.9);
+      overflow: hidden;
+    }
+
+    .directory-sublist .directory-link {
+      padding: 0.78rem 0.9rem;
+      border-bottom-color: rgb(220 252 231);
+    }
+
+    .directory-sublist .directory-title {
+      font-size: 0.9rem;
+    }
+
+    .directory-section-label {
+      padding: 0.85rem 1rem 0.55rem;
+      border-bottom: 1px solid rgb(241 245 249);
+      background: rgb(248 250 252);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgb(100 116 139);
+    }
+
+    .directory-link {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgb(241 245 249);
+      color: rgb(15 23 42);
+      transition: background 150ms ease, color 150ms ease;
+    }
+
+    .directory-link:last-child {
+      border-bottom: 0;
+    }
+
+    .directory-link:hover {
+      background: rgb(248 250 252);
+      color: rgb(4 120 87);
+    }
+
+    .directory-title {
+      min-width: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .directory-meta {
+      white-space: nowrap;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgb(100 116 139);
+    }
+
     .nav-shell {
       display: flex;
       align-items: center;
@@ -172,6 +294,20 @@
       .section-heading {
         align-items: flex-start;
         flex-direction: column;
+      }
+
+      .directory-link {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+
+      .directory-group-title {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .directory-meta {
+        white-space: normal;
       }
     }
     
@@ -680,6 +816,57 @@
               <span class="lang-zh">产品 / 系统 / 交互</span>
             </span>
           </div>
+
+          <div class="content-directory" aria-label="Essay directory">
+            <div class="directory-header">
+              <span class="lang-en">Directory</span>
+              <span class="lang-zh">目录</span>
+              <span>4</span>
+            </div>
+            <div class="directory-list">
+              <a class="directory-link" href="blog.html?post=programmable-space-future">
+                <span class="directory-title">
+                  <span class="lang-en">When Land Becomes Cheap, What Will We Actually Own?</span>
+                  <span class="lang-zh">当土地不再稀缺，我们真正拥有的是什么？</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">Future Interfaces</span>
+                  <span class="lang-zh">未来交互</span>
+                </span>
+              </a>
+              <a class="directory-link" href="blog.html?post=ai-cognitive-labor-value-chain">
+                <span class="directory-title">
+                  <span class="lang-en">AI Eats the Value Chain</span>
+                  <span class="lang-zh">AI 吞噬价值链</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">Product Strategy</span>
+                  <span class="lang-zh">产品战略</span>
+                </span>
+              </a>
+              <a class="directory-link" href="blog.html?post=gemini-hybrid-ai-solution">
+                <span class="directory-title">
+                  <span class="lang-en">Android integration of Gemini Vision</span>
+                  <span class="lang-zh">Android 端集成 Gemini Vision</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">AI Architecture</span>
+                  <span class="lang-zh">AI 架构</span>
+                </span>
+              </a>
+              <a class="directory-link" href="blog.html?post=android-play-install-referrer-tutorial">
+                <span class="directory-title">
+                  <span class="lang-en">Tracking App Install Sources on Android</span>
+                  <span class="lang-zh">在 Android 上追踪应用安装来源</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">Attribution</span>
+                  <span class="lang-zh">归因</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
           <div class="mt-8 space-y-10">
             <div>
               <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
@@ -875,6 +1062,108 @@
               <span class="lang-zh">论文 / 调研 / 评述</span>
             </span>
           </div>
+
+          <div class="content-directory" aria-label="Research directory">
+            <div class="directory-header">
+              <span class="lang-en">Directory</span>
+              <span class="lang-zh">目录</span>
+              <span>
+                <span class="lang-en">1 Series / 4 Singles</span>
+                <span class="lang-zh">1 个专题 / 4 篇单篇</span>
+              </span>
+            </div>
+            <div class="directory-list">
+              <div class="directory-group">
+                <div class="directory-group-title">
+                  <span class="directory-group-name">
+                    <span class="lang-en">AI Organizational Intelligence</span>
+                    <span class="lang-zh">AI 组织智能专题</span>
+                  </span>
+                  <span class="directory-group-meta">
+                    <span class="lang-en">3-part series</span>
+                    <span class="lang-zh">三篇系列</span>
+                  </span>
+                </div>
+                <div class="directory-sublist">
+                  <a class="directory-link" href="note.html?note=ai-organizational-intelligence/01_from_multi_agent_to_ai_organizational_intelligence">
+                    <span class="directory-title">
+                      <span class="lang-en">01. From Multi-Agent to AI Organizational Intelligence</span>
+                      <span class="lang-zh">01. 从 Multi-Agent 到 AI 组织智能</span>
+                    </span>
+                    <span class="directory-meta">
+                      <span class="lang-en">Overview</span>
+                      <span class="lang-zh">主报告</span>
+                    </span>
+                  </a>
+                  <a class="directory-link" href="note.html?note=ai-organizational-intelligence/02_collaborative_reasoning_engine_product_exploration">
+                    <span class="directory-title">
+                      <span class="lang-en">02. Collaborative Reasoning Engine</span>
+                      <span class="lang-zh">02. 协同思考引擎产品探索</span>
+                    </span>
+                    <span class="directory-meta">
+                      <span class="lang-en">Product</span>
+                      <span class="lang-zh">产品探索</span>
+                    </span>
+                  </a>
+                  <a class="directory-link" href="note.html?note=ai-organizational-intelligence/03_research_map_ai_organizational_intelligence">
+                    <span class="directory-title">
+                      <span class="lang-en">03. From Agent Workflow to Cognitive Workflow</span>
+                      <span class="lang-zh">03. 从 Agent Workflow 到 Cognitive Workflow</span>
+                    </span>
+                    <span class="directory-meta">
+                      <span class="lang-en">Research Map</span>
+                      <span class="lang-zh">研究图谱</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="directory-section-label">
+                <span class="lang-en">Single reports</span>
+                <span class="lang-zh">单篇研究</span>
+              </div>
+              <a class="directory-link" href="note.html?note=the-Computer-for-the-21st-Century">
+                <span class="directory-title">
+                  <span class="lang-en">Reflections on Weiser's The Computer for the 21st Century</span>
+                  <span class="lang-zh">维瑟《21世纪的计算机》阅读反思</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">Ambient AI</span>
+                  <span class="lang-zh">环境智能</span>
+                </span>
+              </a>
+              <a class="directory-link" href="note.html?note=ai-insurance-framework">
+                <span class="directory-title">
+                  <span class="lang-en">AI Insurance: Frameworks, Application Cases, and Market Trends</span>
+                  <span class="lang-zh">AI 保险：责任框架、应用案例与市场趋势</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">Trust</span>
+                  <span class="lang-zh">信任机制</span>
+                </span>
+              </a>
+              <a class="directory-link" href="note.html?note=robotics-industry-survey">
+                <span class="directory-title">
+                  <span class="lang-en">The Present and Future of Intelligent Robotics</span>
+                  <span class="lang-zh">智能机器人的现在与未来</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">Robotics</span>
+                  <span class="lang-zh">机器人</span>
+                </span>
+              </a>
+              <a class="directory-link" href="note.html?note=nlp-bias-paper-notes">
+                <span class="directory-title">
+                  <span class="lang-en">Tracking Political Biases in NLP Models</span>
+                  <span class="lang-zh">追踪 NLP 模型中的政治偏见</span>
+                </span>
+                <span class="directory-meta">
+                  <span class="lang-en">Governance</span>
+                  <span class="lang-zh">治理</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
           <div class="mt-8 space-y-10">
             <div>
               <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">
