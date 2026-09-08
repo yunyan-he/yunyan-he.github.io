@@ -1,0 +1,39 @@
+{
+  "kind": "post",
+  "slug": "gemini-hybrid-ai-solution",
+  "en": "Android integration of Gemini Vision",
+  "zh": "Android端集成 Gemini Vision",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "gemini-hybrid-ai-solution-01",
+      "zh": "本地 ONNX 模型优先，云端识别提供第二份参考结果。",
+      "en": "The local ONNX model comes first; cloud recognition provides a second result."
+    },
+    {
+      "id": "gemini-hybrid-ai-solution-02",
+      "zh": "识别动物和获取百科介绍，可以交给不同的服务完成。",
+      "en": "Animal recognition and encyclopedia retrieval can use separate services."
+    },
+    {
+      "id": "gemini-hybrid-ai-solution-03",
+      "zh": "Gemini 返回动物名称后，应用再检索维基百科简介。",
+      "en": "After Gemini returns an animal name, the app retrieves its Wikipedia introduction."
+    },
+    {
+      "id": "gemini-hybrid-ai-solution-04",
+      "zh": "图像和文字提示一起构成多模态识别请求。",
+      "en": "An image and a text prompt form the multimodal recognition request."
+    },
+    {
+      "id": "gemini-hybrid-ai-solution-05",
+      "zh": "发起网络请求前，先检查是否已经有远程识别结果。",
+      "en": "Before making a network request, check whether a remote result is already available."
+    },
+    {
+      "id": "gemini-hybrid-ai-solution-06",
+      "zh": "加载状态、结果解析和界面更新，也是识别流程的一部分。",
+      "en": "Loading states, response parsing and UI updates are part of the recognition flow."
+    }
+  ]
+}

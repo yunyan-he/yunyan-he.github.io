@@ -1,0 +1,49 @@
+{
+  "kind": "note",
+  "slug": "nlp-bias-paper-notes",
+  "en": "Paper Review: Tracking Political Biases in NLP Models",
+  "zh": "论文评述：追踪NLP模型中的政治偏见",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "nlp-bias-paper-notes-01",
+      "zh": "不同语言模型面对敏感问题时的态度差异，引出了这次论文阅读。",
+      "en": "Differences in models’ responses to sensitive questions prompted this paper review."
+    },
+    {
+      "id": "nlp-bias-paper-notes-02",
+      "zh": "这篇论文追踪偏见如何从预训练数据传递到下游任务。",
+      "en": "The reviewed paper traces bias from pretraining data to downstream tasks."
+    },
+    {
+      "id": "nlp-bias-paper-notes-03",
+      "zh": "量化模型立场，需要先明确测量框架。",
+      "en": "Quantifying model positions requires an explicit measurement framework."
+    },
+    {
+      "id": "nlp-bias-paper-notes-04",
+      "zh": "编码器模型与生成式模型，需要不同的立场测量方法。",
+      "en": "Encoder-only and generative models require different methods for measuring stance."
+    },
+    {
+      "id": "nlp-bias-paper-notes-05",
+      "zh": "整体性能指标之外，还需要观察不同群体的表现差异。",
+      "en": "Beyond aggregate performance, evaluation should examine differences across groups."
+    },
+    {
+      "id": "nlp-bias-paper-notes-06",
+      "zh": "模型对与自身立场一致的信息，可能表现出不同的判断倾向。",
+      "en": "Models may judge information aligned with their positions differently."
+    },
+    {
+      "id": "nlp-bias-paper-notes-07",
+      "zh": "特定语料与实验环境中的结论，不一定直接推广到其他场景。",
+      "en": "Conclusions from particular corpora and experiments may not generalize to other settings."
+    },
+    {
+      "id": "nlp-bias-paper-notes-08",
+      "zh": "研究公平性时，复现与更广泛的数据验证同样重要。",
+      "en": "Fairness research also needs replication and validation on broader data."
+    }
+  ]
+}

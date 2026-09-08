@@ -1,0 +1,69 @@
+{
+  "kind": "note",
+  "slug": "the-Computer-for-the-21st-Century",
+  "en": "When Technology Truly \"Disappears\": Reflections on Reading Weiser's The Computer for the 21st Century",
+  "zh": "当技术真正“消失”：阅读维瑟《21世纪的计算机》的心得与反思",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "the-Computer-for-the-21st-Century-01",
+      "zh": "一件发热马甲，也能成为理解隐形计算的入口。",
+      "en": "A heated vest can be an entry point for understanding invisible computing."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-02",
+      "zh": "技术融入生活，不一定要以一台显眼的设备出现。",
+      "en": "Technology can fit into life without appearing as a conspicuous device."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-03",
+      "zh": "熟悉的文字会直接呈现意义，陌生语言却需要额外解码。",
+      "en": "Familiar writing conveys meaning directly; an unfamiliar language needs extra decoding."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-04",
+      "zh": "在德国看路牌的经历，让我想到技术的认知门槛。",
+      "en": "Reading street signs in Germany made me think about technology’s cognitive barriers."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-05",
+      "zh": "普适计算的愿景，是让技术在环境中提供帮助，而不是持续占据注意力。",
+      "en": "Ubiquitous computing imagines technology helping from the environment rather than constantly demanding attention."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-06",
+      "zh": "联网设备需要人反复配置时，计算还没有真正退到背景。",
+      "en": "When networked devices need repeated configuration, computing has not faded into the background."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-07",
+      "zh": "理解新概念时，熟悉的产品类比也可能误导我们。",
+      "en": "Familiar product analogies can mislead us when learning a new concept."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-08",
+      "zh": "把 Tabs 当作 AirTags，会忽略它作为交互媒介的设想。",
+      "en": "Equating Tabs with AirTags misses their envisioned role as interaction media."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-09",
+      "zh": "共享文件和共享一个协作空间，并不完全相同。",
+      "en": "Sharing a file and sharing a collaborative space are not quite the same."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-10",
+      "zh": "联网不自动等于环境中的设备能够动态协作。",
+      "en": "Being connected does not automatically mean devices can cooperate dynamically in an environment."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-11",
+      "zh": "当 AI 替人操作，依赖人浏览的商业模式也会受到影响。",
+      "en": "When AI acts for people, business models that depend on human browsing are affected."
+    },
+    {
+      "id": "the-Computer-for-the-21st-Century-12",
+      "zh": "技术退到背景之后，人的选择权更需要被看见。",
+      "en": "When technology fades into the background, human choice needs to remain visible."
+    }
+  ]
+}

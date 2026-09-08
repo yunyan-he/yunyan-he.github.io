@@ -1,0 +1,69 @@
+{
+  "kind": "note",
+  "slug": "ai-organizational-intelligence/02_collaborative_reasoning_engine_product_exploration",
+  "en": "Collaborative Reasoning Engine: A Product Exploration",
+  "zh": "多智能体协同思考引擎：一个面向高质量决策的 AI 产品设想",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-01",
+      "zh": "在多个 AI 之间复制粘贴时，用户实际上承担了消息传递的工作。",
+      "en": "Copying between AIs makes the user responsible for passing messages."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-02",
+      "zh": "协同思考引擎的设想，是帮助用户组织观点，而不只是访问模型。",
+      "en": "The reasoning-engine concept organizes perspectives rather than merely providing model access."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-03",
+      "zh": "先提取观点，可以减少直接阅读多份长回答的负担。",
+      "en": "Extracting claims first can reduce the burden of reading several long responses."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-04",
+      "zh": "解释分歧的来源，比只统计有多少模型同意更有用。",
+      "en": "Explaining why models disagree can be more useful than counting votes."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-05",
+      "zh": "分歧可能来自事实、价值立场、时间尺度或风险偏好。",
+      "en": "Disagreement can arise from facts, values, time horizons or risk preferences."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-06",
+      "zh": "模型之间的反馈，应该比简单并列回答多提供一些价值。",
+      "en": "Feedback between models should add value beyond parallel responses."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-07",
+      "zh": "不同类型的问题，可以采用不同的讨论流程。",
+      "en": "Different kinds of questions can use different discussion processes."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-08",
+      "zh": "用户需要能够决定继续查证、保留分歧或结束讨论。",
+      "en": "Users should be able to investigate further, preserve disagreement or end the discussion."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-09",
+      "zh": "最小原型可以先尝试独立回答、交叉评价和观点整理。",
+      "en": "A minimal prototype can start with independent responses, cross-review and synthesis."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-10",
+      "zh": "模型因为相似训练数据形成的一致，不等于证据充分。",
+      "en": "Agreement caused by similar training data is not the same as strong evidence."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-11",
+      "zh": "多模型、多轮讨论需要考虑额外成本和等待时间。",
+      "en": "Multiple models and discussion rounds add cost and waiting time."
+    },
+    {
+      "id": "02_collaborative_reasoning_engine_product_exploration-12",
+      "zh": "评估这类产品，还要看用户是否理解分歧并保留判断权。",
+      "en": "Evaluation should ask whether users understand disagreements and retain judgment."
+    }
+  ]
+}

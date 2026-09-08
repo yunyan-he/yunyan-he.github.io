@@ -1,0 +1,69 @@
+{
+  "kind": "post",
+  "slug": "latentlearn-nonlinear-ai-interface",
+  "en": "When AI Becomes a Cognitive Partner: The Limits of Linear Chat and the Search for Non-Linear Interfaces",
+  "zh": "当 AI 成为认知伙伴：线性对话的困境与非线性界面的探索",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "latentlearn-nonlinear-ai-interface-01",
+      "zh": "思维可以同时分叉，线性聊天却要求问题依次排队。",
+      "en": "Thought can branch in several directions; linear chat makes questions queue up."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-02",
+      "zh": "注意力结构、上下文污染和导航负担，是三个不同的问题。",
+      "en": "Attention structure, context pollution and navigation burden are distinct problems."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-03",
+      "zh": "创建新聊天保留了分支，却不一定提供持续可见的结构。",
+      "en": "Starting a new chat preserves a branch without necessarily making its structure visible."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-04",
+      "zh": "LatentLearn 先选择了一个具体场景：有明确主题的聚焦学习。",
+      "en": "LatentLearn starts with a specific case: focused learning around a clear topic."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-05",
+      "zh": "每个分支只继承必要的祖先上下文，而不是整段聊天历史。",
+      "en": "Each branch inherits relevant ancestor context rather than the entire chat history."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-06",
+      "zh": "节点的标题与摘要用来定位，完整内容留到需要时展开。",
+      "en": "Titles and summaries support navigation; full content opens when needed."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-07",
+      "zh": "当分支不断增加，树本身也可能成为新的导航负担。",
+      "en": "As branches multiply, the tree itself can become a navigation burden."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-08",
+      "zh": "完全自动判断偏题可能打断探索，完全手动管理又增加整理成本。",
+      "en": "Automatic topic decisions can interrupt exploration; manual control adds organizational work."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-09",
+      "zh": "树擅长发散，却不会自然告诉你最终理解了什么。",
+      "en": "Trees support exploration but do not automatically reveal what you learned."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-10",
+      "zh": "一个问题可能来自两个父节点，纯粹的树表达不了所有联系。",
+      "en": "A question can arise from two parent nodes; a tree cannot represent every connection."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-11",
+      "zh": "探索、阅读、记忆和表达，可能需要不同的信息结构。",
+      "en": "Exploration, reading, memory and expression may need different structures."
+    },
+    {
+      "id": "latentlearn-nonlinear-ai-interface-12",
+      "zh": "真正值得设计的，是不同认知状态之间如何流畅转换。",
+      "en": "The design challenge is moving smoothly between different cognitive states."
+    }
+  ]
+}

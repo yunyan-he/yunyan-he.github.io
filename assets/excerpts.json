@@ -1,0 +1,690 @@
+[
+  {
+    "kind": "note",
+    "slug": "ai-organizational-intelligence/01_from_multi_agent_to_ai_organizational_intelligence",
+    "en": "From Multi-Agent to AI Organizational Intelligence",
+    "zh": "从 Multi-Agent 到 AI 组织智能：下一代 AI 产品如何组织思考",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-01",
+        "zh": "反复问多个 AI，往往是因为用户需要不同的观察角度。",
+        "en": "People often ask several AIs because they need different perspectives."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-02",
+        "zh": "用户缺少的可能不是答案，而是对共识和分歧的理解。",
+        "en": "People may lack an understanding of agreement and disagreement, rather than answers."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-03",
+        "zh": "并排展示多个模型的全文，仍把分析负担留给用户。",
+        "en": "Showing full responses side by side still leaves the analysis to the user."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-04",
+        "zh": "多智能体的价值取决于分工、通信和决策机制。",
+        "en": "The value of multiple agents depends on roles, communication and decision mechanisms."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-05",
+        "zh": "组织思考需要容纳假设、质疑、证据、反例与修正。",
+        "en": "Organizing thought requires hypotheses, challenges, evidence, counterexamples and revision."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-06",
+        "zh": "不是所有问题都应该追求共识。",
+        "en": "Not every question should aim for consensus."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-07",
+        "zh": "事实问题需要验证，价值问题需要呈现取舍。",
+        "en": "Factual questions need verification; value questions need visible trade-offs."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-08",
+        "zh": "过早追求一致，可能压缩创意的空间。",
+        "en": "Seeking agreement too early can narrow the space for creativity."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-09",
+        "zh": "组织 Agent 完成任务，和组织 Agent 帮助人思考，是不同的设计目标。",
+        "en": "Organizing agents to complete tasks and to help people think are different design goals."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-10",
+        "zh": "讨论什么时候停止，也需要被设计。",
+        "en": "When a discussion should stop is itself a design question."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-11",
+        "zh": "信息搬运可以减少，关键的价值判断仍需要人参与。",
+        "en": "Information shuffling can be reduced while people retain key value judgments."
+      },
+      {
+        "id": "01_from_multi_agent_to_ai_organizational_intelligence-12",
+        "zh": "多智能体产品可以把分歧和待验证之处一起呈现给用户。",
+        "en": "Multi-agent products can show disagreements alongside what still needs verification."
+      }
+    ]
+  },
+  {
+    "kind": "note",
+    "slug": "ai-organizational-intelligence/02_collaborative_reasoning_engine_product_exploration",
+    "en": "Collaborative Reasoning Engine: A Product Exploration",
+    "zh": "多智能体协同思考引擎：一个面向高质量决策的 AI 产品设想",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-01",
+        "zh": "在多个 AI 之间复制粘贴时，用户实际上承担了消息传递的工作。",
+        "en": "Copying between AIs makes the user responsible for passing messages."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-02",
+        "zh": "协同思考引擎的设想，是帮助用户组织观点，而不只是访问模型。",
+        "en": "The reasoning-engine concept organizes perspectives rather than merely providing model access."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-03",
+        "zh": "先提取观点，可以减少直接阅读多份长回答的负担。",
+        "en": "Extracting claims first can reduce the burden of reading several long responses."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-04",
+        "zh": "解释分歧的来源，比只统计有多少模型同意更有用。",
+        "en": "Explaining why models disagree can be more useful than counting votes."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-05",
+        "zh": "分歧可能来自事实、价值立场、时间尺度或风险偏好。",
+        "en": "Disagreement can arise from facts, values, time horizons or risk preferences."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-06",
+        "zh": "模型之间的反馈，应该比简单并列回答多提供一些价值。",
+        "en": "Feedback between models should add value beyond parallel responses."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-07",
+        "zh": "不同类型的问题，可以采用不同的讨论流程。",
+        "en": "Different kinds of questions can use different discussion processes."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-08",
+        "zh": "用户需要能够决定继续查证、保留分歧或结束讨论。",
+        "en": "Users should be able to investigate further, preserve disagreement or end the discussion."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-09",
+        "zh": "最小原型可以先尝试独立回答、交叉评价和观点整理。",
+        "en": "A minimal prototype can start with independent responses, cross-review and synthesis."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-10",
+        "zh": "模型因为相似训练数据形成的一致，不等于证据充分。",
+        "en": "Agreement caused by similar training data is not the same as strong evidence."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-11",
+        "zh": "多模型、多轮讨论需要考虑额外成本和等待时间。",
+        "en": "Multiple models and discussion rounds add cost and waiting time."
+      },
+      {
+        "id": "02_collaborative_reasoning_engine_product_exploration-12",
+        "zh": "评估这类产品，还要看用户是否理解分歧并保留判断权。",
+        "en": "Evaluation should ask whether users understand disagreements and retain judgment."
+      }
+    ]
+  },
+  {
+    "kind": "note",
+    "slug": "ai-organizational-intelligence/03_research_map_ai_organizational_intelligence",
+    "en": "AI Organizational Intelligence: A Research Map",
+    "zh": "AI 组织智能研究地图：从 Agent Workflow 到 Cognitive Workflow",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "03_research_map_ai_organizational_intelligence-01",
+        "zh": "任务流程关注完成工作，认知流程还关注人如何理解与判断。",
+        "en": "Task workflows focus on execution; cognitive workflows also consider understanding and judgment."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-02",
+        "zh": "重复任务、输出矛盾和上下文污染，是多 Agent 的组织问题。",
+        "en": "Duplicate work, conflicting outputs and context pollution are organizational problems for agents."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-03",
+        "zh": "角色边界可以帮助不完美的 Agent 互相发现错误。",
+        "en": "Role boundaries can help imperfect agents catch each other’s errors."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-04",
+        "zh": "跨系统协作还需要权限、审计和异常处理。",
+        "en": "Cross-system collaboration also needs permissions, auditing and failure handling."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-05",
+        "zh": "分工可以按专业划分，也可以按认知功能划分。",
+        "en": "Roles can be divided by expertise or by cognitive function."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-06",
+        "zh": "让所有 Agent 看见所有消息，并不总是最好的通信方式。",
+        "en": "Letting every agent see every message is not always the best communication design."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-07",
+        "zh": "先独立思考再讨论，可以作为避免相互污染的一种机制。",
+        "en": "Thinking independently before discussion is one possible way to limit mutual contamination."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-08",
+        "zh": "多数意见与专家意见冲突时，需要明确的决策机制。",
+        "en": "Conflicts between majority and expert views require an explicit decision mechanism."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-09",
+        "zh": "委员会、中心调度和对立角色组织，各有不同的取舍。",
+        "en": "Committees, central coordination and rival roles involve different trade-offs."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-10",
+        "zh": "人应该在什么时刻介入，比笼统地说人在回路中更具体。",
+        "en": "Asking when people should intervene is more precise than simply keeping them in the loop."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-11",
+        "zh": "共识质量应关注证据、适用边界和不确定性。",
+        "en": "Consensus quality should consider evidence, scope and uncertainty."
+      },
+      {
+        "id": "03_research_map_ai_organizational_intelligence-12",
+        "zh": "停止条件可以考虑新增信息、讨论成本和剩余分歧的性质。",
+        "en": "Stopping conditions can consider new information, cost and the nature of remaining disagreements."
+      }
+    ]
+  },
+  {
+    "kind": "post",
+    "slug": "ai-cognitive-labor-value-chain",
+    "en": "AI Eats the Value Chain: How AI Products Displace Cognitive Labor, Not Just Competitors",
+    "zh": "AI 吞噬价值链：从\"信息检索\"到\"认知代办\"的产品替代规律",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "ai-cognitive-labor-value-chain-01",
+        "zh": "AI 替代的不只是一个 App，而是用户原来的一整套信息加工行为。",
+        "en": "AI replaces not just an app, but the information work people used to do."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-02",
+        "zh": "综合信息这一步正在从人转移给 AI。",
+        "en": "Synthesizing information is moving from people to AI."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-03",
+        "zh": "把十篇文章压缩成几百字，即使没有错误，也会丢失细节。",
+        "en": "Even an accurate summary of ten articles loses detail."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-04",
+        "zh": "解释偏差、融合偏差和幻觉，是不同的产品设计问题。",
+        "en": "Interpretation bias, synthesis bias and hallucination need different design responses."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-05",
+        "zh": "有些任务需要一个足够好的答案，有些任务需要不断修正理解。",
+        "en": "Some tasks need a good enough answer; others need an evolving understanding."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-06",
+        "zh": "发散型任务中，对话的过程本身就有价值。",
+        "en": "In exploratory tasks, the conversation itself has value."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-07",
+        "zh": "分析 AI 产品时，可以先问：它替用户做掉了哪部分认知劳动？",
+        "en": "To analyze an AI product, ask which cognitive work it takes over."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-08",
+        "zh": "当规划被自动化，真人体验仍然可能成为判断的依据。",
+        "en": "When planning is automated, first-hand experience can still support judgment."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-09",
+        "zh": "知识管理工具可能从存储知识，转向支持思考。",
+        "en": "Knowledge tools may shift from storing information to supporting thought."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-10",
+        "zh": "生成演示文稿变容易后，想清楚要讲什么仍然重要。",
+        "en": "When making slides gets easier, deciding what to say still matters."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-11",
+        "zh": "提出目标、承担责任和价值判断，并不会随信息处理自动化而消失。",
+        "en": "Goals, responsibility and value judgments do not disappear when information processing is automated."
+      },
+      {
+        "id": "ai-cognitive-labor-value-chain-12",
+        "zh": "下一代产品也许需要比较：谁能帮助人形成更好的判断？",
+        "en": "The next product question may be: who helps people make better judgments?"
+      }
+    ]
+  },
+  {
+    "kind": "note",
+    "slug": "ai-insurance-framework",
+    "en": "AI Insurance: Frameworks, Application Cases, and Market Trends",
+    "zh": "AI保险：责任框架、应用案例与市场趋势",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "ai-insurance-framework-01",
+        "zh": "当 AI 获得决策权，责任如何划分也成为产品问题。",
+        "en": "As AI gains decision-making power, allocating responsibility becomes a product question."
+      },
+      {
+        "id": "ai-insurance-framework-02",
+        "zh": "自动决策的失误可能来自硬件、软件、网络或人机交接。",
+        "en": "Failures in automated decisions can involve hardware, software, networks or human handovers."
+      },
+      {
+        "id": "ai-insurance-framework-03",
+        "zh": "分析责任时，需要区分系统自主运行和人应当接管的时刻。",
+        "en": "Responsibility analysis needs to distinguish autonomous operation from expected human intervention."
+      },
+      {
+        "id": "ai-insurance-framework-04",
+        "zh": "AI 的幻觉、偏见与未经授权的操作，会带来不同类型的损失。",
+        "en": "Hallucinations, bias and unauthorized actions create different kinds of loss."
+      },
+      {
+        "id": "ai-insurance-framework-05",
+        "zh": "当运行日志由厂商独自掌控，定责证据也会面临信任问题。",
+        "en": "When vendors alone control operational logs, evidence about responsibility raises trust questions."
+      },
+      {
+        "id": "ai-insurance-framework-06",
+        "zh": "模型的随机性让风险评估与保险定价更难稳定下来。",
+        "en": "Model variability makes risk assessment and insurance pricing harder to stabilize."
+      }
+    ]
+  },
+  {
+    "kind": "post",
+    "slug": "android-play-install-referrer-tutorial",
+    "en": "Tracking App Install Sources on Android with the Play Install Referrer Library",
+    "zh": "使用 Play Install Referrer 库在 Android 上追踪应用安装来源",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "android-play-install-referrer-tutorial-01",
+        "zh": "安装来源追踪把推广链接和应用首次安装连接起来。",
+        "en": "Install attribution connects a campaign link with an app installation."
+      },
+      {
+        "id": "android-play-install-referrer-tutorial-02",
+        "zh": "渠道参数进入应用后，才能用于后续的转化分析。",
+        "en": "Campaign parameters must reach the app before they can support conversion analysis."
+      },
+      {
+        "id": "android-play-install-referrer-tutorial-03",
+        "zh": "连接 Google Play 是异步过程，需要分别处理成功、不支持和服务不可用。",
+        "en": "Connecting to Google Play is asynchronous and requires handling different outcomes."
+      },
+      {
+        "id": "android-play-install-referrer-tutorial-04",
+        "zh": "连接断开后，需要考虑如何重新建立连接。",
+        "en": "A disconnected service needs a reconnection strategy."
+      },
+      {
+        "id": "android-play-install-referrer-tutorial-05",
+        "zh": "读取来源信息后，应当释放连接和相关资源。",
+        "en": "After reading attribution data, release the connection and associated resources."
+      },
+      {
+        "id": "android-play-install-referrer-tutorial-06",
+        "zh": "本地安装和经 Google Play 下载的安装，需要用不同场景验证。",
+        "en": "Local installs and Google Play installs need separate test scenarios."
+      }
+    ]
+  },
+  {
+    "kind": "post",
+    "slug": "gemini-hybrid-ai-solution",
+    "en": "Android integration of Gemini Vision",
+    "zh": "Android端集成 Gemini Vision",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "gemini-hybrid-ai-solution-01",
+        "zh": "本地 ONNX 模型优先，云端识别提供第二份参考结果。",
+        "en": "The local ONNX model comes first; cloud recognition provides a second result."
+      },
+      {
+        "id": "gemini-hybrid-ai-solution-02",
+        "zh": "识别动物和获取百科介绍，可以交给不同的服务完成。",
+        "en": "Animal recognition and encyclopedia retrieval can use separate services."
+      },
+      {
+        "id": "gemini-hybrid-ai-solution-03",
+        "zh": "Gemini 返回动物名称后，应用再检索维基百科简介。",
+        "en": "After Gemini returns an animal name, the app retrieves its Wikipedia introduction."
+      },
+      {
+        "id": "gemini-hybrid-ai-solution-04",
+        "zh": "图像和文字提示一起构成多模态识别请求。",
+        "en": "An image and a text prompt form the multimodal recognition request."
+      },
+      {
+        "id": "gemini-hybrid-ai-solution-05",
+        "zh": "发起网络请求前，先检查是否已经有远程识别结果。",
+        "en": "Before making a network request, check whether a remote result is already available."
+      },
+      {
+        "id": "gemini-hybrid-ai-solution-06",
+        "zh": "加载状态、结果解析和界面更新，也是识别流程的一部分。",
+        "en": "Loading states, response parsing and UI updates are part of the recognition flow."
+      }
+    ]
+  },
+  {
+    "kind": "post",
+    "slug": "latentlearn-nonlinear-ai-interface",
+    "en": "When AI Becomes a Cognitive Partner: The Limits of Linear Chat and the Search for Non-Linear Interfaces",
+    "zh": "当 AI 成为认知伙伴：线性对话的困境与非线性界面的探索",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "latentlearn-nonlinear-ai-interface-01",
+        "zh": "思维可以同时分叉，线性聊天却要求问题依次排队。",
+        "en": "Thought can branch in several directions; linear chat makes questions queue up."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-02",
+        "zh": "注意力结构、上下文污染和导航负担，是三个不同的问题。",
+        "en": "Attention structure, context pollution and navigation burden are distinct problems."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-03",
+        "zh": "创建新聊天保留了分支，却不一定提供持续可见的结构。",
+        "en": "Starting a new chat preserves a branch without necessarily making its structure visible."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-04",
+        "zh": "LatentLearn 先选择了一个具体场景：有明确主题的聚焦学习。",
+        "en": "LatentLearn starts with a specific case: focused learning around a clear topic."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-05",
+        "zh": "每个分支只继承必要的祖先上下文，而不是整段聊天历史。",
+        "en": "Each branch inherits relevant ancestor context rather than the entire chat history."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-06",
+        "zh": "节点的标题与摘要用来定位，完整内容留到需要时展开。",
+        "en": "Titles and summaries support navigation; full content opens when needed."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-07",
+        "zh": "当分支不断增加，树本身也可能成为新的导航负担。",
+        "en": "As branches multiply, the tree itself can become a navigation burden."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-08",
+        "zh": "完全自动判断偏题可能打断探索，完全手动管理又增加整理成本。",
+        "en": "Automatic topic decisions can interrupt exploration; manual control adds organizational work."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-09",
+        "zh": "树擅长发散，却不会自然告诉你最终理解了什么。",
+        "en": "Trees support exploration but do not automatically reveal what you learned."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-10",
+        "zh": "一个问题可能来自两个父节点，纯粹的树表达不了所有联系。",
+        "en": "A question can arise from two parent nodes; a tree cannot represent every connection."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-11",
+        "zh": "探索、阅读、记忆和表达，可能需要不同的信息结构。",
+        "en": "Exploration, reading, memory and expression may need different structures."
+      },
+      {
+        "id": "latentlearn-nonlinear-ai-interface-12",
+        "zh": "真正值得设计的，是不同认知状态之间如何流畅转换。",
+        "en": "The design challenge is moving smoothly between different cognitive states."
+      }
+    ]
+  },
+  {
+    "kind": "note",
+    "slug": "nlp-bias-paper-notes",
+    "en": "Paper Review: Tracking Political Biases in NLP Models",
+    "zh": "论文评述：追踪NLP模型中的政治偏见",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "nlp-bias-paper-notes-01",
+        "zh": "不同语言模型面对敏感问题时的态度差异，引出了这次论文阅读。",
+        "en": "Differences in models’ responses to sensitive questions prompted this paper review."
+      },
+      {
+        "id": "nlp-bias-paper-notes-02",
+        "zh": "这篇论文追踪偏见如何从预训练数据传递到下游任务。",
+        "en": "The reviewed paper traces bias from pretraining data to downstream tasks."
+      },
+      {
+        "id": "nlp-bias-paper-notes-03",
+        "zh": "量化模型立场，需要先明确测量框架。",
+        "en": "Quantifying model positions requires an explicit measurement framework."
+      },
+      {
+        "id": "nlp-bias-paper-notes-04",
+        "zh": "编码器模型与生成式模型，需要不同的立场测量方法。",
+        "en": "Encoder-only and generative models require different methods for measuring stance."
+      },
+      {
+        "id": "nlp-bias-paper-notes-05",
+        "zh": "整体性能指标之外，还需要观察不同群体的表现差异。",
+        "en": "Beyond aggregate performance, evaluation should examine differences across groups."
+      },
+      {
+        "id": "nlp-bias-paper-notes-06",
+        "zh": "模型对与自身立场一致的信息，可能表现出不同的判断倾向。",
+        "en": "Models may judge information aligned with their positions differently."
+      },
+      {
+        "id": "nlp-bias-paper-notes-07",
+        "zh": "特定语料与实验环境中的结论，不一定直接推广到其他场景。",
+        "en": "Conclusions from particular corpora and experiments may not generalize to other settings."
+      },
+      {
+        "id": "nlp-bias-paper-notes-08",
+        "zh": "研究公平性时，复现与更广泛的数据验证同样重要。",
+        "en": "Fairness research also needs replication and validation on broader data."
+      }
+    ]
+  },
+  {
+    "kind": "post",
+    "slug": "programmable-space-future",
+    "en": "When Land Becomes Cheap, What Will We Actually Own?",
+    "zh": "当土地不再稀缺，我们真正拥有的是什么？",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "programmable-space-future-01",
+        "zh": "一个房间可以被重新配置的短视频，引出了对未来居住的想象。",
+        "en": "A video of a reconfigurable room prompted an imagined future of living spaces."
+      },
+      {
+        "id": "programmable-space-future-02",
+        "zh": "如果空间不再是约束，改造空间的能力会不会更珍贵？",
+        "en": "If space stops being the constraint, does the ability to reshape it become more valuable?"
+      },
+      {
+        "id": "programmable-space-future-03",
+        "zh": "未来的家，也许可以把物理组件和视觉皮肤分开。",
+        "en": "A future home might separate physical components from its visual appearance."
+      },
+      {
+        "id": "programmable-space-future-04",
+        "zh": "AR 叠加在真实环境上，保留了身体与物理世界的联系。",
+        "en": "AR overlays the real environment while preserving contact with the physical world."
+      },
+      {
+        "id": "programmable-space-future-05",
+        "zh": "如果家的组件是硬件，它们的排列方式是软件，会怎样？",
+        "en": "What if a home’s components were hardware and their arrangement were software?"
+      },
+      {
+        "id": "programmable-space-future-06",
+        "zh": "空间也许会拥有版本号，房间也许会拥有更新日志。",
+        "en": "Spaces might have version numbers; rooms might have changelogs."
+      },
+      {
+        "id": "programmable-space-future-07",
+        "zh": "可重构的材料不等于可重构的生活，能源仍是现实约束。",
+        "en": "Reconfigurable materials do not guarantee reconfigurable living; energy remains a constraint."
+      },
+      {
+        "id": "programmable-space-future-08",
+        "zh": "一个能适应你的空间，同时也是一个在观察你的空间。",
+        "en": "A space that adapts to you is also a space that observes you."
+      },
+      {
+        "id": "programmable-space-future-09",
+        "zh": "在重新排列之前，空间应该先征得你的同意吗？",
+        "en": "Should a space ask permission before rearranging itself?"
+      },
+      {
+        "id": "programmable-space-future-10",
+        "zh": "当家没有固定形态，附着在某个角落的记忆要放在哪里？",
+        "en": "When a home has no fixed form, where do memories tied to a corner belong?"
+      },
+      {
+        "id": "programmable-space-future-11",
+        "zh": "交互设计也需要问：怎样让技术可以被人居住？",
+        "en": "Interaction design can also ask: how can technology become inhabitable?"
+      },
+      {
+        "id": "programmable-space-future-12",
+        "zh": "这篇随笔想象的是空间从财产变成媒介的可能性。",
+        "en": "This essay imagines space changing from property into a medium."
+      }
+    ]
+  },
+  {
+    "kind": "note",
+    "slug": "robotics-industry-survey",
+    "en": "Industry Survey: The Present and Future of Intelligent Robotics",
+    "zh": "行业调查：智能机器人的现状与未来",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "robotics-industry-survey-01",
+        "zh": "机器人进入日常生活时，需要同时考虑技术与社会影响。",
+        "en": "Robots entering everyday life raise both technical and social questions."
+      },
+      {
+        "id": "robotics-industry-survey-02",
+        "zh": "养老陪伴和日常照料，让机器人设计与人的生活需求直接相遇。",
+        "en": "Companionship and everyday care connect robot design directly with human needs."
+      },
+      {
+        "id": "robotics-industry-survey-03",
+        "zh": "不同文化对机器人参与情感交互的接受程度可能不同。",
+        "en": "Acceptance of emotional interaction with robots may vary across cultures."
+      },
+      {
+        "id": "robotics-industry-survey-04",
+        "zh": "理解人的情感和回应方式，是人机交互的一部分。",
+        "en": "Understanding and responding to human emotion is part of human–robot interaction."
+      },
+      {
+        "id": "robotics-industry-survey-05",
+        "zh": "高能耗是机器人走向更广泛应用时需要面对的约束。",
+        "en": "Energy consumption constrains the broader use of robotics."
+      },
+      {
+        "id": "robotics-industry-survey-06",
+        "zh": "讨论机器人发展，也需要讨论伦理、责任与社会效益。",
+        "en": "Discussing robotics also means considering ethics, responsibility and social benefit."
+      }
+    ]
+  },
+  {
+    "kind": "note",
+    "slug": "the-Computer-for-the-21st-Century",
+    "en": "When Technology Truly \"Disappears\": Reflections on Reading Weiser's The Computer for the 21st Century",
+    "zh": "当技术真正“消失”：阅读维瑟《21世纪的计算机》的心得与反思",
+    "format": "core-idea",
+    "excerpts": [
+      {
+        "id": "the-Computer-for-the-21st-Century-01",
+        "zh": "一件发热马甲，也能成为理解隐形计算的入口。",
+        "en": "A heated vest can be an entry point for understanding invisible computing."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-02",
+        "zh": "技术融入生活，不一定要以一台显眼的设备出现。",
+        "en": "Technology can fit into life without appearing as a conspicuous device."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-03",
+        "zh": "熟悉的文字会直接呈现意义，陌生语言却需要额外解码。",
+        "en": "Familiar writing conveys meaning directly; an unfamiliar language needs extra decoding."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-04",
+        "zh": "在德国看路牌的经历，让我想到技术的认知门槛。",
+        "en": "Reading street signs in Germany made me think about technology’s cognitive barriers."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-05",
+        "zh": "普适计算的愿景，是让技术在环境中提供帮助，而不是持续占据注意力。",
+        "en": "Ubiquitous computing imagines technology helping from the environment rather than constantly demanding attention."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-06",
+        "zh": "联网设备需要人反复配置时，计算还没有真正退到背景。",
+        "en": "When networked devices need repeated configuration, computing has not faded into the background."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-07",
+        "zh": "理解新概念时，熟悉的产品类比也可能误导我们。",
+        "en": "Familiar product analogies can mislead us when learning a new concept."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-08",
+        "zh": "把 Tabs 当作 AirTags，会忽略它作为交互媒介的设想。",
+        "en": "Equating Tabs with AirTags misses their envisioned role as interaction media."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-09",
+        "zh": "共享文件和共享一个协作空间，并不完全相同。",
+        "en": "Sharing a file and sharing a collaborative space are not quite the same."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-10",
+        "zh": "联网不自动等于环境中的设备能够动态协作。",
+        "en": "Being connected does not automatically mean devices can cooperate dynamically in an environment."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-11",
+        "zh": "当 AI 替人操作，依赖人浏览的商业模式也会受到影响。",
+        "en": "When AI acts for people, business models that depend on human browsing are affected."
+      },
+      {
+        "id": "the-Computer-for-the-21st-Century-12",
+        "zh": "技术退到背景之后，人的选择权更需要被看见。",
+        "en": "When technology fades into the background, human choice needs to remain visible."
+      }
+    ]
+  }
+]

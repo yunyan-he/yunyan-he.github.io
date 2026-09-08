@@ -1,0 +1,39 @@
+{
+  "kind": "note",
+  "slug": "robotics-industry-survey",
+  "en": "Industry Survey: The Present and Future of Intelligent Robotics",
+  "zh": "行业调查：智能机器人的现状与未来",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "robotics-industry-survey-01",
+      "zh": "机器人进入日常生活时，需要同时考虑技术与社会影响。",
+      "en": "Robots entering everyday life raise both technical and social questions."
+    },
+    {
+      "id": "robotics-industry-survey-02",
+      "zh": "养老陪伴和日常照料，让机器人设计与人的生活需求直接相遇。",
+      "en": "Companionship and everyday care connect robot design directly with human needs."
+    },
+    {
+      "id": "robotics-industry-survey-03",
+      "zh": "不同文化对机器人参与情感交互的接受程度可能不同。",
+      "en": "Acceptance of emotional interaction with robots may vary across cultures."
+    },
+    {
+      "id": "robotics-industry-survey-04",
+      "zh": "理解人的情感和回应方式，是人机交互的一部分。",
+      "en": "Understanding and responding to human emotion is part of human–robot interaction."
+    },
+    {
+      "id": "robotics-industry-survey-05",
+      "zh": "高能耗是机器人走向更广泛应用时需要面对的约束。",
+      "en": "Energy consumption constrains the broader use of robotics."
+    },
+    {
+      "id": "robotics-industry-survey-06",
+      "zh": "讨论机器人发展，也需要讨论伦理、责任与社会效益。",
+      "en": "Discussing robotics also means considering ethics, responsibility and social benefit."
+    }
+  ]
+}

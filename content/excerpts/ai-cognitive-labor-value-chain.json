@@ -1,0 +1,69 @@
+{
+  "kind": "post",
+  "slug": "ai-cognitive-labor-value-chain",
+  "en": "AI Eats the Value Chain: How AI Products Displace Cognitive Labor, Not Just Competitors",
+  "zh": "AI 吞噬价值链：从\"信息检索\"到\"认知代办\"的产品替代规律",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "ai-cognitive-labor-value-chain-01",
+      "zh": "AI 替代的不只是一个 App，而是用户原来的一整套信息加工行为。",
+      "en": "AI replaces not just an app, but the information work people used to do."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-02",
+      "zh": "综合信息这一步正在从人转移给 AI。",
+      "en": "Synthesizing information is moving from people to AI."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-03",
+      "zh": "把十篇文章压缩成几百字，即使没有错误，也会丢失细节。",
+      "en": "Even an accurate summary of ten articles loses detail."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-04",
+      "zh": "解释偏差、融合偏差和幻觉，是不同的产品设计问题。",
+      "en": "Interpretation bias, synthesis bias and hallucination need different design responses."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-05",
+      "zh": "有些任务需要一个足够好的答案，有些任务需要不断修正理解。",
+      "en": "Some tasks need a good enough answer; others need an evolving understanding."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-06",
+      "zh": "发散型任务中，对话的过程本身就有价值。",
+      "en": "In exploratory tasks, the conversation itself has value."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-07",
+      "zh": "分析 AI 产品时，可以先问：它替用户做掉了哪部分认知劳动？",
+      "en": "To analyze an AI product, ask which cognitive work it takes over."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-08",
+      "zh": "当规划被自动化，真人体验仍然可能成为判断的依据。",
+      "en": "When planning is automated, first-hand experience can still support judgment."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-09",
+      "zh": "知识管理工具可能从存储知识，转向支持思考。",
+      "en": "Knowledge tools may shift from storing information to supporting thought."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-10",
+      "zh": "生成演示文稿变容易后，想清楚要讲什么仍然重要。",
+      "en": "When making slides gets easier, deciding what to say still matters."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-11",
+      "zh": "提出目标、承担责任和价值判断，并不会随信息处理自动化而消失。",
+      "en": "Goals, responsibility and value judgments do not disappear when information processing is automated."
+    },
+    {
+      "id": "ai-cognitive-labor-value-chain-12",
+      "zh": "下一代产品也许需要比较：谁能帮助人形成更好的判断？",
+      "en": "The next product question may be: who helps people make better judgments?"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "note",
+  "slug": "ai-organizational-intelligence/01_from_multi_agent_to_ai_organizational_intelligence",
+  "en": "From Multi-Agent to AI Organizational Intelligence",
+  "zh": "从 Multi-Agent 到 AI 组织智能：下一代 AI 产品如何组织思考",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-01",
+      "zh": "反复问多个 AI，往往是因为用户需要不同的观察角度。",
+      "en": "People often ask several AIs because they need different perspectives."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-02",
+      "zh": "用户缺少的可能不是答案，而是对共识和分歧的理解。",
+      "en": "People may lack an understanding of agreement and disagreement, rather than answers."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-03",
+      "zh": "并排展示多个模型的全文，仍把分析负担留给用户。",
+      "en": "Showing full responses side by side still leaves the analysis to the user."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-04",
+      "zh": "多智能体的价值取决于分工、通信和决策机制。",
+      "en": "The value of multiple agents depends on roles, communication and decision mechanisms."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-05",
+      "zh": "组织思考需要容纳假设、质疑、证据、反例与修正。",
+      "en": "Organizing thought requires hypotheses, challenges, evidence, counterexamples and revision."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-06",
+      "zh": "不是所有问题都应该追求共识。",
+      "en": "Not every question should aim for consensus."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-07",
+      "zh": "事实问题需要验证，价值问题需要呈现取舍。",
+      "en": "Factual questions need verification; value questions need visible trade-offs."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-08",
+      "zh": "过早追求一致，可能压缩创意的空间。",
+      "en": "Seeking agreement too early can narrow the space for creativity."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-09",
+      "zh": "组织 Agent 完成任务，和组织 Agent 帮助人思考，是不同的设计目标。",
+      "en": "Organizing agents to complete tasks and to help people think are different design goals."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-10",
+      "zh": "讨论什么时候停止，也需要被设计。",
+      "en": "When a discussion should stop is itself a design question."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-11",
+      "zh": "信息搬运可以减少，关键的价值判断仍需要人参与。",
+      "en": "Information shuffling can be reduced while people retain key value judgments."
+    },
+    {
+      "id": "01_from_multi_agent_to_ai_organizational_intelligence-12",
+      "zh": "多智能体产品可以把分歧和待验证之处一起呈现给用户。",
+      "en": "Multi-agent products can show disagreements alongside what still needs verification."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "note",
+  "slug": "ai-insurance-framework",
+  "en": "AI Insurance: Frameworks, Application Cases, and Market Trends",
+  "zh": "AI保险：责任框架、应用案例与市场趋势",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "ai-insurance-framework-01",
+      "zh": "当 AI 获得决策权，责任如何划分也成为产品问题。",
+      "en": "As AI gains decision-making power, allocating responsibility becomes a product question."
+    },
+    {
+      "id": "ai-insurance-framework-02",
+      "zh": "自动决策的失误可能来自硬件、软件、网络或人机交接。",
+      "en": "Failures in automated decisions can involve hardware, software, networks or human handovers."
+    },
+    {
+      "id": "ai-insurance-framework-03",
+      "zh": "分析责任时，需要区分系统自主运行和人应当接管的时刻。",
+      "en": "Responsibility analysis needs to distinguish autonomous operation from expected human intervention."
+    },
+    {
+      "id": "ai-insurance-framework-04",
+      "zh": "AI 的幻觉、偏见与未经授权的操作，会带来不同类型的损失。",
+      "en": "Hallucinations, bias and unauthorized actions create different kinds of loss."
+    },
+    {
+      "id": "ai-insurance-framework-05",
+      "zh": "当运行日志由厂商独自掌控，定责证据也会面临信任问题。",
+      "en": "When vendors alone control operational logs, evidence about responsibility raises trust questions."
+    },
+    {
+      "id": "ai-insurance-framework-06",
+      "zh": "模型的随机性让风险评估与保险定价更难稳定下来。",
+      "en": "Model variability makes risk assessment and insurance pricing harder to stabilize."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "post",
+  "slug": "android-play-install-referrer-tutorial",
+  "en": "Tracking App Install Sources on Android with the Play Install Referrer Library",
+  "zh": "使用 Play Install Referrer 库在 Android 上追踪应用安装来源",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "android-play-install-referrer-tutorial-01",
+      "zh": "安装来源追踪把推广链接和应用首次安装连接起来。",
+      "en": "Install attribution connects a campaign link with an app installation."
+    },
+    {
+      "id": "android-play-install-referrer-tutorial-02",
+      "zh": "渠道参数进入应用后，才能用于后续的转化分析。",
+      "en": "Campaign parameters must reach the app before they can support conversion analysis."
+    },
+    {
+      "id": "android-play-install-referrer-tutorial-03",
+      "zh": "连接 Google Play 是异步过程，需要分别处理成功、不支持和服务不可用。",
+      "en": "Connecting to Google Play is asynchronous and requires handling different outcomes."
+    },
+    {
+      "id": "android-play-install-referrer-tutorial-04",
+      "zh": "连接断开后，需要考虑如何重新建立连接。",
+      "en": "A disconnected service needs a reconnection strategy."
+    },
+    {
+      "id": "android-play-install-referrer-tutorial-05",
+      "zh": "读取来源信息后，应当释放连接和相关资源。",
+      "en": "After reading attribution data, release the connection and associated resources."
+    },
+    {
+      "id": "android-play-install-referrer-tutorial-06",
+      "zh": "本地安装和经 Google Play 下载的安装，需要用不同场景验证。",
+      "en": "Local installs and Google Play installs need separate test scenarios."
+    }
+  ]
+}

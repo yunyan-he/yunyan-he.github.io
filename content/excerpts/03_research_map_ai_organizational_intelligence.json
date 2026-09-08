@@ -1,0 +1,69 @@
+{
+  "kind": "note",
+  "slug": "ai-organizational-intelligence/03_research_map_ai_organizational_intelligence",
+  "en": "AI Organizational Intelligence: A Research Map",
+  "zh": "AI 组织智能研究地图：从 Agent Workflow 到 Cognitive Workflow",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "03_research_map_ai_organizational_intelligence-01",
+      "zh": "任务流程关注完成工作，认知流程还关注人如何理解与判断。",
+      "en": "Task workflows focus on execution; cognitive workflows also consider understanding and judgment."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-02",
+      "zh": "重复任务、输出矛盾和上下文污染，是多 Agent 的组织问题。",
+      "en": "Duplicate work, conflicting outputs and context pollution are organizational problems for agents."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-03",
+      "zh": "角色边界可以帮助不完美的 Agent 互相发现错误。",
+      "en": "Role boundaries can help imperfect agents catch each other’s errors."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-04",
+      "zh": "跨系统协作还需要权限、审计和异常处理。",
+      "en": "Cross-system collaboration also needs permissions, auditing and failure handling."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-05",
+      "zh": "分工可以按专业划分，也可以按认知功能划分。",
+      "en": "Roles can be divided by expertise or by cognitive function."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-06",
+      "zh": "让所有 Agent 看见所有消息，并不总是最好的通信方式。",
+      "en": "Letting every agent see every message is not always the best communication design."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-07",
+      "zh": "先独立思考再讨论，可以作为避免相互污染的一种机制。",
+      "en": "Thinking independently before discussion is one possible way to limit mutual contamination."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-08",
+      "zh": "多数意见与专家意见冲突时，需要明确的决策机制。",
+      "en": "Conflicts between majority and expert views require an explicit decision mechanism."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-09",
+      "zh": "委员会、中心调度和对立角色组织，各有不同的取舍。",
+      "en": "Committees, central coordination and rival roles involve different trade-offs."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-10",
+      "zh": "人应该在什么时刻介入，比笼统地说人在回路中更具体。",
+      "en": "Asking when people should intervene is more precise than simply keeping them in the loop."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-11",
+      "zh": "共识质量应关注证据、适用边界和不确定性。",
+      "en": "Consensus quality should consider evidence, scope and uncertainty."
+    },
+    {
+      "id": "03_research_map_ai_organizational_intelligence-12",
+      "zh": "停止条件可以考虑新增信息、讨论成本和剩余分歧的性质。",
+      "en": "Stopping conditions can consider new information, cost and the nature of remaining disagreements."
+    }
+  ]
+}
