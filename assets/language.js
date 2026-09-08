@@ -10,7 +10,7 @@ function apply(){
  document.querySelectorAll('[data-zh]').forEach(e=>e.textContent=e.dataset[lang]);
  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
  while(n=walker.nextNode()){
-  if(n.parentElement.closest('script,style,[data-zh],#language-toggle,#random-note,#note-pool'))continue;
+  if(n.parentElement.closest('script,style,[data-zh],#language-toggle,#random-note'))continue;
   const raw=n.textContent,trim=raw.trim();
   if(!originals.has(n))originals.set(n,raw);
   const original=originals.get(n),key=original.trim();
