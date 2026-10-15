@@ -1,0 +1,39 @@
+{
+  "kind": "note",
+  "slug": "xai-language-and-judgment",
+  "zh": "换一种语言，模型的判断会改变吗？",
+  "en": "Does changing the language change a model’s judgment?",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "xai-language-and-judgment-01",
+      "zh": "多语言产品需要在翻译检查之外检验行为一致性。",
+      "en": "Multilingual products need behavioral consistency checks alongside translation checks."
+    },
+    {
+      "id": "xai-language-and-judgment-02",
+      "zh": "具体伦理场景帮助把抽象的立场问题转化为可评测的输入。",
+      "en": "Concrete ethical scenarios turn abstract questions about stance into testable inputs."
+    },
+    {
+      "id": "xai-language-and-judgment-03",
+      "zh": "裁判之间的一致性不等同于客观真值。",
+      "en": "Agreement between judges is not objective ground truth."
+    },
+    {
+      "id": "xai-language-and-judgment-04",
+      "zh": "从激活中预测立场，不等于找到了控制立场的机制。",
+      "en": "Predicting stance from activations does not establish a mechanism that controls it."
+    },
+    {
+      "id": "xai-language-and-judgment-05",
+      "zh": "相关性提出候选解释，干预实验检验解释的边界。",
+      "en": "Correlation proposes candidate explanations; intervention tests their limits."
+    },
+    {
+      "id": "xai-language-and-judgment-06",
+      "zh": "无显著效果的结果同样能帮助划清结论边界。",
+      "en": "Non-significant results also help define what the evidence can support."
+    }
+  ]
+}

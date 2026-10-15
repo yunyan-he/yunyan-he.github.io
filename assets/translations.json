@@ -204,5 +204,22 @@
   "产品观察 · 节选 ↗": "Product observations · excerpt ↗",
   "下一代产品的竞争，或许不再是“谁处理信息最快”，而是“谁能帮助人类形成更好的判断（Support Better Judgment）”。 ↗": "The next generation of products may compete less on processing information quickly and more on helping people make better judgments. ↗",
   "AI 吞噬价值链 ↗": "AI eats the value chain ↗",
-  "README / 源码 ↗": "README / Source ↗"
+  "README / 源码 ↗": "README / Source ↗",
+  "换一种语言，模型的判断会改变吗？": "Does changing the language change a model’s judgment?",
+  "我独立设计并完成了一项双语 LLM 研究，从伦理场景评测走到模型内部表征与干预实验，探索行为差异能否被解释，以及解释的边界在哪里。": "I independently designed and completed a bilingual LLM study, from ethical scenarios to internal representations and interventions, exploring how behavioral differences can be explained and where those explanations stop.",
+  "阅读案例 ↗": "Read the case study ↗",
+  "从“抠得干净”到“真的可用”：一次图像模型评测实践": "From clean cutouts to usable results: evaluating image models",
+  "在 PrimiLab 的 AI 产品实习中，我把主体选择、边缘质量和复杂场景中的失败整理成评测规则，结合自动指标与人工盲评，支持模型选型和后续迭代。": "During my AI product internship at PrimiLab, I translated subject selection, edge quality and difficult failure cases into evaluation rules, combining metrics with blind review to support model selection and iteration.",
+  "研究与实践": "Research & practice",
+  "从提出问题，到建立判断的依据。": "From asking questions to building evidence.",
+  "研究": "Research",
+  "2026 · 夏–秋": "Summer–autumn 2026",
+  "2026.10–至今": "Oct 2026–present",
+  "在波恩开始科研工作": "Starting research work in Bonn",
+  "在 PrimiLab 做 AI 产品经理实习，参与图像抠图与贴纸生成产品的模型评估、选型和端侧可行性分析。": "At PrimiLab, I worked on model evaluation, selection and on-device feasibility for image cutout and sticker products as an AI product management intern.",
+  "从目标主体与标注规则，到可复现的模型实验和人工盲评，我逐步把产品可用性转化为评测依据。": "From target-subject and annotation rules to reproducible experiments and blind review, I worked to turn product usability into evaluation criteria.",
+  "读 PrimiLab 实践记录": "Read the PrimiLab case study",
+  "2026 年 10 月起，在波恩大学 CAIAN 的 Bach Lab 担任 Student Research Assistant。": "Since October 2026, I have been a Student Research Assistant at Bach Lab, CAIAN, University of Bonn.",
+  "目前处于入组学习阶段：阅读关联学习文献、熟悉现有代码与数据结构，理解计算模型评测的研究工作流。": "I am currently onboarding: reading associative-learning literature, exploring the codebase and data structures, and learning the research workflow for computational model evaluation.",
+  "看看研究与实践": "Explore research and practice"
 }

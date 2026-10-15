@@ -30,8 +30,12 @@ Each article has a metadata file in `content/excerpts/`:
 
 Short articles currently have 6–8 core ideas; longer articles have 12. New articles should have 5–8 or 11–12 according to length. Keep each statement meaningful without its surrounding paragraph; preserve uncertainty and avoid turning a report's claims into universal facts. Add exact quotations only with an explicit format/attribution change.
 
-Run the build after editing. The homepage draws without replacement through the 116-entry pool, then reshuffles. It avoids consecutive entries from the same article whenever the remaining pool permits. Each reader exposes its own core ideas in a collapsible panel.
+Run the build after editing. The homepage draws without replacement through the 128-entry pool, then reshuffles. It avoids consecutive entries from the same article whenever the remaining pool permits. Each reader exposes its own core ideas in a collapsible panel.
 
 ## Dependencies
 
 Vendored browser libraries are Marked 15.0.12 and DOMPurify 3.2.6; their license headers are preserved in `assets/vendor/`. Markdown is sanitized before rendering. Nothing calls an AI service at runtime.
+
+## Research case studies
+
+The homepage includes bilingual XAI and PrimiLab case studies, with corresponding reader entries and core ideas. The background includes the University of Bonn RA onboarding stage (October 2026). Research summaries omit unverified quantitative results and internal project details.

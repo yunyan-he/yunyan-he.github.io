@@ -70,5 +70,17 @@
     "slug": "the-Computer-for-the-21st-Century",
     "en": "When Technology Truly \"Disappears\": Reflections on Reading Weiser's The Computer for the 21st Century",
     "zh": "当技术真正“消失”：阅读维瑟《21世纪的计算机》的心得与反思"
+  },
+  {
+    "kind": "note",
+    "slug": "xai-language-and-judgment",
+    "zh": "换一种语言，模型的判断会改变吗？",
+    "en": "Does changing the language change a model’s judgment?"
+  },
+  {
+    "kind": "note",
+    "slug": "primilab-model-evaluation",
+    "zh": "从“抠得干净”到“真的可用”：一次图像模型评测实践",
+    "en": "From clean cutouts to usable results: evaluating image models"
   }
 ]

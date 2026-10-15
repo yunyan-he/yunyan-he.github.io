@@ -1,0 +1,39 @@
+{
+  "kind": "note",
+  "slug": "primilab-model-evaluation",
+  "zh": "从“抠得干净”到“真的可用”：一次图像模型评测实践",
+  "en": "From clean cutouts to usable results: evaluating image models",
+  "format": "core-idea",
+  "excerpts": [
+    {
+      "id": "primilab-model-evaluation-01",
+      "zh": "先定义用户想得到什么，再决定如何评价模型。",
+      "en": "Define what users want before deciding how to evaluate a model."
+    },
+    {
+      "id": "primilab-model-evaluation-02",
+      "zh": "产品规则不清与模型能力不足需要分开处理。",
+      "en": "Unclear product rules and model limitations need to be addressed separately."
+    },
+    {
+      "id": "primilab-model-evaluation-03",
+      "zh": "诊断样本适合发现问题，但不能直接代表线上分布。",
+      "en": "Diagnostic samples reveal problems but do not directly represent the production distribution."
+    },
+    {
+      "id": "primilab-model-evaluation-04",
+      "zh": "自动指标与人工评审共同支持对产品可用性的判断。",
+      "en": "Automatic metrics and human review jointly inform judgments about product usability."
+    },
+    {
+      "id": "primilab-model-evaluation-05",
+      "zh": "参考标注和样本归组争议需要先于模型输赢结论解决。",
+      "en": "Disputes about reference annotations and sample assignments need resolving before declaring a model winner."
+    },
+    {
+      "id": "primilab-model-evaluation-06",
+      "zh": "实验环境中的耗时不能替代端侧真机性能测试。",
+      "en": "Experimental runtimes do not substitute for on-device performance testing."
+    }
+  ]
+}
